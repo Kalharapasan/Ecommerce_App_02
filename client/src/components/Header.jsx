@@ -4,8 +4,8 @@ import { assets } from "../assets/data";
 import Navbar from "./Navbar";
 
 const Header = () => {
-  const [menuOpened, setMenuOpend] = useState(false);
-  const toggleMenu = () => setMenuOpend((prev) => !prev);
+  const [menuOpened, setMenuOpened] = useState(false);
+  const toggleMenu = () => setMenuOpened((prev) => !prev);
 
   return (
     <div>
@@ -24,9 +24,12 @@ const Header = () => {
           {/* Nav Bar */}
           <div className="flex-1">
             <Navbar
-              containerStyles={
-                "hidden lg:flex gap-x-5 xl:gap-x-8 medium-15 bg-secondary/10 rounded-full p-1"
-              }
+              setMenuOpened={setMenuOpened}
+              containerStyles={`${
+                menuOpened
+                    ? "flex items-start flex-col gap-y-8 fixed top-16 right-6 p-5 bg-white rounded-xl shadow-md w-52 z-50"
+                    : "hidden lg:flex gap-x-5 xl:gap-x-8 medium-15 bg-secondary/10 rounded-full p-1"
+              }`}
             />
           </div>
 
@@ -48,7 +51,7 @@ const Header = () => {
                 src={assets.menuClose}
                 alt=""
                 className={`absolute inset-0 lg:hidden cursor-pointer transition-opacity duration-700 ${
-                  menuOpened ? "opacity-0" : "opacity-100"
+                  menuOpened ? "opacity-100" : "opacity-0"
                 }`}
               />
             </div>

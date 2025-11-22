@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 
 
-const Navbar = ({containerStyles}) => {
+const Navbar = ({containerStyles,setMenuOpened}) => {
 
   const navLinks=[
     {path:"/",title:"Home"},
@@ -14,7 +14,7 @@ const Navbar = ({containerStyles}) => {
 
 
   return (
-    <nav className={'${containerStyles}'}>
+    <nav className={`${containerStyles}`}>
       {navLinks.map((link)=>(
         <NavLink key={link.title} to={link.path} className={({ isActive }) => `${isActive ? "active-link" : ""} p-2 px-4 rounded-full capitalize text-sm font-semibold`}>
           {link.title}
