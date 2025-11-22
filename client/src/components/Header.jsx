@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {Link} from 'react-router-dom'
 import {assets} from '../assets/data'
 import Navbar from './Navbar'
 
 const Header = () => {
+
+  const [menuOpened,setMenuOpend] =useState(false)
+  const toggleMenu = () =>setMenuOpend(prev => !prev)
+
   return (
     <div>
       <header className='absolute top-0 left-0 right-0 z-50 bg-white py-3'>
@@ -24,8 +28,8 @@ const Header = () => {
           {/* Button and Profile */}
           <div className="flex flex-1 items-center sm:justify-end gap-x-4 sm:gap-x-8">
              {/* menu*/}
-            <div>
-              <img src={assets.menu} alt='' />
+            <div className="relative lg:hidden w-7 h-6">
+              <img src={assets.menu} alt="" className={`absolute inset-0 lg:hidden cursor-pointer transition-opacity duration-700 ${menuOpened ? "opacity-0" : "opacity-100"}`} />
             </div>
             {/* Cart */}
             <div>
