@@ -1,10 +1,26 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
-const Navbar = () => {
+
+
+const Navbar = ({containerStyles}) => {
+
+  const navLinks=[
+    {path:"/",title:"Home"},
+    {path:"/collection",title:"Collection"},
+    {path:"/blog",title:"Blog"},
+    {path:"/contact",title:"Contact"},
+  ]
+
+
   return (
-    <div>
-      <h1>Navbar</h1>
-    </div>
+    <nav className={'${containerStyles}'}>
+      {navLinks.map((link)=>(
+        <NavLink key={link.title} to={link.path} className={({ isActive }) => `${isActive ? "active-link" : ""} p-2 px-4 rounded-full capitalize text-sm font-semibold`}>
+          {link.title}
+        </NavLink>
+      ))}
+    </nav>
   )
 }
 
