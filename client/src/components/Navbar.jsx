@@ -16,7 +16,7 @@ const Navbar = ({containerStyles,setMenuOpened}) => {
   return (
     <nav className={`${containerStyles}`}>
       {navLinks.map((link)=>(
-        <NavLink key={link.title} to={link.path} className={({ isActive }) => `${isActive ? "active-link" : ""} p-2 px-4 rounded-full capitalize text-sm font-semibold`}>
+        <NavLink onClick={()=>setMenuOpened(false)} key={link.title} to={link.path} className={({ isActive }) => `${isActive ? "active-link" : ""} p-2 px-4 rounded-full capitalize text-sm font-semibold`}>
           {link.title}
         </NavLink>
       ))}

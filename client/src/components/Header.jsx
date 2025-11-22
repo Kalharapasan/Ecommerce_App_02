@@ -56,13 +56,13 @@ const Header = () => {
               />
             </div>
             {/* Cart */}
-            <div>
+            <div className="relative cursor-pointer">
               <img src={assets.cartAdded} alt="" className="min-w-7" />
-              <label>0</label>
+              <label className="absolute bottom-7 right-0 left-0 text-xs font-bold bg-secondary/15 flexCenter rounded-full">0</label>
             </div>
             {/* User Profile */}
             <div>
-              <div>
+              <div className="group relative top-1">
                 <button className="btn-secondary">
                   Login
                   <img src={assets.user} alt="" className="invert w-5" />
