@@ -24,6 +24,7 @@ const Header = () => {
           {/* Nav Bar */}
           <div className="flex-1">
             <Navbar
+              
               setMenuOpened={setMenuOpened}
               containerStyles={`${
                 menuOpened
