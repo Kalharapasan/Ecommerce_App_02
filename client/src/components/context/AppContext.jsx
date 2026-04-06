@@ -1,5 +1,4 @@
 import React, { createContext, useContext } from 'react'
-import { useClerk } from '@clerk/clerk-react'
 import { useNavigate } from 'react-router-dom'
 import { useUser } from '@clerk/react'
  

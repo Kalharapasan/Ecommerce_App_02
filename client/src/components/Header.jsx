@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 import { assets } from "../assets/data";
 import Navbar from "./Navbar";
 import { useClerk, UserButton } from "@clerk/react";
-import {AppContext} from '../components/context/AppContext'
+import {useAppContext} from '../components/context/AppContext'
 
 const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false);
 
   const {openSinIn} =useClerk();
-  const {user} =AppContext();
+  const {user} =useAppContext();
 
   const toggleMenu = () => setMenuOpened((prev) => !prev);
 
@@ -76,6 +76,13 @@ const Header = () => {
                 {user ?
                   (
                     <UserButton>
+
+                      <UserButton.MenuItems>
+                        <UserButton.Action label="My Orders"
+                          labelIcon={<OrderIcon/>}
+                          onClick={()=>navigator('/my-orders')}
+                        />
+                      </UserButton.MenuItems>
 
                     </UserButton>
 
