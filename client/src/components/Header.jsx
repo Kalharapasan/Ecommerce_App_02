@@ -3,12 +3,13 @@ import { Link } from "react-router-dom";
 import { assets } from "../assets/data";
 import Navbar from "./Navbar";
 import { useClerk, UserButton } from "@clerk/react";
-import {user} from '../components/context/AppContext'
+import {AppContext} from '../components/context/AppContext'
 
 const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false);
 
-  const {openSinIn} =useClerk()
+  const {openSinIn} =useClerk();
+  const {user} =AppContext();
 
   const toggleMenu = () => setMenuOpened((prev) => !prev);
 
