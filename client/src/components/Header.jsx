@@ -12,7 +12,7 @@ const Header = () => {
   const { user } = useUser();
 
   const toggleMenu = () => setMenuOpened((prev) => !prev);
-  const OrderIcon = () => (
+  const OrdersIcon = () => (
   <svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -95,7 +95,7 @@ const Header = () => {
 
                       <UserButton.MenuItems>
                         <UserButton.Action label="My Orders"
-                          labelIcon={<OrderIcon />}
+                          labelIcon={<OrdersIcon />}
                           onClick={() => navigate('/my-orders')}
                         />
                       </UserButton.MenuItems>
