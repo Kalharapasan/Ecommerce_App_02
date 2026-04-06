@@ -7,7 +7,7 @@ export const AppContextProvider = ({children}) =>{
 
     const navigater =useNavigate()
 
-    const value = {}
+    const value = {navigater}
 
     return (
         <AppContext.Provider value={value} >{children}</AppContext.Provider>
