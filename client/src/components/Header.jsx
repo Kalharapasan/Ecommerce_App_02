@@ -87,11 +87,18 @@ const Header = () => {
             {/* User Profile */}
             <div>
 
-              <div className="group relative top-1">
+              <div className="group ">
 
                 {user ?
                   (
-                    <UserButton>
+                    <UserButton appearance={{
+                      elements :{
+                        userButtonAvatarBox:{
+                          width:"42px",
+                          height:"42px"
+                        }
+                      }
+                    }}>
 
                       <UserButton.MenuItems>
                         <UserButton.Action label="My Orders"
