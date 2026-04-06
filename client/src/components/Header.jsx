@@ -64,7 +64,7 @@ const Header = () => {
             {/* User Profile */}
             <div>
               <div className="group relative top-1">
-                <button className="btn-secondary">
+                <button className="btn-secondary flexCenter gap-2 rounded-full">
                   Login
                   <img src={assets.user} alt="" className="invert w-5" />
                 </button>
