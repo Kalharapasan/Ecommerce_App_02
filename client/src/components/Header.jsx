@@ -1,18 +1,18 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { assets } from "../assets/data";
 import Navbar from "./Navbar";
-import { useClerk, UserButton } from "@clerk/react";
-import { useAppContext } from '../components/context/AppContext'
+import { useClerk, UserButton, useUser } from "@clerk/react";
 
 const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false);
+  const navigate = useNavigate();
 
-  const { openSinIn } = useClerk();
-  const { user } = useAppContext();
+  const { openSignIn } = useClerk();
+  const { user } = useUser();
 
   const toggleMenu = () => setMenuOpened((prev) => !prev);
-  const OrdersIcon = () => (
+  const OrderIcon = () => (
   <svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"
@@ -20,10 +20,10 @@ const Header = () => {
       viewBox="0 0 36 36"
       fill="none"
       stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="lucide lucide-scroll-text-icon lucide-scroll-text"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="lucide lucide-scroll-text-icon lucide-scroll-text"
     >
       <path d="M15 12h-5" />
       <path d="M15 8h-5" />
@@ -96,7 +96,7 @@ const Header = () => {
                       <UserButton.MenuItems>
                         <UserButton.Action label="My Orders"
                           labelIcon={<OrderIcon />}
-                          onClick={() => navigator('/my-orders')}
+                          onClick={() => navigate('/my-orders')}
                         />
                       </UserButton.MenuItems>
 
@@ -105,7 +105,7 @@ const Header = () => {
                   )
                   :
                   (
-                    <button onClick={openSinIn} className="btn-secondary flexCenter gap-2 rounded-full">
+                    <button onClick={() => openSignIn()} className="btn-secondary flexCenter gap-2 rounded-full">
                       Login
                       <img src={assets.user} alt="" className="invert w-5" />
                     </button>
