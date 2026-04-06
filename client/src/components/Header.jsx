@@ -2,9 +2,14 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { assets } from "../assets/data";
 import Navbar from "./Navbar";
+import { useClerk, UserButton } from "@clerk/react";
+import {user} from '../components/context/AppContext'
 
 const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false);
+
+  const {openSinIn} =useClerk()
+
   const toggleMenu = () => setMenuOpened((prev) => !prev);
 
   return (
@@ -61,15 +66,33 @@ const Header = () => {
               <img src={assets.cartAdded} alt="" className="min-w-7" />
               <label className="absolute bottom-7 right-0 left-0 text-xs font-bold bg-secondary/15 flexCenter rounded-full">0</label>
             </div>
+            
             {/* User Profile */}
             <div>
+              
               <div className="group relative top-1">
-                <button className="btn-secondary flexCenter gap-2 rounded-full">
-                  Login
-                  <img src={assets.user} alt="" className="invert w-5" />
-                </button>
+
+                {user ?
+                  (
+                    <UserButton>
+
+                    </UserButton>
+
+                  )
+                  :
+                  (
+                    <button className="btn-secondary flexCenter gap-2 rounded-full">
+                      Login
+                      <img src={assets.user} alt="" className="invert w-5" />
+                    </button>
+                  )
+                }
+
               </div>
+
             </div>
+
+
           </div>
         </div>
       </header>
