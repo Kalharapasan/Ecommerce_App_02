@@ -105,7 +105,7 @@ const Header = () => {
                   )
                   :
                   (
-                    <button className="btn-secondary flexCenter gap-2 rounded-full">
+                    <button onClick={openSinIn} className="btn-secondary flexCenter gap-2 rounded-full">
                       Login
                       <img src={assets.user} alt="" className="invert w-5" />
                     </button>
