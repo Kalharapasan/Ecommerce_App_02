@@ -14,7 +14,7 @@ const Hero = () => {
             className='absolute inset-0 h-full w-full object-cover object-[68%_center]'
           />
 
-          <div className='relative z-10 max-w-xl pt-8 sm:pt-10 space-y-5 md:pb-44'>
+          <div className='relative z-10 max-w-xl pt-8 sm:pt-10 space-y-5 lg:pb-56'>
             <h1 className='text-[40px] md:text-[58px] font-[500] leading-[1.1] text-tertiary'>
               Enhance Your <span className='font-[700] text-secondary'>Look</span> With <span className='font-[700] text-secondary'>Glam</span> Essentials
             </h1>
@@ -33,7 +33,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className='relative z-10 mt-8 rounded-2xl bg-white/95 p-3 w-[210px] shadow-sm md:absolute md:left-6 md:bottom-6 md:mt-0'>
+          <div className='relative z-10 mt-8 rounded-2xl bg-white/95 p-3 w-[210px] shadow-sm lg:absolute lg:left-6 lg:bottom-6 lg:mt-0'>
             <img src={assets.hero} alt='Lip serum' className='h-28 w-full rounded-xl object-cover' />
             <p className='text-[13px] leading-5 text-gray-50'>
               <span className='uppercase font-semibold text-tertiary'>UNLOCK</span> your best look, one click at a time, your style upgrade starts here, shop today!
