@@ -45,7 +45,7 @@ const Item = ({ product }) => {
         <div className="pt-3 p-1">
             {/* Title and description */}
             <div className="flexBetween">
-                <h5>{product.title}</h5>
+                <h5 className='h5 uppercase line-clamp'>{product.title}</h5>
                 <p>{currency}{product.price[size]}</p>
             </div>
             <p>{product.description}</p>
