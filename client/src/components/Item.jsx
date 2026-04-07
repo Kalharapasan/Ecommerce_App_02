@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useAppContext } from './context/AppContext'
 
-const Item = () => {
+const Item = ({ product }) => {
 
     const {navigate,currency} = useAppContext()
     const [hovered,setHovered] =useState(false)
