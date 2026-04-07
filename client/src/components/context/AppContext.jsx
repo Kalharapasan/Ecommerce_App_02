@@ -21,7 +21,7 @@ export const AppContextProvider = ({children}) =>{
         fetchProducts()
     },[])
 
-    const value = {navigater,user,products}
+    const value = {navigater,user,products,currency}
 
     return (
         <AppContext.Provider value={value} >{children}</AppContext.Provider>
