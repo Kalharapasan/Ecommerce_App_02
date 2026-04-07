@@ -8,6 +8,7 @@ import 'swiper/css';
 // import required modules
 import { Autoplay} from 'swiper/modules';
 import { useAppContext } from './context/AppContext';
+import Item from './Item';
 
 
 
@@ -58,6 +59,8 @@ const NewArrivals = () => {
                 >
                    {NewArrivals.map((product) =>(
                         <SwiperSlide key={product._id}>
+
+                            <Item />
 
                         </SwiperSlide>
                    ))
