@@ -13,20 +13,21 @@ const Item = ({ product }) => {
     const bgcolor = colors[(parseInt(product._id?.slice(-4) || "0", 16)) % colors.length]
 
   return (
-    <div className='overflow-hidden flex flex-col'>
+    <div className='overflow-hidden flex flex-col gap-3'>
 
         {/* Image */}
 
         <div onMouseEnter={()=>setHovered(true)}
             onMouseLeave={()=> setHovered(false)}
-            className='flexCenter h-[182px] w-full transition-all duration-300 rounded-xl group relative overflow-hidden'>
+            className='flexCenter h-[170px] w-full transition-all duration-300 rounded-2xl group relative overflow-hidden px-6'
+            style={{ backgroundColor: bgcolor }}>
 
                 <img src={product.images.length > 1 && hovered ?
                  product.images[1] : product.images[0]} alt="" 
-                 className='h-full w-full object-contain'
+                 className='h-[110px] w-[110px] object-contain transition-transform duration-300 group-hover:scale-105'
                  height={144}
                  width={144}/>
-                 <div className="absolute bottom-1 left-1 right-1 hidden group-hover:block">
+                 <div className="absolute bottom-2 left-2 right-2 opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
                     <button
                         onClick={()=>{
                             navigate(`/products/${product._id}`)
@@ -36,19 +37,21 @@ const Item = ({ product }) => {
                     >
                         Quick View
                     </button>
-                    <p className="absolute top-2 right-2 ring-1 ring-slate-900/10 px-5 bg-white/50 rounded-full">{product.type}</p>
+                    <p className="absolute top-2 right-2 rounded-full border border-slate-200 bg-white/80 px-4 py-0.5 text-sm text-slate-500 shadow-sm">{product.type}</p>
                  </div>
 
         </div>
 
         {/* Info */}
-        <div className="pt-3 p-1">
+        <div className="px-1 pb-1">
             {/* Title and description */}
             <div className="flexBetween">
-                <h5 className='h5 uppercase line-clamp'>{product.title}</h5>
-                <p>{currency}{product.price[size]}</p>
+                <h5 className='h5 uppercase truncate pr-2'>{product.title}</h5>
+                <p className='shrink-0 text-slate-500'>
+                    {currency}{product.price[size]}
+                </p>
             </div>
-            <p>{product.description}</p>
+            <p className='mt-1 line-clamp-3'>{product.description}</p>
         </div>
 
     </div>
