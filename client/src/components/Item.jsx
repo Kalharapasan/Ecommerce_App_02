@@ -7,6 +7,11 @@ const Item = ({ product }) => {
     const [hovered,setHovered] =useState(false)
     const[size,setSize] = useState(product.sizes[0])
 
+    // colors to cycle through
+    const colors = ["#f2f2f2", "#f6f9f6", "#f6f8fe"]
+    // compute an index from product._id; parseInt fallback to 0 for safety
+    const bgcolor = colors[(parseInt(product._id?.slice(-4) || "0", 16)) % colors.length]
+
   return (
     <div className='overflow-hidden flex flex-col'>
 
