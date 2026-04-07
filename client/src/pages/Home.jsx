@@ -12,6 +12,7 @@ const Home = () => {
     <Features/>
     <NewArrivals/>
     <PopularProducts/>
+    <div>banner</div>
     <Testimonials/>
     </>
   )
