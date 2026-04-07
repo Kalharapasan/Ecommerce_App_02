@@ -16,8 +16,8 @@ const Item = ({ product }) => {
             onMouseLeave={()=> setHovered(false)}
             className='flexCenter h-[182px] w-full transition-all duration-300 rounded-xl group relative'>
 
-                <img src={product.images.lenght > 1 && hovered ?
-                 product.imges[1] : product.imges[0]} alt="" 
+                <img src={product.images.length > 1 && hovered ?
+                 product.images[1] : product.images[0]} alt="" 
                  height={144}
                  width={144}/>
                  <div>
