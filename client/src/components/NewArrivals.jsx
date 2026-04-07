@@ -19,17 +19,31 @@ const NewArrivals = () => {
             {
                 <Swiper
                     spaceBetween={30}
-                    centeredSlides={true}
                     autoplay={{
-                        delay: 2500,
+                        delay: 4000,
                         disableOnInteraction: false,
                     }}
                     pagination={{
                         clickable: true,
                     }}
-                    navigation={true}
-                    modules={[Autoplay, Pagination, Navigation]}
-                    className="mySwiper"
+
+                    breakpoints={{
+                        555:{
+                            slidesPerView:1
+                        },
+                        600:{
+                            slidesPerView:2
+                        },
+                        1022:{
+                            slidesPerView:3
+                        },
+                        1350:{
+                            slidesPerView:4
+                        },
+                    }}
+
+                    modules={[Autoplay]}
+                    className="min-h-[399px]"
                 >
                     <SwiperSlide>Slide 1</SwiperSlide>
                     <SwiperSlide>Slide 2</SwiperSlide>
