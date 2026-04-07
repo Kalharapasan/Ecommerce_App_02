@@ -24,7 +24,7 @@ const NewArrivals = () => {
     },[products])
 
     return (
-        <section>
+        <section className='max-padd-container mt-28'>
             <Title title1={"New"} title2={'Arrivals'} title1Styles={'pb-10'} />
             {/* Container */}
 
@@ -60,7 +60,7 @@ const NewArrivals = () => {
                    {NewArrivals.map((product) =>(
                         <SwiperSlide key={product._id}>
 
-                            <Item />
+                            <Item product={product}/>
 
                         </SwiperSlide>
                    ))
