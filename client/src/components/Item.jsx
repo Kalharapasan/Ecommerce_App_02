@@ -26,7 +26,7 @@ const Item = ({ product }) => {
                  className='h-full w-full object-contain'
                  height={144}
                  width={144}/>
-                 <div>
+                 <div className="absolute bottom-1 left-1 right-1 hidden group-hover:block">
                     <button
                         onClick={()=>{
                             navigate(`/products/${product._id}`)
