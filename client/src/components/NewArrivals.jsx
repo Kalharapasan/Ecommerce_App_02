@@ -18,7 +18,8 @@ const NewArrivals = () => {
     const [NewArrivals,setNewArrivals] = useState([])
 
     useEffect(()=>{
-        const data = products.filter((item)=>item.inStock)
+        const data = products.filter((item)=>item.inStock).slice(0,10)
+        setNewArrivals(data)
     },[products])
 
     return (
@@ -55,8 +56,12 @@ const NewArrivals = () => {
                     modules={[Autoplay]}
                     className="min-h-[399px]"
                 >
-                   {
-                     <SwiperSlide></SwiperSlide>
+                   {NewArrivals.map((product) =>(
+                        <SwiperSlide key={product._id}>
+
+                        </SwiperSlide>
+                   ))
+                     
                    }
                     
                 </Swiper>
