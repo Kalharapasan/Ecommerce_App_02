@@ -23,12 +23,16 @@ const Footer = () => {
                         </p>
                         <div className='flex items-center gap-3 mt-4'>
                             {/* Instagram */}
-                            
+                            <img src={assets.facebook} alt="" />
+                            <img src={assets.instagram} alt="" />
+                            <img src={assets.twitter} alt="" />
+                            <img src={assets.linkedin} alt="" />
+
                         </div>
                     </div>
 
                     <div>
-                        <p className='text-lg text-gray-800'>COMPANY</p>
+                        <p className='h4 text-black/80'>COMPANY</p>
                         <ul className='mt-3 flex flex-col gap-2 text-sm'>
                             <li><a href="#">About</a></li>
                             <li><a href="#">Careers</a></li>
@@ -39,7 +43,7 @@ const Footer = () => {
                     </div>
 
                     <div>
-                        <p className='text-lg text-gray-800'>SUPPORT</p>
+                        <p className='h4 text-black/80'>SUPPORT</p>
                         <ul className='mt-3 flex flex-col gap-2 text-sm'>
                             <li><a href="#">Help Center</a></li>
                             <li><a href="#">Safety Information</a></li>
@@ -50,7 +54,7 @@ const Footer = () => {
                     </div>
 
                     <div className='max-w-80'>
-                        <p className='text-lg text-gray-800'>STAY UPDATED</p>
+                        <p className='h4 text-black/80'>STAY UPDATED</p>
                         <p className='mt-3 text-sm'>
                             Subscribe to our newsletter for inspiration and special offers.
                         </p>
