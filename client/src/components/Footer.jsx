@@ -21,7 +21,7 @@ const Footer = () => {
                         <p className='text-sm mt-5'>
                             Discover premium beauty with our cosmetic collection, crafted to enhance your natural glow, boost confidence, and deliver flawless elegance every day.
                         </p>
-                        <div className='flex items-center gap-3 mt-4'>
+                        <div className='flex items-center gap-3 mt-7'>
                             {/* Instagram */}
                             <img src={assets.facebook} alt="" />
                             <img src={assets.instagram} alt="" />
@@ -69,7 +69,7 @@ const Footer = () => {
                 </div>
                 <hr className='border-gray-300 mt-8' />
                 <div className='flex flex-col md:flex-row gap-2 items-center justify-between py-5 mt-8'>
-                    <p>© {new Date().getFullYear()} <a href="https://prebuiltui.com">PrebuiltUI</a>. All rights reserved.</p>
+                    <p>© {new Date().getFullYear()} <a href="https://prebuiltui.com">Vogues</a>. All rights reserved.</p>
                     <ul className='flex items-center gap-4'>
                         <li><a href="#">Privacy</a></li>
                         <li><a href="#">Terms</a></li>
