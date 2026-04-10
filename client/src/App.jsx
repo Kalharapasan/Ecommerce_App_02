@@ -3,6 +3,7 @@ import Header from "./components/Header"
 import {Route, Routes} from 'react-router-dom'
 import Home from './pages/Home'
 import Collection from './pages/Collection'
+import Footer from './components/Footer'
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Route path='/collection' element={<Collection />} />
 
       </Routes>
+      <Footer/>
     </main>
   )
 }
