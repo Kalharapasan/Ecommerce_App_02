@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import assets from '../assets'
 
 
 const Footer = () => {
@@ -7,7 +9,15 @@ const Footer = () => {
             <div className='max-pass-container'>
                 <div className='flex flex-wrap justify-between gap-12 md:gap-6'>
                     <div className='max-w-80'>
-                        <img src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/dummyLogo/dummyLogoColored.svg" alt="logo" className='mb-4 h-8 md:h-9' />
+                        {/*Logo*/}
+                        <div className="flex flex-1">
+                            <Link to={"/"} className="flex items-end">
+                                <img src={assets.logoImg} alt="logoImg" className="h-11" />
+                                <span className="hidden sm:block bold-24 relative top-1">
+                                    oguse
+                                </span>
+                            </Link>
+                        </div>
                         <p className='text-sm'>
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text
                         </p>
