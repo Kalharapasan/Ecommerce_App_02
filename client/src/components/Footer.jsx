@@ -3,8 +3,8 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <footer>
-            <div className='text-gray-500/80 pt-8 px-6 md:px-16 lg:px-24 xl:px-32'>
+        <footer className="pt-16 xl:pt-20 w-full text-gray-500 bg-primary">
+            <div className='max-pass-container'>
                 <div className='flex flex-wrap justify-between gap-12 md:gap-6'>
                     <div className='max-w-80'>
                         <img src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/dummyLogo/dummyLogoColored.svg" alt="logo" className='mb-4 h-8 md:h-9' />
