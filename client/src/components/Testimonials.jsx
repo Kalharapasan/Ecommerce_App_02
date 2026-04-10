@@ -1,7 +1,7 @@
 import React from 'react'
 import { assets } from '../assets/data';
 
-const Testimonials = () => {
+const Testimonials  = () => {
     const cardsData = [
         {
             image: assets.user1,
@@ -32,12 +32,22 @@ const Testimonials = () => {
                 <div className="flex flex-col">
                     <div className="flex items-center gap-1">
                         <p>{card.name}</p>
-                        <img src={assets.badge} alt="" />
+                        <img src={assets.badge} alt="" width={15}/>
                     </div>
                     <span className="text-xs text-slate-500">{card.handle}</span>
                 </div>
             </div>
-            <p className="text-sm py-4 text-gray-800">Radiant made undercutting all of our competitors an absolute breeze.</p>
+            <p className="text-sm py-4 text-gray-800">Radiant made undercutting all of our competitors an absolute
+                breeze.</p>
+            <div className="flex items-center justify-between text-slate-500 text-xs">
+                <div className="flex items-center gap-1">
+                    <span>Posted on</span>
+                    <a href="https://x.com" target="_blank" className="hover:text-sky-500">
+                        <img src={assets.twitter} alt="" width={16}/>
+                    </a>
+                </div>
+                <p>{card.date}</p>
+            </div>
         </div>
     );
 
