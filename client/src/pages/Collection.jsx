@@ -47,7 +47,11 @@ const Collection = () => {
           </div>
           <div className='mt-4 bg-white rounded-xl'>
                 
-                
+            <h5 className='h5 mb-4'>Types</h5>
+            <div>
+
+              
+            </div>
 
           </div>
         </div>
