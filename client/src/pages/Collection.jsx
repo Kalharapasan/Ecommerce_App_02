@@ -64,8 +64,7 @@ const Collection = () => {
                 <Item product={product} key={product._id} />
               ))
             ) : (
-              // Optional: Add logic for when there are no products
-              <p>No products found.</p>
+              <p className="capitalize">No products found for selected filters.</p>
             )}
           </div>
         </div>
