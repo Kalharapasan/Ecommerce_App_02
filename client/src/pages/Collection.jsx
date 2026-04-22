@@ -15,6 +15,9 @@ const Collection = () => {
   const [availableTypes, setAvailableTypes] = useState([])
   const itemsPerPage = 8
 
+  // ALL Categories
+  const allCategories = useMemo(() => ["Hair Care", "Body Care", "Face Care"], [])
+
   return (
     <div>
       <div>
