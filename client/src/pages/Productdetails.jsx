@@ -9,6 +9,12 @@ import { assets } from '../assets/data'
 
 
 const Productdetails = () => {
+
+    const {products, currency} = useAppContext()
+    const {productId} = useParams()
+
+    const product = products.find((item)=> item._id)
+
   return (
     <div>Productdetails</div>
   )
