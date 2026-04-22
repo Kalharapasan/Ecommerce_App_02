@@ -17,7 +17,25 @@ const Collection = () => {
 
   return (
     <div>
-      <h1>Collection Page</h1>
+      <div>
+        {/* Filters Option */}
+        <div>
+          <SearchInput />
+          <div>
+            <h5 className='h5 mb-4'>Sort By</h5>
+            <select>
+              <option value="relevant">Relevant</option>
+              <option value="low">Low</option>
+              <option value="high">High</option>
+            </select>
+          </div>
+          <div>
+            <h5 className='h5 mb-4'>Categories</h5>
+            <div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
