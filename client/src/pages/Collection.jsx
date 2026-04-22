@@ -57,8 +57,8 @@ const Collection = () => {
         </div>
         
         {/* Right Side - Filtered Products */}
-        <div>
-          <div>
+        <div className='max-sm:px-10 sm:pr-10'>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'>
             {products.length > 0 ? (
               products.map((product) => (
                 <Item product={product} key={product._id} />
