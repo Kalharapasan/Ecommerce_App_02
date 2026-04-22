@@ -73,6 +73,13 @@ const Collection = () => {
     }
   }
 
+  // Update filtered and sorted products whenever dependencies change
+  useEffect(() => {
+    let filtered = applyFilters()
+    let sorted = applySorting(filtered)
+    setFilteredProducts()
+  }, [category, type, selectedSort, products, searchQuery])
+
 
   return (
     <div className='max-padd-container !px-0 mt-20'>
