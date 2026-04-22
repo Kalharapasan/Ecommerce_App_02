@@ -34,6 +34,29 @@ const Collection = () => {
     setType((prev) => prev.filter((t) => typesSet.has(t)));
   }, [category, products, allCategories]);
 
+
+  // Apply filter like search, category, type and inStock
+  const applyFilters = () => {
+    let filtered = [...products]
+    // Product that are inStock
+    filtered = filtered.filter(p => p.inStock)
+
+    if (searchQuery) {
+      filtered = filtered.filter(product => product.title.toLowerCase().includes(searchQuery.toLowerCase()))
+    }
+
+    if (category.length) {
+      filtered = filtered.filter(product => category.includes(product.category))
+    }
+
+    if (type.length) {
+      filtered = filtered.filter(product => type.includes(product.type))
+    }
+
+    return filtered
+  }
+
+
   return (
     <div className='max-padd-container !px-0 mt-20'>
       <div className='flex flex-col sm:flex-row gap-8 mb-16'>
