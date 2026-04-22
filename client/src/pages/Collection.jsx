@@ -26,7 +26,7 @@ const Collection = () => {
           <div className='px-4 py-3 mt-4 bg-white rounded-xl'>
             <SearchInput />
             <div className='mt-4 bg-white rounded-xl'>
-              <h5 className='h5 mb-4'>Sort By</h5>
+              <h5 className='h5 mb-4'>Sort By Price</h5>
               <select className='border border-slate-900/10 outline-none text-gray-30 medium-14 h-8 w-full px-2 rounded-md'>
                 <option value="relevant">Relevant</option>
                 <option value="low">Low</option>
