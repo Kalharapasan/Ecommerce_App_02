@@ -36,7 +36,7 @@ const Collection = () => {
           </div>
           <div className='mt-4 bg-white rounded-xl'>
             <h5 className='h5 mb-4'>Categories</h5>
-            <div>
+            <div className='flex flex-col gap-2 text-sm font-light'>
 
               {allCategories.map((cat) => (
                 <label key={cat}>
