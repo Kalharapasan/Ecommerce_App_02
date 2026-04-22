@@ -6,7 +6,7 @@ import SearchInput from '../components/SearchInput'
 
 const Collection = () => {
 
-  const { products, searchQuery } = useAppContext()
+  const {products, searchQuery} = useAppContext()
   const [category, setCategory] = useState([])
   const [type, setType] = useState([])
   const [selectedSort, setSelectedSort] = useState("relevant")
