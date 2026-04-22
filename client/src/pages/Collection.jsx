@@ -77,7 +77,8 @@ const Collection = () => {
   useEffect(() => {
     let filtered = applyFilters()
     let sorted = applySorting(filtered)
-    setFilteredProducts()
+    setFilteredProducts(sorted)
+    setCurrentPage(1)
   }, [category, type, selectedSort, products, searchQuery])
 
 
