@@ -56,6 +56,23 @@ const Collection = () => {
     return filtered
   }
 
+  // Sorting logic based on price or relevance
+  const applySorting = (productsList) => {
+    switch (selectedSort) {
+      case "low":
+        return [...productsList].sort((a,b) => Math.min(...Object.values(a.price)) - Math.min(...Object.values(b.price)))
+        break;
+
+      case "high":
+        return [...productsList].sort((a,b) => Math.min(...Object.values(b.price)) - Math.min(...Object.values(a.price)))
+        break;
+
+      default:
+        return productsList
+        break;
+    }
+  }
+
 
   return (
     <div className='max-padd-container !px-0 mt-20'>
