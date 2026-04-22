@@ -26,9 +26,13 @@ const Collection = () => {
   // Dynamically update types based on selected categories
   useEffect(() => {
     const selectedCats = category.length > 0 ? category : allCategories;
-    const filteredProds = products.filter((p) => selectedCats.includes(p.category))
-    const typesSet = new Set(filteredProds.map((p)=>p.type))
-  })
+    const filteredProds = products.filter((p) => selectedCats.includes(p.category));
+    const typesSet = new Set(filteredProds.map((p) => p.type));
+    const newAvailableTypes = [...typesSet].sort();
+    setAvailableTypes(newAvailableTypes);
+    // Remove unavailable types from selection
+    setType((prev) => prev.filter((t) => typesSet.has(t)));
+  }, [category, products, allCategories]);
 
   return (
     <div className='max-padd-container !px-0 mt-20'>
