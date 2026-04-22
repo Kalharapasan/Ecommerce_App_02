@@ -100,7 +100,7 @@ const Collection = () => {
             <SearchInput />
             <div className='mt-4 bg-white rounded-xl'>
               <h5 className='h5 mb-4'>Sort By Price</h5>
-              <select className='border border-slate-900/10 outline-none text-gray-30 medium-14 h-8 w-full px-2 rounded-md'>
+              <select onChange={(e) => setSelectedSort(e.target.value)} className='border border-slate-900/10 outline-none text-gray-30 medium-14 h-8 w-full px-2 rounded-md'>
                 <option value="relevant">Relevant</option>
                 <option value="low">Low</option>
                 <option value="high">High</option>
@@ -113,7 +113,7 @@ const Collection = () => {
 
               {allCategories.map((cat) => (
                 <label key={cat} className='flex gap-2 medium-14 text-gray-30'>
-                  <input type="checkbox" value={cat} className='w-3' />
+                  <input  type="checkbox" value={cat} className='w-3' />
                   {cat}
                 </label>
               ))}
