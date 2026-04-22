@@ -1,4 +1,4 @@
-import React ,{useEffect,useMemo,useState}from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import Item from '../components/Item'
 import { useAppContext } from '../components/context/AppContext'
 import SearchInput from '../components/SearchInput'
@@ -6,7 +6,7 @@ import SearchInput from '../components/SearchInput'
 
 const Collection = () => {
 
-  const {products, searchQuery} = useAppContext()
+  const { products, searchQuery } = useAppContext()
   const [category, setCategory] = useState([])
   const [type, setType] = useState([])
   const [selectedSort, setSelectedSort] = useState("relevant")
@@ -21,32 +21,34 @@ const Collection = () => {
   return (
     <div className='max-padd-container !px-0 mt-20'>
       <div className='flex flex-col sm:flex-row gap-8 mb-16'>
-        {/* Filters Option */}
-        <div className='mt-4 bg-white rounded-xl'>
-          <SearchInput />
-          <div>
-            <h5 className='h5 mb-4'>Sort By</h5>
-            <select>
-              <option value="relevant">Relevant</option>
-              <option value="low">Low</option>
-              <option value="high">High</option>
-            </select>
+        <div className='min-w-72 bg-primary p-4 pl-6 lg:pl-12 rounded-r-xl'>
+          {/* Filters Option */}
+          <div className='mt-4 bg-white rounded-xl'>
+            <SearchInput />
+            <div>
+              <h5 className='h5 mb-4'>Sort By</h5>
+              <select>
+                <option value="relevant">Relevant</option>
+                <option value="low">Low</option>
+                <option value="high">High</option>
+              </select>
+            </div>
           </div>
           <div className='mt-4 bg-white rounded-xl'>
             <h5 className='h5 mb-4'>Categories</h5>
             <div>
 
-                {allCategories.map((cat) => (
-                  <label key={cat}>
-                    <input type="checkbox" value={cat} className='w-3' />
-                    {cat}
-                  </label>
-                ))}
+              {allCategories.map((cat) => (
+                <label key={cat}>
+                  <input type="checkbox" value={cat} className='w-3' />
+                  {cat}
+                </label>
+              ))}
 
             </div>
           </div>
           <div className='mt-4 bg-white rounded-xl'>
-                
+
             <h5 className='h5 mb-4'>Types</h5>
             <div>
 
@@ -55,7 +57,7 @@ const Collection = () => {
 
           </div>
         </div>
-        
+
         {/* Right Side - Filtered Products */}
         <div className='max-sm:px-10 sm:pr-10'>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'>
