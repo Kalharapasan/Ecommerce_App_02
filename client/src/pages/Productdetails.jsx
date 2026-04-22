@@ -14,11 +14,12 @@ const Productdetails = () => {
     const [image, setImage] = useState(null)
     const { productId } = useParams()
     const product = products.find((item) => item._id === productId)
-    const [size, setSize] = useState(product.sizes[0]) // Default size (first in the array)
+    const [size, setSize] = useState('')
 
     useEffect(() => {
         if (product) {
             setImage(product.images[0])
+            setSize(product.sizes[0] || '')
         }
     }, [product])
 
