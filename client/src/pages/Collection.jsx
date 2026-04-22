@@ -50,11 +50,26 @@ const Collection = () => {
             <h5 className='h5 mb-4'>Types</h5>
             <div>
 
-              
+
             </div>
 
           </div>
         </div>
+        
+        {/* Right Side - Filtered Products */}
+        <div>
+          <div>
+            {products.length > 0 ? (
+              products.map((product) => (
+                <Item product={product} key={product._id} />
+              ))
+            ) : (
+              // Optional: Add logic for when there are no products
+              <p>No products found.</p>
+            )}
+          </div>
+        </div>
+
       </div>
     </div>
   )
