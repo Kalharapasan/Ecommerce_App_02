@@ -20,7 +20,7 @@ const Collection = () => {
 
   return (
     <div className='max-padd-container !px-0 mt-20'>
-      <div>
+      <div className='flex flex-col sm:flex-row gap-8 mb-16'>
         {/* Filters Option */}
         <div className='mt-4 bg-white rounded-xl'>
           <SearchInput />
