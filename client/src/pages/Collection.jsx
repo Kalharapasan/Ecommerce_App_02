@@ -113,7 +113,7 @@ const Collection = () => {
 
               {allCategories.map((cat) => (
                 <label key={cat} className='flex gap-2 medium-14 text-gray-30'>
-                  <input  type="checkbox" value={cat} className='w-3' />
+                  <input onChange={(e) => toggleFilter(e.target.value)} type="checkbox" value={cat} className='w-3' />
                   {cat}
                 </label>
               ))}
