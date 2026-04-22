@@ -27,7 +27,7 @@ const Collection = () => {
   useEffect(() => {
     const selectedCats = category.length > 0 ? category : allCategories;
     const filteredProds = products.filter((p) => selectedCats.includes(p.category))
-    const typesSet = new Set()
+    const typesSet = new Set(filteredProds.map((p)=>p.type))
   })
 
   return (
