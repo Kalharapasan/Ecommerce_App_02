@@ -151,6 +151,35 @@ const Collection = () => {
               <p className="capitalize">No products found for selected filters.</p>
             )}
           </div>
+          
+          {/* Right Side - Filtered Products */}
+          <div className='max-sm:px-10 sm:pr-10'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'>
+              {getPaginatedProducts().length > 0 ? (
+                getPaginatedProducts().map((product)=>(
+                  <Item product={product} key={product._id}/>
+                ))
+              ) : (
+                <p className="capitalize">No products found for selected filters.</p>
+              )}
+            </div>
+            {/* Pagination */}
+            <div className='flexCenter flex flex-wrap mt-14 mb-10 gap-4'>
+              <button disabled={currentPage === 1} onClick={() => setCurrentPage((prev)=> prev - 1)} 
+                className={`btn-secondary !py-1 !px-3 ${currentPage === 1 && "opacity-50 cursor-not-allowed"}`}>
+                Previous
+              </button>
+              {Array.from({length: totalPages}, (_, index)=> (
+                <button key={index + 1} onClick={() => setCurrentPage(index + 1)} 
+                  className={`btn-light !py-1 !px-3 ${currentPage === index + 1 && "bg-tertiary text-white"}`}>{index + 1}</button>
+              ))}
+              <button disabled={currentPage === totalPages} onClick={() => setCurrentPage((prev)=> prev + 1)} 
+                className={`btn-secondary !py-1 !px-3 ${currentPage === 1 && "opacity-50 cursor-not-allowed"}`}>
+                Next
+              </button>
+            </div>
+          </div>
+
         </div>
 
       </div>
