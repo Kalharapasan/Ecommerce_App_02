@@ -19,7 +19,7 @@ const Collection = () => {
   const allCategories = useMemo(() => ["Hair Care", "Body Care", "Face Care"], [])
 
   return (
-    <div>
+    <div className='max-padd-container !px-0 mt-20'>
       <div>
         {/* Filters Option */}
         <div className='mt-4 bg-white rounded-xl'>
