@@ -46,7 +46,9 @@ const Productdetails = () => {
                             ))}
                         </div>
                         
-                        
+                        <div>
+                            <img src={image} alt="" />
+                        </div>
 
                     </div>
                 </div>
