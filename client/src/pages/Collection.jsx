@@ -23,9 +23,9 @@ const Collection = () => {
       <div className='flex flex-col sm:flex-row gap-8 mb-16'>
         <div className='min-w-72 bg-primary p-4 pl-6 lg:pl-12 rounded-r-xl'>
           {/* Filters Option */}
-          <div className='mt-4 bg-white rounded-xl'>
+          <div className='px-4 py-3 mt-4 bg-white rounded-xl'>
             <SearchInput />
-            <div>
+            <div className='mt-4 bg-white rounded-xl'>
               <h5 className='h5 mb-4'>Sort By</h5>
               <select>
                 <option value="relevant">Relevant</option>
