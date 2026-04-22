@@ -26,13 +26,12 @@ const Productdetails = () => {
 
     return (
         product && (
-            <div className=''>
+            <div className='max-padd-container pt-20'>
                 {/* Product Data */}
-                <div>
+                <div className='flex gap-10 flex-col xl:flex-row mt-3 mb-6'>
                     {/* Image */}
-                    <div>
-
-                        <div>
+                    <div className='flex flex-1 gap-x-2 max-w-[533px]'>
+                        <div className='flex-1 flexCenter flex-col gap-[7px] flex-wrap'>
                             {product.images.map((item, i) => (
                                 <div key={i} className='bg-primary rounded-xl'>
                                     <img
@@ -44,11 +43,9 @@ const Productdetails = () => {
                                 </div>
                             ))}
                         </div>
-                        
-                        <div>
-                            <img src={image} alt="" />
-                        </div>
-
+                    </div>
+                    <div>
+                        <img src={image} alt="" />
                     </div>
                 </div>
             </div>
