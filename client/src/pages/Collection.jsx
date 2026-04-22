@@ -47,7 +47,7 @@ const Collection = () => {
 
             </div>
           </div>
-          <div className='pl-5 mt-4 bg-white rounded-xl'>
+          <div className='pl-5 mt-6 bg-white rounded-xl'>
 
             <h5 className='h5 mb-4'>Types</h5>
             <div>
