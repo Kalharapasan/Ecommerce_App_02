@@ -6,7 +6,7 @@ import { assets } from '../assets/data'
 const Footer = () => {
     return (
         <footer className="pt-16 xl:pt-20 w-full text-gray-500 bg-primary">
-            <div className='max-pass-container'>
+            <div className='max-padd-container'>
                 <div className='flex flex-wrap justify-between gap-12 md:gap-6'>
                     <div className='max-w-80'>
                         {/*Logo*/}
@@ -58,11 +58,14 @@ const Footer = () => {
                         <p className='mt-3 text-sm'>
                             Subscribe to our newsletter for inspiration and special offers.
                         </p>
-                        <div className='flex items-center mt-4'>
-                            <input type="text" className='w-full h-full outline-none text-sm text-gray-500' placeholder='Your email' />
-                            <button className='btn-dark font-medium !px-3.5 py-2 mr-0.5'>
-                                {/* Arrow icon */}
-                               Subscribe
+                        <div className='mt-4 flex flex-col sm:flex-row sm:items-center gap-2'>
+                            <input
+                                type='email'
+                                className='w-full rounded-full bg-white px-4 py-3 outline-none text-sm text-gray-500 ring-1 ring-slate-900/10'
+                                placeholder='Your email'
+                            />
+                            <button className='btn-dark font-medium !px-4 !py-2.5 whitespace-nowrap'>
+                                Subscribe
                             </button>
                         </div>
                     </div>
