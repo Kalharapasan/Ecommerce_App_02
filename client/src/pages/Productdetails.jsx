@@ -44,7 +44,7 @@ const Productdetails = () => {
                             ))}
                         </div>
                     </div>
-                    <div>
+                    <div className='flex flex-[4] bg-primary rounded-2xl'>
                         <img src={image} alt="" />
                     </div>
                 </div>
