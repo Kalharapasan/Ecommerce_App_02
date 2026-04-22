@@ -22,7 +22,7 @@ const Collection = () => {
     <div>
       <div>
         {/* Filters Option */}
-        <div>
+        <div className='mt-4 bg-white rounded-xl'>
           <SearchInput />
           <div>
             <h5 className='h5 mb-4'>Sort By</h5>
@@ -32,7 +32,7 @@ const Collection = () => {
               <option value="high">High</option>
             </select>
           </div>
-          <div>
+          <div className='mt-4 bg-white rounded-xl'>
             <h5 className='h5 mb-4'>Categories</h5>
             <div>
 
@@ -44,6 +44,11 @@ const Collection = () => {
                 ))}
 
             </div>
+          </div>
+          <div className='mt-4 bg-white rounded-xl'>
+                
+                
+
           </div>
         </div>
       </div>
