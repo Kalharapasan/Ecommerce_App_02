@@ -15,8 +15,20 @@ const Collection = () => {
   const [availableTypes, setAvailableTypes] = useState([])
   const itemsPerPage = 8
 
-  // ALL Categories
+  // Predefined Categories list
   const allCategories = useMemo(() => ["Hair Care", "Body Care", "Face Care"], [])
+
+  // Reusable Function to toggle filter values
+  const toggleFilter = (value, setState) => {
+    setState((prev) => prev.includes(value) ? prev.filter((item) => item !== value) : [...prev, value])
+  }
+
+  // Dynamically update types based on selected categories
+  useEffect(() => {
+    const selectedCats = category.length > 0 ? category : allCategories;
+    const filteredProds = products.filter((p) => selectedCats.includes(p.category))
+    const typesSet = new Set()
+  })
 
   return (
     <div className='max-padd-container !px-0 mt-20'>
