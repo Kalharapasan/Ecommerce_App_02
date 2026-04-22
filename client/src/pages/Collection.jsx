@@ -120,7 +120,7 @@ const Collection = () => {
 
             </div>
           </div>
-          <div className='pl-5 mt-6 bg-white rounded-xl'>
+          <div className='pl-5 py-3 mt-6 bg-white rounded-xl'>
 
             <h5 className='h5 mb-4'>Types</h5>
             <div className='flex flex-col gap-2 text-sm font-light'>
@@ -143,8 +143,8 @@ const Collection = () => {
         {/* Right Side - Filtered Products */}
         <div className='max-sm:px-10 sm:pr-10'>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6'>
-            {products.length > 0 ? (
-              products.map((product) => (
+            {getPaginatedProducts().length > 0 ? (
+              getPaginatedProducts().map((product) => (
                 <Item product={product} key={product._id} />
               ))
             ) : (
