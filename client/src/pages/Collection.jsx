@@ -113,7 +113,7 @@ const Collection = () => {
 
               {allCategories.map((cat) => (
                 <label key={cat} className='flex gap-2 medium-14 text-gray-30'>
-                  <input onChange={(e) => toggleFilter(e.target.value)} type="checkbox" value={cat} className='w-3' />
+                  <input onChange={(e) => toggleFilter(e.target.value,setCategory)} type="checkbox" value={cat} checked={category.includes(cat)} className='w-3' />
                   {cat}
                 </label>
               ))}
@@ -123,11 +123,20 @@ const Collection = () => {
           <div className='pl-5 mt-6 bg-white rounded-xl'>
 
             <h5 className='h5 mb-4'>Types</h5>
-            <div>
-
-
+            <div className='flex flex-col gap-2 text-sm font-light'>
+              {availableTypes.map((typ) => (
+                <label key={typ} className='flex gap-2 medium-14 text-gray-30'>
+                  <input 
+                    onChange={(e) => toggleFilter(e.target.value, setType)} 
+                    type='checkbox' 
+                    value={typ} 
+                    checked={type.includes(typ)} 
+                    className='w-3'
+                  />
+                  {typ}
+                </label>
+              ))}
             </div>
-
           </div>
         </div>
 
