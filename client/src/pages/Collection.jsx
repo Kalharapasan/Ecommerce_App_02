@@ -35,6 +35,14 @@ const Collection = () => {
           <div>
             <h5 className='h5 mb-4'>Categories</h5>
             <div>
+
+                {allCategories.map((cat) => (
+                  <label key={cat}>
+                    <input type="checkbox" value={cat} className='w-3' />
+                    {cat}
+                  </label>
+                ))}
+
             </div>
           </div>
         </div>
