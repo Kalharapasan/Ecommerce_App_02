@@ -8,6 +8,7 @@ import {dummyProducts} from '../../assets/data'
 export const AppContextProvider = ({children}) =>{
 
     const [products,setProducts] =useState([])
+    const [searchQuery , setSearchQuery] =useState ("")
     const navigater =useNavigate()
     const currency =import.meta.env.VITE_CURRENCY
     const {user} =  useUser()
@@ -21,7 +22,7 @@ export const AppContextProvider = ({children}) =>{
         fetchProducts()
     },[])
 
-    const value = {navigater,user,products,currency}
+    const value = {navigater,user,products,currency,searchQuery,setSearchQuery}
 
     return (
         <AppContext.Provider value={value} >{children}</AppContext.Provider>
