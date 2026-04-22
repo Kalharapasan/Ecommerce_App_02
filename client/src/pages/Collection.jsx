@@ -81,6 +81,15 @@ const Collection = () => {
     setCurrentPage(1)
   }, [category, type, selectedSort, products, searchQuery])
 
+  // Handle Pagination logic
+  const getPaginatedProducts = () => {
+    const startIndex = (currentPage - 1) * itemsPerPage
+    const endIndex = startIndex + itemsPerPage
+    return filteredProducts.slice(startIndex, endIndex)
+  }
+
+  const totalPages = Math.ceil(filteredProducts.length / itemsPerPage)
+
 
   return (
     <div className='max-padd-container !px-0 mt-20'>
