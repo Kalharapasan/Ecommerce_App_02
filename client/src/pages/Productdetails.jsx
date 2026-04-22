@@ -12,10 +12,9 @@ const Productdetails = () => {
 
     const { products, currency } = useAppContext()
     const [image, setImage] = useState(null)
-    const [size, setSize] = useState(product.sizes[0]) // Default size (first in the array)
-
     const { productId } = useParams()
     const product = products.find((item) => item._id === productId)
+    const [size, setSize] = useState(product.sizes[0]) // Default size (first in the array)
 
     useEffect(() => {
         if (product) {
