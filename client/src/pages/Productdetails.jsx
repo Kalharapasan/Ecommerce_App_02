@@ -70,7 +70,17 @@ const Productdetails = () => {
                                  <h3 className="h3 text-secondary">{currency}{product.price[size]}.00</h3>
                             </div>
                             
-                            
+                            <p className="max-w-[555px]">{product.description}</p>
+                            <div>
+                            <div>
+                                {[...product.sizes].map((item, i) => (
+                                <button key={i} onClick={() => setSize(item)}>
+                                    {item}
+                                </button>
+                                ))}
+                            </div>
+                            </div>
+
 
                         </div>
                     </div>
