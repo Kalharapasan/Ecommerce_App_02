@@ -81,8 +81,8 @@ const Productdetails = () => {
                                 </div>
                             </div>
 
-                            <div>
-                                <button>Add to Cart</button>
+                            <div className="flex items-center gap-x-4">
+                                <button className="btn-dark sm:w-1/2 flexCenter gap-x-2 capitalize">Add to Cart</button>
                                 <button className="btn-white">
                                     <img src={assets.heartAdd} alt="" width={19} />
                                 </button>
