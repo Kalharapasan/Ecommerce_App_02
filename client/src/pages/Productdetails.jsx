@@ -19,7 +19,7 @@ const Productdetails = () => {
     useEffect(() => {
         if (product) {
             setImage(product.images[0])
-            setSize(product.sizes[0] || '')
+            setSize(product.sizes[0])
         }
     }, [product])
 
