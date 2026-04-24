@@ -62,7 +62,7 @@ const RelatedProducts = ({ product, productId }) => {
           modules={[Autoplay]}
           className="min-h-[399px]"
         >
-          {RelatedProducts.map((product) => (
+          {relatedProducts.map((product) => (
             <SwiperSlide key={product._id}>
 
               <Item product={product} />
