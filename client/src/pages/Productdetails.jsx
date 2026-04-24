@@ -48,12 +48,12 @@ const Productdetails = () => {
                     <div className='flex flex-[4] bg-primary rounded-2xl'>
                         <img src={image} alt="" />
                     </div>
-                    
+
                     <div>
                         {/* Product Info */}
                         <div>
                             <h3 className="h3 leading-none">{product.title}</h3>
-                            
+
                             {/* Rating & Price */}
                             <div>
                                 <div>
@@ -67,20 +67,30 @@ const Productdetails = () => {
                             </div>
 
                             <div>
-                                 <h3 className="h3 text-secondary">{currency}{product.price[size]}.00</h3>
-                            </div>
-                            
-                            <p className="max-w-[555px]">{product.description}</p>
-                            <div>
-                            <div>
-                                {[...product.sizes].map((item, i) => (
-                                <button key={i} onClick={() => setSize(item)}>
-                                    {item}
-                                </button>
-                                ))}
-                            </div>
+                                <h3 className="h3 text-secondary">{currency}{product.price[size]}.00</h3>
                             </div>
 
+                            <p className="max-w-[555px]">{product.description}</p>
+                            <div>
+                                <div>
+                                    {[...product.sizes].map((item, i) => (
+                                        <button key={i} onClick={() => setSize(item)}>
+                                            {item}
+                                        </button>
+                                    ))}
+                                </div>
+                            </div>
+
+                            <div>
+                                <button>Add to Cart</button>
+                                <button className="btn-white">
+                                    <img src={assets.heartAdd} alt="" width={19} />
+                                </button>
+                            </div>
+                            <div>
+                                <img src={assets.delivery} alt="" width={17} />
+                                <span className="medium-14">Free Delivery on orders over 500$</span>
+                            </div>
 
                         </div>
                     </div>
