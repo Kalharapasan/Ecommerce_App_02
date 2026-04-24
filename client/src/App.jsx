@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import Collection from './pages/Collection'
 import Footer from './components/Footer'
 import ProductDetails from './pages/Productdetails'
+import Contact from './pages/Contact'
 
 const App = () => {
   return (
@@ -15,6 +16,8 @@ const App = () => {
         <Route path='/'  element={<Home />}/>
         <Route path='/collection' element={<Collection />} />
         <Route path='/collection/:productId' element={<ProductDetails />} />
+        <Route path='/blog' element={<Blob />} />
+        <Route path='/contact' element={<Contact />} />
 
       </Routes>
       <Footer/>
