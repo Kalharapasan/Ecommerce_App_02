@@ -74,7 +74,7 @@ const Productdetails = () => {
                             <div className="flex flex-col gap-4 my-4 mb-5">
                                 <div className="flex gap-2">
                                     {[...product.sizes].map((item, i) => (
-                                        <button key={i} onClick={() => setSize(item)}>
+                                        <button key={i} onClick={() => setSize(item)} className={`${item === size ? "bg-primary-dark" : "bg-white"} medium-14 h-8 w-16 ring-1 ring-slate-900/10 cursor-pointer rounded-lg`}>
                                             {item}
                                         </button>
                                     ))}
@@ -102,12 +102,12 @@ const Productdetails = () => {
                         </div>
                     </div>
                 </div>
-                
-                <ProductDescription/>
-                <ProductFeatures/>
+
+                <ProductDescription />
+                <ProductFeatures />
 
                 {/* Related Products */}
-                <RelatedProducts product={product} id ={productId} />
+                <RelatedProducts product={product} id={productId} />
 
             </div>
         )
