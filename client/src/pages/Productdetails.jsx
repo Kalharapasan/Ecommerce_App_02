@@ -51,7 +51,7 @@ const Productdetails = () => {
 
                     <div>
                         {/* Product Info */}
-                        <div>
+                        <div className="flex-1 px-5 py-3 bg-primary rounded-2xl">
                             <h3 className="h3 leading-none">{product.title}</h3>
 
                             {/* Rating & Price */}
@@ -106,8 +106,8 @@ const Productdetails = () => {
                 <ProductDescription/>
                 <ProductFeatures/>
 
-                {/*  */}
-                <RelatedProducts/>
+                {/* Related Products */}
+                <RelatedProducts product={product} id ={productId} />
 
             </div>
         )
