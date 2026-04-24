@@ -92,6 +92,13 @@ const Productdetails = () => {
                                 <span className="medium-14">Free Delivery on orders over 500$</span>
                             </div>
 
+                            <hr className="my-3 w-2/3" />
+                            <div>
+                                <p>Authenticy You Can Trust</p>
+                                <p>Enjoy Cash on Delivery for Your Convenience</p>
+                                <p>Easy Returns and Exchanges Within 7 Days</p>
+                            </div>
+
                         </div>
                     </div>
                 </div>
