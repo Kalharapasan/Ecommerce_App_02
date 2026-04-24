@@ -6,7 +6,7 @@ const Contact = () => {
             <p className="text-xs bg-black/80 text-white font-medium px-3 py-1 rounded-full">Contact Us</p>
             <h1 className="text-4xl font-bold py-4 text-center">Let’s Get In Touch.</h1>
             <p className="max-md:text-sm text-gray-500 pb-10 text-center">
-                Or just reach out manually to us at <a href="#" className="text-indigo-600 hover:underline">kalharap84@gmail.com</a>
+                Or just reach out manually to us at <a href="mailto:hello@vogues.com" className="text-indigo-600 hover:underline">hello@vogues.com</a>
             </p>
 
             <div className="max-w-96 w-full px-4">
