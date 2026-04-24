@@ -93,7 +93,7 @@ const Productdetails = () => {
                             </div>
 
                             <hr className="my-3 w-2/3" />
-                            <div>
+                            <div className="mt-2 flex flex-col gap-1 text-gray-30 text-[14px]">
                                 <p>Authenticy You Can Trust</p>
                                 <p>Enjoy Cash on Delivery for Your Convenience</p>
                                 <p>Easy Returns and Exchanges Within 7 Days</p>
