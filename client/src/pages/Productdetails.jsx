@@ -102,6 +102,13 @@ const Productdetails = () => {
                         </div>
                     </div>
                 </div>
+                
+                <ProductDescription/>
+                <ProductFeatures/>
+
+                {/*  */}
+                <RelatedProducts/>
+
             </div>
         )
     )
