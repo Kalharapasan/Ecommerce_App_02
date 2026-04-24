@@ -48,6 +48,32 @@ const Productdetails = () => {
                     <div className='flex flex-[4] bg-primary rounded-2xl'>
                         <img src={image} alt="" />
                     </div>
+                    
+                    <div>
+                        {/* Product Info */}
+                        <div>
+                            <h3 className="h3 leading-none">{product.title}</h3>
+                            
+                            {/* Rating & Price */}
+                            <div>
+                                <div>
+                                    <img src={assets.star} alt="" width={19} />
+                                    <img src={assets.star} alt="" width={19} />
+                                    <img src={assets.star} alt="" width={19} />
+                                    <img src={assets.star} alt="" width={19} />
+                                    <img src={assets.star} alt="" width={19} />
+                                </div>
+                                <p className="medium-14">(222)</p>
+                            </div>
+
+                            <div>
+                                 <h3 className="h3 text-secondary">{currency}{product.price[size]}.00</h3>
+                            </div>
+                            
+                            
+
+                        </div>
+                    </div>
                 </div>
             </div>
         )
