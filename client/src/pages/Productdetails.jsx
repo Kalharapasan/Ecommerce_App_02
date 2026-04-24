@@ -82,7 +82,7 @@ const Productdetails = () => {
                             </div>
 
                             <div className="flex items-center gap-x-4">
-                                <button className="btn-dark sm:w-1/2 flexCenter gap-x-2 capitalize">Add to Cart <img src={assets.cartAdd} alt="" /></button>
+                                <button className="btn-dark sm:w-1/2 flexCenter gap-x-2 capitalize">Add to Cart <img src={assets.cartAdd} alt="" width={19} /></button>
                                 <button className="btn-white">
                                     <img src={assets.heartAdd} alt="" width={19} />
                                 </button>
