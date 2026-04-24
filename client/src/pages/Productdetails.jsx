@@ -55,8 +55,8 @@ const Productdetails = () => {
                             <h3 className="h3 leading-none">{product.title}</h3>
 
                             {/* Rating & Price */}
-                            <div>
-                                <div>
+                            <div className="flex items-center gap-x-2 pt-2">
+                                <div className="flex gap-x-2 text-yellow-400">
                                     <img src={assets.star} alt="" width={19} />
                                     <img src={assets.star} alt="" width={19} />
                                     <img src={assets.star} alt="" width={19} />
