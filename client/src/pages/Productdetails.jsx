@@ -66,13 +66,13 @@ const Productdetails = () => {
                                 <p className="medium-14">(222)</p>
                             </div>
 
-                            <div>
+                            <div className="h4 flex items-baseline gap-4 my-2">
                                 <h3 className="h3 text-secondary">{currency}{product.price[size]}.00</h3>
                             </div>
 
                             <p className="max-w-[555px]">{product.description}</p>
-                            <div>
-                                <div>
+                            <div className="flex flex-col gap-4 my-4 mb-5">
+                                <div className="flex gap-2">
                                     {[...product.sizes].map((item, i) => (
                                         <button key={i} onClick={() => setSize(item)}>
                                             {item}
