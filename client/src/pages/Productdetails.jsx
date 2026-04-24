@@ -87,7 +87,7 @@ const Productdetails = () => {
                                     <img src={assets.heartAdd} alt="" width={19} />
                                 </button>
                             </div>
-                            <div>
+                            <div className="flex items-center gap-x-2 mt-3">
                                 <img src={assets.delivery} alt="" width={17} />
                                 <span className="medium-14">Free Delivery on orders over 500$</span>
                             </div>
