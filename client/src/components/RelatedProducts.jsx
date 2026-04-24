@@ -6,72 +6,77 @@ import 'swiper/css';
 
 
 // import required modules
-import { Autoplay} from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 import { useAppContext } from './context/AppContext';
 import Item from './Item';
 
 
 
 
-const RelatedProducts = ({product,productId}) => {
+const RelatedProducts = ({ product, productId }) => {
 
-    const {products} =useAppContext()
-    const [RelatedProducts,setRelatedProducts] = useState([])
+  const { products } = useAppContext()
+  const [relatedProducts, setRelatedProducts] = useState([])
 
-    useEffect(()=>{
-        const data = products.filter((item)=>item.inStock).slice(0,10)
-        setRelatedProducts(data)
-    },[products])
+  useEffect(() => {
+    if (products.length > 0) {
+      let productsCopy = products.slice();
+      productsCopy = productsCopy.filter((item) =>
+        item.category === product.category && productId !== item._id
+      );
+      setRelatedProducts(productsCopy.slice(0, 6));
+    }
+  }, [products]);
 
-    return (
-        <section className='max-padd-container mt-28'>
-            <Title title1={"New"} title2={'Arrivals'} title1Styles={'pb-10'} />
-            {/* Container */}
+  return (
+    <section className='max-padd-container mt-28'>
+      <Title title1={"Related"} title2={'Products'} title1Styles={'pb-10'} />
+      {/* Container */}
 
-            {
-                <Swiper
-                    spaceBetween={30}
-                    autoplay={{
-                        delay: 4000,
-                        disableOnInteraction: false,
-                    }}
-                    pagination={{
-                        clickable: true,
-                    }}
+      {
+        <Swiper
+          spaceBetween={30}
+          autoplay={{
+            delay: 4000,
+            disableOnInteraction: false,
+          }}
+          pagination={{
+            clickable: true,
+          }}
 
-                    breakpoints={{
-                        555:{
-                            slidesPerView:1
-                        },
-                        600:{
-                            slidesPerView:2
-                        },
-                        1022:{
-                            slidesPerView:3
-                        },
-                        1350:{
-                            slidesPerView:4
-                        },
-                    }}
+          breakpoints={{
+            555: {
+              slidesPerView: 1
+            },
+            600: {
+              slidesPerView: 2
+            },
+            1022: {
+              slidesPerView: 3
+            },
+            1350: {
+              slidesPerView: 4
+            },
+          }}
 
-                    modules={[Autoplay]}
-                    className="min-h-[399px]"
-                >
-                   {RelatedProducts.map((product) =>(
-                        <SwiperSlide key={product._id}>
+          modules={[Autoplay]}
+          className="min-h-[399px]"
+        >
+          {RelatedProducts.map((product) => (
+            <SwiperSlide key={product._id}>
 
-                            <Item product={product}/>
+              <Item product={product} />
 
-                        </SwiperSlide>
-                   ))
-                     
-                   }
-                    
-                </Swiper>
-            }
+            </SwiperSlide>
+          ))
 
-        </section>
-    )
+          }
+
+        </Swiper>
+      }
+
+    </section>
+  )
 }
 
 
