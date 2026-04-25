@@ -27,7 +27,7 @@ const CartTotal = () => {
                         </p>
                         <button className='text-secondary medium-14 hover:underline cursor-pointer' onClick={() => setShowAddress(!showAddress)} className=''>Change</button>
                         {showAddress && (
-                            <div>
+                            <div className='absolute top-10 py-1 bg-white ring-1 ring-slate-900/10 text-sm w-full'>
                                 {addresses.map((address, index) => (
                                     <p key={index} onClick={() => { setSelectedAddress(address); setShowAddress(false) }}>
                                         {address.street}, {address.city}, {address.state}, {" "}
