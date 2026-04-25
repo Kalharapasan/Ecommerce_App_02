@@ -2,7 +2,7 @@ import React, { createContext, useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useUser } from '@clerk/react'
 import toast from 'react-hot-toast'
-import { dummyProducts } from '../../assets/data'
+import { dummyProducts } from '../assets/data'
 
 const AppContext = createContext()
 
