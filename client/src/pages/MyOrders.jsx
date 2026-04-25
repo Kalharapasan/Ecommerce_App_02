@@ -20,15 +20,15 @@ const MyOrders = () => {
 
 
   return (
-    <div>
+    <div className='max-padd-container py-16 pt-28 bg-primary'>
       <Title title1={"Delivery"} title2={"Information"} titleStyles={"pb-10"} />
       {orders.map((order) => (
-        <div key={order._id}>
+        <div key={order._id} className='bg-white p-2 mt-3 rounded-2xl'>
           {/* Order Items */}
           {order.items.map((item, idx) => (
-            <div key={idx}>
-              <div>
-                <div>
+            <div key={idx} className='text-gray-700 flex flex-col lg:flex-row gap-4 mb-3'>
+              <div className='flex flex-[2] gap-x-3'>
+                <div className='flexCenter bg-primary rounded-xl'>
                   <img src={item.product.images[0]} alt="" className='max-h-20 max-w-20 object-contain' />
                 </div>
                 <div className="block w-full">
