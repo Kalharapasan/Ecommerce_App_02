@@ -25,7 +25,7 @@ const CartTotal = () => {
                                 ? `${selectedAddress.street}, ${selectedAddress.city}, ${selectedAddress.state}, ${selectedAddress.country}`
                                 : "No address found"}
                         </p>
-                        <button onClick={() => setShowAddress(!showAddress)} className=''>Change</button>
+                        <button className='text-secondary medium-14 hover:underline cursor-pointer' onClick={() => setShowAddress(!showAddress)} className=''>Change</button>
                         {showAddress && (
                             <div>
                                 {addresses.map((address, index) => (
