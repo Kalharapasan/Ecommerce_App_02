@@ -20,9 +20,9 @@ const AddressForm = () => {
   })
 
   return (
-    <div>
+    <div className='max-padd-container py-16 pt-28 bg-primary'>
       {/* Container */}
-      <div>
+      <div className='flex flex-col xl:flex-row gap-20 xl:gap-28'>
         {/* Left Side */}
         <form>
           <Title title1={"Delivery"} title2={"Information"} titleStyles={"pb-5"} />
