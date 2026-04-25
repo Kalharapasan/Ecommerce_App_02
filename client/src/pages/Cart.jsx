@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import Title from '../components/Title'
 import CartTotal from '../components/CartTotal'
 import { useAppContext } from '../context/AppContext'
@@ -6,32 +6,54 @@ import { assets } from '../assets/data'
 
 const Cart = () => {
 
-
-  const { navigate, products, currency, cartItems } = useAppContext()
-  const [cartData, setCartData] = useState([])
-
-  useEffect(() => {
-    if (products.length > 0) {
-      const tempData = []
-      for (const itemId in cartItems) {
-        for (const size in cartItems[itemId]) {
-          if (cartItems[itemId][size] > 0) {
-            tempData.push({
-              _id: itemId,
-              size: size
-            })
-          }
+  const { navigate, products, currency, cartItems, setCartItems, addToCart } = useAppContext()
+  const cartData = useMemo(() => {
+    const tempData = []
+    for (const itemId in cartItems) {
+      for (const size in cartItems[itemId]) {
+        if (cartItems[itemId][size] > 0) {
+          tempData.push({
+            _id: itemId,
+            size
+          })
         }
       }
-      setCartData(tempData)
     }
-  }, [products, cartItems])
+    return tempData
+  }, [cartItems])
 
   const increment = (id, size) => {
-
+    addToCart(id, size)
   }
-  const decrement = (id, size) => {
 
+  const decrement = (id, size) => {
+    setCartItems((prev) => {
+      const next = structuredClone(prev)
+      if (!next[id] || !next[id][size]) return prev
+
+      if (next[id][size] === 1) {
+        delete next[id][size]
+        if (Object.keys(next[id]).length === 0) {
+          delete next[id]
+        }
+      } else {
+        next[id][size] -= 1
+      }
+
+      return next
+    })
+  }
+
+  const removeItem = (id, size) => {
+    setCartItems((prev) => {
+      const next = structuredClone(prev)
+      if (!next[id] || !next[id][size]) return prev
+      delete next[id][size]
+      if (Object.keys(next[id]).length === 0) {
+        delete next[id]
+      }
+      return next
+    })
   }
 
 
@@ -46,30 +68,49 @@ const Cart = () => {
             <h5>Subtotal</h5>
             <h5>Action</h5>
           </div>
+
+          {cartData.length === 0 && (
+            <div className='rounded-xl bg-white p-5'>
+              <p>Your cart is empty.</p>
+              <button onClick={() => navigate('/collection')} className='btn-dark mt-4'>Continue Shopping</button>
+            </div>
+          )}
+
           {cartData.map((item, i) => {
-            const product = product // Note: Looks like this needs to be defined based on your logic
-            const quantity = cartItems // Note: Looks like this needs to be defined based on your logic
+            const product = products.find((p) => p._id === item._id)
+            if (!product) return null
+
+            const quantity = cartItems[item._id]?.[item.size] || 0
+            const subtotal = (product.price[item.size] || 0) * quantity
+
             return (
-              <div key={i}>
-                <div>
-                  <div>
+              <div key={`${item._id}-${item.size}-${i}`} className='grid grid-cols-[1fr_auto_auto] items-center gap-3 rounded-xl bg-white p-3'>
+                <div className='flex items-center gap-3'>
+                  <div className='rounded-lg bg-primary p-2'>
                     <img src={product.images[0]} alt="" className='w-20' />
                   </div>
                   <div>
                     <h5>{product.title}</h5>
-                    <div>Size: <p>{item.size}</p></div>
+                    <p>Size: {item.size}</p>
                     <div className='flexBetween'>
-                      <div>
-                        <button><img src={assets.minus} alt="" width={11} className='invert' /></button>
-                        <button><img src={assets.plus} alt="" width={11} className='invert' /></button>
+                      <div className='mt-2 flex items-center gap-2'>
+                        <button onClick={() => decrement(item._id, item.size)} className='btn-dark !p-2'>
+                          <img src={assets.minus} alt="" width={11} className='invert' />
+                        </button>
+                        <span>{quantity}</span>
+                        <button onClick={() => increment(item._id, item.size)} className='btn-dark !p-2'>
+                          <img src={assets.plus} alt="" width={11} className='invert' />
+                        </button>
                       </div>
                     </div>
                   </div>
-                  <div>
-                  </div>
                 </div>
-                <div>{currency}{product.price[item.size] * quantity}.00</div>
-                <button><img src={assets.cartRemove} alt="" width={22} /></button>
+
+                <div>{currency}{subtotal}.00</div>
+
+                <button onClick={() => removeItem(item._id, item.size)}>
+                  <img src={assets.cartRemove} alt="" width={22} />
+                </button>
               </div>
             )
           })}
