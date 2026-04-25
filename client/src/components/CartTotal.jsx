@@ -43,10 +43,16 @@ const CartTotal = () => {
                 <div className='my-6'>
                     <h4 className='h4 mb-5'>Payment Method</h4>
                     <div className='flex gap-3'>
-                        <div onClick={() => setMethod("COD")}>
+                        <div
+                            onClick={() => setMethod("COD")}
+                            className={`${method === "COD" ? "btn-secondary" : "btn-outline"} py-1 text-xs cursor-pointer`}
+                        >
                             Cash On Delivery
                         </div>
-                        <div onClick={() => setMethod("stripe")}>
+                        <div
+                            onClick={() => setMethod("stripe")}
+                            className={`${method === "stripe" ? "btn-secondary" : "btn-outline"} py-1 text-xs cursor-pointer`}
+                        >
                             Stripe
                         </div>
                     </div>
