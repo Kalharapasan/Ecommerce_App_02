@@ -61,12 +61,12 @@ const Cart = () => {
     <div className='max-padd-container py-16 pt-28 bg-primary'>
       <div className='flex flex-col xl:flex-row gap-20 xl:gap-28'>
         {/* Left Side */}
-        <div className='flex flex-[2] flex-col gap-3 text-[95%]'> 
+        <div className='flex flex-[2] flex-col gap-3 text-[95%]'>
           <Title title1={"Cart"} title2={"Overview"} titleStyles={"pb-5"} />
-          <div>
-            <h5>Product Details</h5>
-            <h5>Subtotal</h5>
-            <h5>Action</h5>
+          <div className='grid grid-cols-[6fr_2fr_1fr] font-medium bg-white p-2 rounded-xl'>
+            <h5 className='h5 text-left'>Product Details</h5>
+            <h5 className='h5 text-center'>Subtotal</h5>
+            <h5 className='h5 text-center'>Action</h5>
           </div>
 
           {cartData.length === 0 && (
