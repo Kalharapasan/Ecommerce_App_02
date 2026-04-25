@@ -44,7 +44,11 @@ const AddressForm = () => {
           <button type='submit' className='btn-dark rounded-md w-1/2 mt-2'>Add Address</button>
         </form>
         {/* Right Side */}
-        
+        <div className='flex flex-1 flex-col'>
+          <div className='max-w-[379px] w-full bg-white p-5 py-10 max-md:mt-16 rounded-xl'>
+            <CartTotal />
+          </div>
+        </div>
       </div>
     </div>
   )
