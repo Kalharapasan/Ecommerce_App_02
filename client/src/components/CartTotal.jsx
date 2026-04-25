@@ -60,7 +60,7 @@ const CartTotal = () => {
                 <hr className='border-gray-300 mt-5' />
             </div>
 
-            <div>
+            <div className='mt-4 space-y-2'>
                 <div className='flex justify-between'>
                     <h5 className="h5">Price</h5>
                     <p className="font-bold">{currency}{getCartAmount()}</p>
@@ -81,7 +81,7 @@ const CartTotal = () => {
                         {currency}{getCartAmount() === 0 ? "$0.00" : getCartAmount() + delivery_charges + (getCartAmount() * 2) / 100}
                     </p>
                 </div>
-                <button className=''>
+                <button className='btn-dark w-full mt-8 !rounded-md'>
                     Proceed to Order
                 </button>
             </div>
