@@ -42,7 +42,7 @@ const CartTotal = () => {
                 <hr className='border-gray-300 mt-5' />
                 <div className='my-6'>
                     <h4 className='h4 mb-5'>Payment Method</h4>
-                    <div>
+                    <div className='flex gap-3'>
                         <div onClick={() => setMethod("COD")}>
                             Cash On Delivery
                         </div>
