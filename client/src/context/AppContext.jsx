@@ -39,6 +39,19 @@ export const AppContextProvider = ({ children }) => {
         return count
     }
 
+    // Get Cart Amount
+    const getCartAmount = () => {
+        let total = 0
+        for (const itemId in cartItems) {
+            const product = products.find(p => p._id === itemId)
+            if (!product) continue
+            for (const size in cartItems[itemId]) {
+                total += product.price[size] * cartItems[itemId][size]
+            }
+        }
+        return total
+    }
+
     const fetchProducts = async () => {
         setProducts(dummyProducts)
     }
@@ -47,7 +60,7 @@ export const AppContextProvider = ({ children }) => {
         fetchProducts()
     }, [])
 
-    const value = { navigate, user, products, currency, searchQuery, setSearchQuery, cartItems, setCartItems, method, setMethod, delivery_charges,addToCart,getCartCount }
+    const value = { navigate, user, products, currency, searchQuery, setSearchQuery, cartItems, setCartItems, method, setMethod, delivery_charges, addToCart, getCartCount }
 
     return (
         <AppContext.Provider value={value} >{children}</AppContext.Provider>
