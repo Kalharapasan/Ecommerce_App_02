@@ -10,11 +10,13 @@ import Blog from './pages/Blog'
 import Cart from './Cart'
 import MyOrders from './pages/MyOrders'
 import AddressForm from './pages/AddressForm'
+import { Toaster } from "react-hot-toast"
 
 const App = () => {
   return (
     <main className='overflow-hidden text-tertiary'>
       <Header />
+      <Toaster />
       <Routes>
 
         <Route path='/'  element={<Home />}/>
