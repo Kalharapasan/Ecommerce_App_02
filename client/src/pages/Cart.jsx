@@ -46,6 +46,32 @@ const Cart = () => {
             <h5>Subtotal</h5>
             <h5>Action</h5>
           </div>
+          {cartData.map((item, i) => {
+            const product = product // Note: Looks like this needs to be defined based on your logic
+            const quantity = cartItems // Note: Looks like this needs to be defined based on your logic
+            return (
+              <div key={i}>
+                <div>
+                  <div>
+                    <img src={product.images[0]} alt="" className='w-20'/>
+                  </div>
+                  <div>
+                    <h5>{product.title}</h5>
+                    <div>Size: <p>{item.size}</p></div>
+                    <div className='flexBetween'>
+                      <div>
+                        <button><img src={assets.minus} alt="" width={11} className='invert' /></button>
+                        <button><img src={assets.plus} alt="" width={11} className='invert' /></button>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                  </div>
+                </div>
+              </div>
+            )
+          })}
+
         </div>
         {/* Right Side */}
       </div>
