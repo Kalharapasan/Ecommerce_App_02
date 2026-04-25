@@ -63,6 +63,10 @@ const MyOrders = () => {
                 <div className='flex items-center gap-x-2'>
                   <h5 className='medium-14'>Payment Status:</h5>
                   <p className='text-gray-400 text-sm'>{order.isPaid ? "Done" : "Pending"}</p>
+                  <div className='flex items-center gap-x-2'>
+                    <h5 className='medium-14'>Size:</h5>
+                    <p className='text-gray-400 text-xs break-all'>{order._id}</p>
+                  </div>
                 </div>
               </div>
             </div>
