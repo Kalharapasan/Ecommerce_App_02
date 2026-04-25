@@ -92,7 +92,7 @@ const Cart = () => {
                   <div>
                     <h5>{product.title}</h5>
                     <p>Size: {item.size}</p>
-                    <div className='mt-2 flex items-center gap-2'>
+                    <div className='flex items-center ring-1 ring-slate-900/15 rounded-full overflow-hidden bg-primary'>
                       <button onClick={() => decrement(item._id, item.size)} className='btn-dark !p-2' aria-label='Decrease quantity'>
                         <img src={assets.minus} alt="" width={11} className='invert' />
                       </button>
