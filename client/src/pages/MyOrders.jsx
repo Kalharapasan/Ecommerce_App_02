@@ -51,6 +51,23 @@ const MyOrders = () => {
               </div>
             </div>
           ))}
+
+          {/* Order Summary */}
+          <div>
+            <div>
+              <div className='flex items-center gap-x-2'>
+                <h5 className='medium-14'>Size:</h5>
+                <p className='text-gray-400 text-xs break-all'>{order._id}</p>
+              </div>
+              <div className='flex gap-4'>
+                <div className='flex items-center gap-x-2'>
+                  <h5 className='medium-14'>Payment Status:</h5>
+                  <p className='text-gray-400 text-sm'>{order._id}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       ))}
     </div>
