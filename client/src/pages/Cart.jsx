@@ -36,10 +36,10 @@ const Cart = () => {
 
 
   return products && cartItems ? (
-    <div>
-      <div>
+    <div className='max-padd-container py-16 pt-28 bg-primary'>
+      <div className='flex flex-col xl:flex-row gap-20 xl:gap-28'>
         {/* Left Side */}
-        <div>
+        <div className='flex flex-[2] flex-col gap-3 text-[95%]'> 
           <Title title1={"Cart"} title2={"Overview"} titleStyles={"pb-5"} />
           <div>
             <h5>Product Details</h5>
@@ -76,6 +76,9 @@ const Cart = () => {
 
         </div>
         {/* Right Side */}
+        <div className='flex flex-1 flex-col'>
+          <CartTotal />
+        </div>
       </div>
     </div>
   ) : null
