@@ -34,9 +34,25 @@ const Cart = () => {
 
   }
 
-  return (
-    <div>Cart</div>
-  )
+
+  return products && cartItems ? (
+    <div>
+      <div>
+        {/* Left Side */}
+        <div>
+          <Title title1={"Cart"} title2={"Overview"} titleStyles={"pb-5"} />
+          <div>
+            <h5>Product Details</h5>
+            <h5>Subtotal</h5>
+            <h5>Action</h5>
+          </div>
+        </div>
+        {/* Right Side */}
+      </div>
+    </div>
+  ) : null
+
+
 }
 
 export default Cart
