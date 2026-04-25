@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import Item from '../components/Item'
-import { useAppContext } from '../components/context/AppContext'
+import { useAppContext } from '../context/AppContext'
 import SearchInput from '../components/SearchInput'
 
 const Collection = () => {

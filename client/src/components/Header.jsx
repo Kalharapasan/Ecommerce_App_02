@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { assets } from "../assets/data";
 import Navbar from "./Navbar";
 import { useClerk, UserButton, useUser } from "@clerk/react";
-import { useAppContext } from "./context/AppContext";
+import { useAppContext } from "../context/AppContext";
 
 const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false);

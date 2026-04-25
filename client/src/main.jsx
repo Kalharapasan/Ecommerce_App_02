@@ -1,7 +1,7 @@
 import { BrowserRouter } from "react-router-dom";
 import App from "./App.jsx";
 import "./index.css";
-import { AppContextProvider } from "./components/context/AppContext.jsx";
+import { AppContextProvider } from "./context/AppContext.jsx";
 import { createRoot } from 'react-dom/client'
 import { ClerkProvider } from '@clerk/react'
 

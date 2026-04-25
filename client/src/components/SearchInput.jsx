@@ -1,6 +1,6 @@
 import React from 'react'
 import { assets } from '../assets/data'
-import { useAppContext } from './context/AppContext'
+import { useAppContext } from '../context/AppContext'
 
 const SearchInput = () => {
   const { searchQuery, setSearchQuery } = useAppContext()
