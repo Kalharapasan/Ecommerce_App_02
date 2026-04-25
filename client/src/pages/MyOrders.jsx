@@ -1,33 +1,55 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import Title from '../components/Title'
 import { useAppContext } from '../context/AppContext'
 import { dummyOrdersData } from '../assets/data'
 
 const MyOrders = () => {
 
-  const {currency, user} = useAppContext()
+  const { currency, user } = useAppContext()
   const [orders, setOrders] = useState([])
 
   const loadOrdersData = () => {
     setOrders(dummyOrdersData)
   }
 
-  useEffect(()=>{
-    if(user){
+  useEffect(() => {
+    if (user) {
       loadOrdersData()
     }
   }, [user])
 
+
   return (
     <div>
       <Title title1={"Delivery"} title2={"Information"} titleStyles={"pb-10"} />
-      {orders.map((order)=>(
+      {orders.map((order) => (
         <div key={order._id}>
-          
+          {/* Order Items */}
+          {order.items.map((item, idx) => (
+            <div key={idx}>
+              <div>
+                <div>
+                  <img src={item.product.images[0]} alt="" className='max-h-20 max-w-20 object-contain' />
+                </div>
+                <div className="block w-full">
+                  <h5 className="h5 uppercase line-clamp-1">{item.product.title}</h5>
+                  <div>
+                    <div>
+                      <h5>Price:</h5>
+                      <p>{currency}{item.product.price[item.size]}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       ))}
     </div>
   )
+
+
+
 }
 
 export default MyOrders
