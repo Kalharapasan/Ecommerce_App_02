@@ -41,6 +41,7 @@ const AddressForm = () => {
             <input value={address.zipcode} name='zipcode' type='text' placeholder='Zip Code' className='ring-1 ring-slate-900/15 p-1 pl-3 rounded-sm bg-white outline-none w-1/2' />
             <input value={address.country} name='country' type='text' placeholder='Country' className='ring-1 ring-slate-900/15 p-1 pl-3 rounded-sm bg-white outline-none w-1/2' />
           </div>
+          <button type='submit' className='btn-dark rounded-md w-1/2 mt-2'>Add Address</button>
         </form>
         {/* Right Side */}
       </div>
