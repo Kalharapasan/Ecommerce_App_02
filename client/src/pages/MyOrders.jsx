@@ -81,6 +81,18 @@ const MyOrders = () => {
                 </div>
               </div>
 
+
+              <div className='flex gap-3'>
+                <div className='flex items-center gap-2'>
+                  <h5 className='medium-14'>Status:</h5>
+                  <div className='flex items-center gap-1'>
+                    <span className="min-w-2 h-2 rounded-full bg-green-500" />
+                    <p>{order.status}</p>
+                  </div>
+                </div>
+                <button className='btn-secondary !py-1 !text-xs rounded-sm'>Track Order</button>
+              </div>
+
             </div>
           </div>
 
