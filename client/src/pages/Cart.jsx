@@ -104,14 +104,8 @@ const Cart = () => {
                   </div>
                 </div>
 
-                <div className='sm:text-center'>
-                  <span className='sm:hidden mr-2 font-semibold'>Subtotal:</span>
-                  {currency}{subtotal}.00
-                </div>
-
-                <button onClick={() => removeItem(item._id, item.size)} className='sm:justify-self-center' aria-label='Remove item'>
-                  <img src={assets.cartRemove} alt="" width={22} />
-                </button>
+                <div className='text-center bold-16'>{currency}{product.price[item.size] * quantity}.00</div>
+                <button className='cursor-pointer mx-auto'><img src={assets.cartRemove} alt="" width={22} /></button>
               </div>
             )
           })}
