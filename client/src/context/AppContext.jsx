@@ -39,6 +39,13 @@ export const AppContextProvider = ({ children }) => {
         return count
     }
 
+    // Update Cart Quantity
+    const updateQuantity = async (itemId, size, quantity) => {
+        let cartData = structuredClone(cartItems)
+        cartData[itemId][size] = quantity
+        setCartItems(cartData)
+    }
+
     // Get Cart Amount
     const getCartAmount = () => {
         let total = 0
@@ -60,7 +67,7 @@ export const AppContextProvider = ({ children }) => {
         fetchProducts()
     }, [])
 
-    const value = { navigate, user, products, currency, searchQuery, setSearchQuery, cartItems, setCartItems, method, setMethod, delivery_charges, addToCart, getCartCount }
+    const value = { navigate, user, products, currency, searchQuery, setSearchQuery, cartItems, setCartItems, method, setMethod, delivery_charges, addToCart, getCartCount, getCartAmount,updateQuantity }
 
     return (
         <AppContext.Provider value={value} >{children}</AppContext.Provider>

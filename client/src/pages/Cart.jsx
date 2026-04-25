@@ -6,7 +6,7 @@ import { assets } from '../assets/data'
 
 const Cart = () => {
 
-  const { navigate, products, currency, cartItems, setCartItems, addToCart } = useAppContext()
+  const { navigate, products, currency, cartItems, setCartItems, addToCart, getCartAmount, updateQuantity } = useAppContext()
   const cartData = useMemo(() => {
     const tempData = []
     for (const itemId in cartItems) {
@@ -23,25 +23,15 @@ const Cart = () => {
   }, [cartItems])
 
   const increment = (id, size) => {
-    addToCart(id, size)
+    const currentQuantity = cartItems[id][size]
+    updateQuantity(id, size, currentQuantity + 1)
   }
 
   const decrement = (id, size) => {
-    setCartItems((prev) => {
-      const next = structuredClone(prev)
-      if (!next[id] || !next[id][size]) return prev
-
-      if (next[id][size] === 1) {
-        delete next[id][size]
-        if (Object.keys(next[id]).length === 0) {
-          delete next[id]
-        }
-      } else {
-        next[id][size] -= 1
-      }
-
-      return next
-    })
+    const currentQuantity = cartItems[id][size]
+    if (currentQuantity > 1) {
+      updateQuantity(id, size, currentQuantity - 1)
+    }
   }
 
   const removeItem = (id, size) => {
