@@ -3,13 +3,12 @@ import { Link, useNavigate } from "react-router-dom";
 import { assets } from "../assets/data";
 import Navbar from "./Navbar";
 import { useClerk, UserButton, useUser } from "@clerk/react";
+import { useAppContext } from "./context/AppContext";
 
 const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false);
-  const navigate = useNavigate();
-
   const { openSignIn } = useClerk();
-  const { user } = useUser();
+  const {navigate,user,getCartCount} = useAppContext();
 
   const toggleMenu = () => setMenuOpened((prev) => !prev);
   const OrdersIcon = () => (
@@ -88,7 +87,7 @@ const Header = () => {
             {/* Cart */}
             <div onClick={()=> navigate('/cart')}  className="relative cursor-pointer">
               <img src={assets.cartAdded} alt="" className="min-w-7" />
-              <label className="absolute bottom-7 right-0 left-0 text-xs font-bold bg-secondary/15 flexCenter rounded-full">0</label>
+              <label className="absolute bottom-7 right-0 left-0 text-xs font-bold bg-secondary/15 flexCenter rounded-full">{getCartCount()}</label>
             </div>
 
             {/* User Profile */}
