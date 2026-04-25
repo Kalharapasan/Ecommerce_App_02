@@ -8,6 +8,8 @@ import ProductDetails from './pages/Productdetails'
 import Contact from './pages/Contact'
 import Blog from './pages/Blog'
 import Cart from './Cart'
+import MyOrders from './pages/MyOrders'
+import AddressForm from './pages/AddressForm'
 
 const App = () => {
   return (
@@ -21,6 +23,8 @@ const App = () => {
         <Route path='/blog' element={<Blog />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/cart' element={<Cart />} />
+        <Route path='/my-orders' element={<MyOrders />} />
+        <Route path='/address-form' element={<AddressForm />} />
 
       </Routes>
       <Footer/>
