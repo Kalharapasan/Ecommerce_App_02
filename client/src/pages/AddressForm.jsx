@@ -37,6 +37,10 @@ const AddressForm = () => {
             <input value={address.city} name='city' type='text' placeholder='City' className='ring-1 ring-slate-900/15 p-1 pl-3 rounded-sm bg-white outline-none w-1/2' />
             <input value={address.state} name='state' type='text' placeholder='State' className='ring-1 ring-slate-900/15 p-1 pl-3 rounded-sm bg-white outline-none w-1/2' />
           </div>
+          <div className='flex gap-3'>
+            <input value={address.zipcode} name='zipcode' type='text' placeholder='Zip Code' className='ring-1 ring-slate-900/15 p-1 pl-3 rounded-sm bg-white outline-none w-1/2' />
+            <input value={address.country} name='country' type='text' placeholder='Country' className='ring-1 ring-slate-900/15 p-1 pl-3 rounded-sm bg-white outline-none w-1/2' />
+          </div>
         </form>
         {/* Right Side */}
       </div>
