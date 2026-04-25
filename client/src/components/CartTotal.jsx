@@ -29,7 +29,7 @@ const CartTotal = () => {
                         {showAddress && (
                             <div className='absolute top-10 py-1 bg-white ring-1 ring-slate-900/10 text-sm w-full'>
                                 {addresses.map((address, index) => (
-                                    <p key={index} onClick={() => { setSelectedAddress(address); setShowAddress(false) }}>
+                                    <p className='p-2 cursor-pointer hover:bg-gray-100 medium-14' key={index} onClick={() => { setSelectedAddress(address); setShowAddress(false) }}>
                                         {address.street}, {address.city}, {address.state}, {" "}
                                         {address.country}
                                     </p>
