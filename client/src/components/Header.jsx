@@ -86,7 +86,7 @@ const Header = () => {
               />
             </div>
             {/* Cart */}
-            <div className="relative cursor-pointer">
+            <div onClick={()=> navigate('/cart')}  className="relative cursor-pointer">
               <img src={assets.cartAdded} alt="" className="min-w-7" />
               <label className="absolute bottom-7 right-0 left-0 text-xs font-bold bg-secondary/15 flexCenter rounded-full">0</label>
             </div>
