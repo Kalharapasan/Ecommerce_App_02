@@ -80,9 +80,8 @@ const MyOrders = () => {
                   <p className='text-gray-400 text-xs'>{currency}{order.amount}</p>
                 </div>
               </div>
-
-
-              <div className='flex gap-3'>
+            </div>
+            <div className='flex gap-3'>
                 <div className='flex items-center gap-2'>
                   <h5 className='medium-14'>Status:</h5>
                   <div className='flex items-center gap-1'>
@@ -92,8 +91,6 @@ const MyOrders = () => {
                 </div>
                 <button className='btn-secondary !py-1 !text-xs rounded-sm'>Track Order</button>
               </div>
-
-            </div>
           </div>
 
         </div>
