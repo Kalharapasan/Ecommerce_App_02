@@ -7,11 +7,15 @@ import {dummyProducts} from '../../assets/data'
 
 export const AppContextProvider = ({children}) =>{
 
-    const [products,setProducts] =useState([])
-    const [searchQuery , setSearchQuery] =useState ("")
-    const navigate =useNavigate()
-    const navigater = navigate
-    const currency =import.meta.env.VITE_CURRENCY
+    const [products, setProducts] = useState([])
+    const [searchQuery, setSearchQuery] = useState("")
+    const [cartItems, setCartItems] = useState({})
+    const [method, setMethod] = useState("COD")
+    const navigate = useNavigate()
+    const currency = import.meta.env.VITE_CURRENCY
+    const delivery_charges = 10; // 10 Dollars
+    
+    
     const {user} =  useUser()
     
 
