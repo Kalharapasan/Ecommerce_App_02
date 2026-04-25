@@ -84,7 +84,7 @@ const Cart = () => {
             const subtotal = (product.price[item.size] || 0) * quantity
 
             return (
-              <div key={`${item._id}-${item.size}-${i}`} className='grid grid-cols-1 sm:grid-cols-[1fr_auto_auto] items-center gap-3 rounded-xl bg-white p-3'>
+              <div key={`${item._id}-${item.size}-${i}`} className='grid grid-cols-[6fr_2fr_1fr] items-center bg-white p-2 rounded-xl'>
                 <div className='flex items-center gap-3'>
                   <div className='rounded-lg bg-primary p-2'>
                     <img src={product.images[0]} alt="" className='w-20' />
