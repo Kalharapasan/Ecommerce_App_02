@@ -20,9 +20,11 @@ const CartTotal = () => {
                 <div>
                     <div>Where to ship your order?</div>
                     <div>
-                        <p>{selectedAddress
-                            ? `${selectedAddress.street}, ${selectedAddress.city}, ${selectedAddress.state}, ${selectedAddress.country}`
-                            : "No address found"}</p>
+                        <p>
+                            {selectedAddress
+                                ? `${selectedAddress.street}, ${selectedAddress.city}, ${selectedAddress.state}, ${selectedAddress.country}`
+                                : "No address found"}
+                        </p>
                         <button onClick={() => setShowAddress(!showAddress)} className=''>Change</button>
                         {showAddress && (
                             <div>
@@ -32,10 +34,12 @@ const CartTotal = () => {
                                         {address.country}
                                     </p>
                                 ))}
+                                <p onClick={() => { navigate('/address-form'); scrollTo(0, 0) }}>Add Address</p>
                             </div>
                         )}
                     </div>
                 </div>
+                <hr className='border-gray-300' />
             </div>
         </div>
     )
