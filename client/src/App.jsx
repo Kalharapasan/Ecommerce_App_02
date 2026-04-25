@@ -16,7 +16,7 @@ const App = () => {
   return (
     <main className='overflow-hidden text-tertiary'>
       <Header />
-      <Toaster />
+      <Toaster position='bottom-right' />
       <Routes>
 
         <Route path='/'  element={<Home />}/>
