@@ -11,7 +11,20 @@ const Cart = () => {
   const [cartData, setCartData] = useState([])
 
   useEffect(() => {
-    console.log(cartItems)
+    if (products.length > 0) {
+      const tempData = []
+      for (const itemId in cartItems) {
+        for (const size in cartItems[itemId]) {
+          if (cartItems[itemId][size] > 0) {
+            tempData.push({
+              _id: itemId,
+              size: size
+            })
+          }
+        }
+      }
+      setCartData(tempData)
+    }
   }, [products, cartItems])
 
   return (
