@@ -60,6 +60,13 @@ const Header = () => {
 
           {/* Button and Profile */}
           <div className="flex flex-1 items-center sm:justify-end gap-x-4 sm:gap-x-8">
+            
+            <div>
+              <button className="btn-outline px-2 py-1 text-xs font-semibold">
+                Dashboard
+              </button>
+            </div>
+
             {/* menu*/}
             <div className="relative lg:hidden w-7 h-6">
               <img
