@@ -63,7 +63,7 @@ const Cart = () => {
         {/* Left Side */}
         <div className='flex flex-[2] flex-col gap-3 text-[95%]'>
           <Title title1={"Cart"} title2={"Overview"} titleStyles={"pb-5"} />
-          <div className='grid grid-cols-[6fr_2fr_1fr] font-medium bg-white p-2 rounded-xl'>
+          <div className='hidden sm:grid grid-cols-[6fr_2fr_1fr] font-medium bg-white p-3 rounded-xl'>
             <h5 className='h5 text-left'>Product Details</h5>
             <h5 className='h5 text-center'>Subtotal</h5>
             <h5 className='h5 text-center'>Action</h5>
@@ -84,7 +84,7 @@ const Cart = () => {
             const subtotal = (product.price[item.size] || 0) * quantity
 
             return (
-              <div key={`${item._id}-${item.size}-${i}`} className='grid grid-cols-[1fr_auto_auto] items-center gap-3 rounded-xl bg-white p-3'>
+              <div key={`${item._id}-${item.size}-${i}`} className='grid grid-cols-1 sm:grid-cols-[1fr_auto_auto] items-center gap-3 rounded-xl bg-white p-3'>
                 <div className='flex items-center gap-3'>
                   <div className='rounded-lg bg-primary p-2'>
                     <img src={product.images[0]} alt="" className='w-20' />
@@ -92,23 +92,24 @@ const Cart = () => {
                   <div>
                     <h5>{product.title}</h5>
                     <p>Size: {item.size}</p>
-                    <div className='flexBetween'>
-                      <div className='mt-2 flex items-center gap-2'>
-                        <button onClick={() => decrement(item._id, item.size)} className='btn-dark !p-2'>
-                          <img src={assets.minus} alt="" width={11} className='invert' />
-                        </button>
-                        <span>{quantity}</span>
-                        <button onClick={() => increment(item._id, item.size)} className='btn-dark !p-2'>
-                          <img src={assets.plus} alt="" width={11} className='invert' />
-                        </button>
-                      </div>
+                    <div className='mt-2 flex items-center gap-2'>
+                      <button onClick={() => decrement(item._id, item.size)} className='btn-dark !p-2' aria-label='Decrease quantity'>
+                        <img src={assets.minus} alt="" width={11} className='invert' />
+                      </button>
+                      <span className='min-w-6 text-center'>{quantity}</span>
+                      <button onClick={() => increment(item._id, item.size)} className='btn-dark !p-2' aria-label='Increase quantity'>
+                        <img src={assets.plus} alt="" width={11} className='invert' />
+                      </button>
                     </div>
                   </div>
                 </div>
 
-                <div>{currency}{subtotal}.00</div>
+                <div className='sm:text-center'>
+                  <span className='sm:hidden mr-2 font-semibold'>Subtotal:</span>
+                  {currency}{subtotal}.00
+                </div>
 
-                <button onClick={() => removeItem(item._id, item.size)}>
+                <button onClick={() => removeItem(item._id, item.size)} className='sm:justify-self-center' aria-label='Remove item'>
                   <img src={assets.cartRemove} alt="" width={22} />
                 </button>
               </div>
