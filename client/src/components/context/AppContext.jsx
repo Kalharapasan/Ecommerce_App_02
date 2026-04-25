@@ -1,11 +1,11 @@
 import React, { createContext, useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useUser } from '@clerk/react'
-import {dummyProducts} from '../../assets/data'
- 
- const AppContext =createContext()
+import { dummyProducts } from '../../assets/data'
 
-export const AppContextProvider = ({children}) =>{
+const AppContext = createContext()
+
+export const AppContextProvider = ({ children }) => {
 
     const [products, setProducts] = useState([])
     const [searchQuery, setSearchQuery] = useState("")
@@ -14,24 +14,30 @@ export const AppContextProvider = ({children}) =>{
     const navigate = useNavigate()
     const currency = import.meta.env.VITE_CURRENCY
     const delivery_charges = 10; // 10 Dollars
-    
-    
-    const {user} =  useUser()
-    
 
-    const fetchProducts = async () =>{
+
+    const { user } = useUser()
+
+    // Add Product to the cart
+    const addToCart = (itemId, size) => {
+        if (!size) {
+            return
+        }
+    }
+
+    const fetchProducts = async () => {
         setProducts(dummyProducts)
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         fetchProducts()
-    },[])
+    }, [])
 
-    const value = {navigate, user, products, currency, searchQuery, setSearchQuery, cartItems, setCartItems, method, setMethod, delivery_charges}
+    const value = { navigate, user, products, currency, searchQuery, setSearchQuery, cartItems, setCartItems, method, setMethod, delivery_charges }
 
     return (
         <AppContext.Provider value={value} >{children}</AppContext.Provider>
     )
 }
 
-export const useAppContext =() => useContext(AppContext)
+export const useAppContext = () => useContext(AppContext)
