@@ -16,10 +16,10 @@ const CartTotal = () => {
             <h3 className='bold-22'>Order Details <span className="bold-14 text-secondary">({getCartCount()}) Items</span></h3>
             <hr className='border-gray-300 my-5' />
             {/* Payment & Addresses */}
-            <div>
-                <div>
-                    <div>Where to ship your order?</div>
-                    <div>
+            <div className='mb-5'>
+                <div className='my-5'>
+                    <h4 className='h4 mb-5'>Where to ship your order?</h4>
+                    <div className='relative flex justify-between items-start mt-2'>
                         <p>
                             {selectedAddress
                                 ? `${selectedAddress.street}, ${selectedAddress.city}, ${selectedAddress.state}, ${selectedAddress.country}`
