@@ -26,7 +26,7 @@ const Contact = () => {
                     <label htmlFor="message" className="font-semibold mt-4 text-slate-700">Message</label>
                     <textarea rows="4" className="w-full mt-2 p-3 border border-slate-300 bg-[#e8ebea] rounded-lg resize-none outline-none focus:ring-2 focus-within:ring-indigo-400 transition-all" placeholder="Enter your message" required></textarea>
 
-                    <button type="submit" className="flex items-center justify-center gap-1 mt-5 bg-indigo-500 hover:bg-indigo-600 text-white py-2.5 w-full rounded-full transition">
+                    <button type="submit" className="flexCenter gap-1 mt-5 btn-secondary w-full !font-bold">
                         Submit Form
                         <img src={assets.right} alt="" className="invert"/>
                     </button>
