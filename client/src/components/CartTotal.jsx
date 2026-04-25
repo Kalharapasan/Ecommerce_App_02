@@ -69,9 +69,11 @@ const CartTotal = () => {
                     <h5 className="h5">Tax (2%)</h5>
                     <p className="font-bold">{currency}{(getCartAmount() * 2) / 100}</p>
                 </div>
-                <div className='flex justify-between'>
-                    <h5 className="h5">Tax (2%)</h5>
-                    <p className="font-bold">{currency}{(getCartAmount() * 2) / 100}</p>
+                <div className='flex justify-between text-lg font-medium mt-3'>
+                    <h5 className="h5">Total Amount:</h5>
+                    <p className="bold-18">
+                        {currency}{getCartAmount() === 0 ? "$0.00" : getCartAmount() + delivery_charges + (getCartAmount() * 2) / 100}
+                    </p>
                 </div>
             </div>
 
