@@ -64,11 +64,23 @@ const MyOrders = () => {
                   <h5 className='medium-14'>Payment Status:</h5>
                   <p className='text-gray-400 text-sm'>{order.isPaid ? "Done" : "Pending"}</p>
                   <div className='flex items-center gap-x-2'>
-                    <h5 className='medium-14'>Size:</h5>
-                    <p className='text-gray-400 text-xs break-all'>{order._id}</p>
+                    <h5 className='medium-14'>Method:</h5>
+                    <p className='text-gray-400 text-xs break-all'>{order.paymentMethod}</p>
                   </div>
                 </div>
               </div>
+
+              <div className='flex gap-4'>
+                <div className='flex items-center gap-x-2'>
+                  <h5 className='medium-14'>Date:</h5>
+                  <p className='text-gray-400 text-sm'>{new Date(order.createdAt).toDateString()}</p>
+                </div>
+                <div className='flex items-center gap-x-2'>
+                  <h5 className='medium-14'>Amount:</h5>
+                  <p className='text-gray-400 text-xs'>{currency}{order.amount}</p>
+                </div>
+              </div>
+
             </div>
           </div>
 
