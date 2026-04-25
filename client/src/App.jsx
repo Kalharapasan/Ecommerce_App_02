@@ -7,6 +7,7 @@ import Footer from './components/Footer'
 import ProductDetails from './pages/Productdetails'
 import Contact from './pages/Contact'
 import Blog from './pages/Blog'
+import Cart from './Cart'
 
 const App = () => {
   return (
