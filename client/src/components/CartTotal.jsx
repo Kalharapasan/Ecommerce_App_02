@@ -40,7 +40,7 @@ const CartTotal = () => {
                     </div>
                 </div>
                 <hr className='border-gray-300 mt-5' />
-                <div>
+                <div className='my-6'>
                     <h4 className='h4 mb-5'>Payment Method</h4>
                     <div>
                         <div onClick={() => setMethod("COD")}>
