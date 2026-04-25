@@ -53,7 +53,7 @@ const Cart = () => {
               <div key={i}>
                 <div>
                   <div>
-                    <img src={product.images[0]} alt="" className='w-20'/>
+                    <img src={product.images[0]} alt="" className='w-20' />
                   </div>
                   <div>
                     <h5>{product.title}</h5>
@@ -68,6 +68,8 @@ const Cart = () => {
                   <div>
                   </div>
                 </div>
+                <div>{currency}{product.price[item.size] * quantity}.00</div>
+                <button><img src={assets.cartRemove} alt="" width={22} /></button>
               </div>
             )
           })}
