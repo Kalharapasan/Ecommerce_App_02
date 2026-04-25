@@ -20,7 +20,7 @@ const Cart = () => {
       }
     }
     return tempData
-  }, [cartItems])
+  }, [products,cartItems])
 
   const increment = (id, size) => {
     const currentQuantity = cartItems[id][size]
