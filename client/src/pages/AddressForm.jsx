@@ -24,7 +24,7 @@ const AddressForm = () => {
       {/* Container */}
       <div className='flex flex-col xl:flex-row gap-20 xl:gap-28'>
         {/* Left Side */}
-        <form>
+        <form className='flex flex-[2] flex-col gap-3 text-[95%]'>
           <Title title1={"Delivery"} title2={"Information"} titleStyles={"pb-5"} />
           <div className='flex gap-3'>
             <input value={address.firstName} name='firstName' type='text' placeholder='First Name' className='ring-1 ring-slate-900/15 p-1 pl-3 rounded-sm bg-white outline-none w-1/2' />
