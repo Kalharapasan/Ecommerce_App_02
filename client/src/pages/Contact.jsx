@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { assets } from "../assets/data";
 const Contact = () => {
     return (
         <section className="bg-[#f2f4f3] pt-24 pb-20 px-4 min-h-[calc(100vh-180px)]">
@@ -13,9 +13,7 @@ const Contact = () => {
                 <div className="max-w-96 w-full px-2">
                     <label htmlFor="name" className="font-semibold text-slate-700">Full Name</label>
                     <div className="flex items-center mt-2 mb-4 h-11 pl-3 border border-slate-300 bg-[#e8ebea] rounded-full focus-within:ring-2 focus-within:ring-indigo-400 transition-all overflow-hidden">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M18.311 16.406a9.64 9.64 0 0 0-4.748-4.158 5.938 5.938 0 1 0-7.125 0 9.64 9.64 0 0 0-4.749 4.158.937.937 0 1 0 1.623.938c1.416-2.447 3.916-3.906 6.688-3.906 2.773 0 5.273 1.46 6.689 3.906a.938.938 0 0 0 1.622-.938M5.938 7.5a4.063 4.063 0 1 1 8.125 0 4.063 4.063 0 0 1-8.125 0" fill="#475569" />
-                        </svg>
+                        <img src={assets.user} alt="" width={19} className="invert-50"/>
                         <input type="text" className="h-full px-2 w-full outline-none bg-transparent" placeholder="Enter your full name" required />
                     </div>
 
@@ -43,3 +41,4 @@ const Contact = () => {
 }
 
 export default Contact
+
