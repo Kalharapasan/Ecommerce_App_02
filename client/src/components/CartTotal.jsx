@@ -75,6 +75,9 @@ const CartTotal = () => {
                         {currency}{getCartAmount() === 0 ? "$0.00" : getCartAmount() + delivery_charges + (getCartAmount() * 2) / 100}
                     </p>
                 </div>
+                <button className=''>
+                    Proceed to Order
+                </button>
             </div>
 
         </div>
