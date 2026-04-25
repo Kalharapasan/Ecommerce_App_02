@@ -10,7 +10,7 @@ import { assets } from '../assets/data'
 
 const Productdetails = () => {
 
-    const { products, currency,addToCard } = useAppContext()
+    const { products, currency, addToCart } = useAppContext()
     const [image, setImage] = useState(null)
     const { productId } = useParams()
     const product = products.find((item) => item._id === productId)
@@ -82,7 +82,7 @@ const Productdetails = () => {
                             </div>
 
                             <div className="flex items-center gap-x-4">
-                                <button onClick={()=>addToCard(product._id)} className="btn-dark sm:w-1/2 flexCenter gap-x-2 capitalize">Add to Cart <img src={assets.cartAdd} alt="" width={19} /></button>
+                                <button onClick={() => addToCart(product._id, size)} className="btn-dark sm:w-1/2 flexCenter gap-x-2 capitalize">Add to Cart <img src={assets.cartAdd} alt="" width={19} /></button>
                                 <button className="btn-white">
                                     <img src={assets.heartAdd} alt="" width={19} />
                                 </button>
