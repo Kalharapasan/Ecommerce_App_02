@@ -34,17 +34,7 @@ const Cart = () => {
     }
   }
 
-  const removeItem = (id, size) => {
-    setCartItems((prev) => {
-      const next = structuredClone(prev)
-      if (!next[id] || !next[id][size]) return prev
-      delete next[id][size]
-      if (Object.keys(next[id]).length === 0) {
-        delete next[id]
-      }
-      return next
-    })
-  }
+  
 
 
   return products && cartItems ? (
