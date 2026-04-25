@@ -62,7 +62,7 @@ const MyOrders = () => {
               <div className='flex gap-4'>
                 <div className='flex items-center gap-x-2'>
                   <h5 className='medium-14'>Payment Status:</h5>
-                  <p className='text-gray-400 text-sm'>{order._id}</p>
+                  <p className='text-gray-400 text-sm'>{order.isPaid ? "Done" : "Pending"}</p>
                 </div>
               </div>
             </div>
