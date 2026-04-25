@@ -27,6 +27,13 @@ const Cart = () => {
     }
   }, [products, cartItems])
 
+  const increment = (id, size) => {
+
+  }
+  const decrement = (id, size) => {
+
+  }
+
   return (
     <div>Cart</div>
   )
