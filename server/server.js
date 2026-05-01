@@ -14,7 +14,7 @@ app.use(express.json()) // Enables JSON request body parsing
 app.use(clerkMiddleware())
 
 // Route Endpoint to check API Status
-app.get('/', (req,res)=>{
+app.get('/', (req, res) => {
     res.send("API Successfully connected")
 })
 
