@@ -7,6 +7,7 @@ import { clerkMiddleware } from '@clerk/express'
 import clerkWebhooks from "./controllers/ClerkWebhooks.js"
 import userRouter from "./routes/userRoutes.js"
 import connectCloudinary from "./config/clodinary.js"
+import productRouter from "./routes/productRoutes.js"
 
 dotenv.config({ path: fileURLToPath(new URL("./.env", import.meta.url)) })
 
