@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from 'react'
+import React, { createContext, useContext, useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useUser } from '@clerk/react'
 import toast from 'react-hot-toast'
@@ -18,6 +18,7 @@ export const AppContextProvider = ({ children }) => {
 
 
     const { user } = useUser()
+    const syncedUserIdRef = useRef(null)
 
     // Add Product to the cart
     const addToCart = (itemId, size) => {
@@ -66,6 +67,37 @@ export const AppContextProvider = ({ children }) => {
     useEffect(() => {
         fetchProducts()
     }, [])
+
+    useEffect(() => {
+        const syncUser = async () => {
+            if (!user?.id || syncedUserIdRef.current === user.id) return
+
+            const backendUrl = import.meta.env.VITE_BACKEND_URL || ""
+            const response = await fetch(`${backendUrl}/api/users`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    id: user.id,
+                    email: user.primaryEmailAddress?.emailAddress,
+                    username: user.fullName || user.firstName || user.username || "User",
+                    image: user.imageUrl,
+                }),
+            })
+
+            if (!response.ok) {
+                throw new Error(`Failed to sync user: ${response.status}`)
+            }
+
+            syncedUserIdRef.current = user.id
+        }
+
+        syncUser().catch((error) => {
+            syncedUserIdRef.current = null
+            console.error(error)
+        })
+    }, [user])
 
     const value = { navigate, user, products, currency, searchQuery, setSearchQuery, cartItems, setCartItems, method, setMethod, delivery_charges, addToCart, getCartCount, getCartAmount,updateQuantity }
 
