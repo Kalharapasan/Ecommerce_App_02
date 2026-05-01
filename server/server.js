@@ -21,12 +21,12 @@ const authMiddleware = process.env.CLERK_SECRET_KEY
 const app = express() // Initialize Express Application
 app.use(cors()) // Enable Cross-Origin Resource sharing
 
+// Clerk webhooks must keep the raw request body for signature verification.
+app.use("/api/clerk", express.raw({ type: "application/json" }), clerkWebhooks)
+
 // Middleware Setup
 app.use(express.json()) // Enables JSON request body parsing
 app.use(authMiddleware)
-
-// API to Listen Clerk Webhooks
-app.use("/api/clerk", clerkWebhooks)
 
 // Define API Routes
 app.use('/api/users', userRouter) // Routes for User functionality

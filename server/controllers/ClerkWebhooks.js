@@ -7,6 +7,10 @@ const clerkWebhooks = async (req, res) => {
             return res.status(503).json({ success: false, message: "Clerk webhook secret is not configured" })
         }
 
+        if (!Buffer.isBuffer(req.body)) {
+            return res.status(400).json({ success: false, message: "Webhook raw body is missing" })
+        }
+
         // Creating a Svix instance
         const whook = new Webhook(process.env.CLERK_WEBHOOK_SECRET)
         // Get headers
@@ -17,10 +21,11 @@ const clerkWebhooks = async (req, res) => {
         }
 
         // Verifying headers
-        await whook.verify(JSON.stringify(req.body), headers)
+        const rawBody = req.body.toString("utf8")
+        await whook.verify(rawBody, headers)
 
         // Getting Data from request body
-        const { data, type } = req.body
+        const { data, type } = JSON.parse(rawBody)
 
         // Switch Cases for different Events
         switch (type) {
@@ -53,7 +58,7 @@ const clerkWebhooks = async (req, res) => {
             default:
                 break;
         }
-        res.json({ success: true, message: "Webhook Recieved" })
+        res.json({ success: true, message: "Webhook Received" })
 
     } catch (error) {
         console.log(error.message)

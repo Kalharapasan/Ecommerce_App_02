@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const connectDB = async () => {
-  const mongoUri = process.env.MONGO_URL || process.env.MONGO_URL;
+  const mongoUri = process.env.MONGO_URL || process.env.MONGO_URI;
 
   if (!mongoUri) {
     console.warn("MongoDB connection string is not set. Set MONGO_URL or MONGO_URI to enable database-backed features.");
