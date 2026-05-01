@@ -28,9 +28,8 @@ export const createProduct = async (req, res) => {
 // Controller function for get Product List [GET '/']
 export const listProduct = async (req, res) => {
     try {
-        const { productId } = await req.body
-        const product = await Product.findById(productId)
-        res.json({ success: true, product })
+        const products = await Product.find({})
+        res.json({ success: true, products })
 
     } catch (error) {
         console.log(error.message)
@@ -41,6 +40,10 @@ export const listProduct = async (req, res) => {
 // Controller function for get single product [GET '/single']
 export const singleProduct = async (req, res) => {
     try {
+
+        const { productId } = await req.body
+        const product = await Product.findById(productId)
+        res.json({ success: true, product })
 
     } catch (error) {
         console.log(error.message)
