@@ -2,12 +2,16 @@ import User from "../models/User.js";
 
 export const authUser = async (req, res, next) => {
     try {
+        if (typeof req.auth !== "function") {
+            return res.json({ success: false, message: "Not Authorized" });
+        }
+
         const { userId } = req.auth();
         if (!userId) {
             return res.json({ success: false, message: "Not Authorized" });
         }
 
-        const user = await User.findById(userId);
+        let user = await User.findById(userId);
         if (!user) {
             return res.json({ success: false, message: "Not Authorized" });
         }

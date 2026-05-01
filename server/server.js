@@ -11,12 +11,19 @@ dotenv.config({ path: fileURLToPath(new URL("./.env", import.meta.url)) })
 
 await connectDB();
 
+const authMiddleware = process.env.CLERK_SECRET_KEY
+    ? clerkMiddleware()
+    : (req, res, next) => {
+        req.auth = () => ({ userId: null })
+        next()
+    }
+
 const app = express() // Initialize Express Application
 app.use(cors()) // Enable Cross-Origin Resource sharing
 
 // Middleware Setup
 app.use(express.json()) // Enables JSON request body parsing
-app.use(clerkMiddleware())
+app.use(authMiddleware)
 
 // API to Listen Clerk Webhooks
 app.use("/api/clerk", clerkWebhooks)
@@ -31,5 +38,9 @@ app.get('/', (req, res) => {
 
 const port = process.env.PORT || 3000 // Define server port
 
-// Start the server
-app.listen(port, () => console.log(`Server is running at http://localhost:${port}`))
+if (process.env.VERCEL !== "1") {
+    // Start the server only for local development.
+    app.listen(port, () => console.log(`Server is running at http://localhost:${port}`))
+}
+
+export default app

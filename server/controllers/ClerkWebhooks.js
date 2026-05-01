@@ -3,6 +3,10 @@ import { Webhook } from "svix";
 
 const clerkWebhooks = async (req, res) => {
     try {
+        if (!process.env.CLERK_WEBHOOK_SECRET) {
+            return res.status(503).json({ success: false, message: "Clerk webhook secret is not configured" })
+        }
+
         // Creating a Svix instance
         const whook = new Webhook(process.env.CLERK_WEBHOOK_SECRET)
         // Get headers
