@@ -9,6 +9,10 @@ await connectDB();
 const app = express() // Initialize Express Application
 app.use(cors()) // Enable Cross-Origin Resource sharing
 
+// Middleware Setup
+app.use(express.json()) // Enables JSON request body parsing
+app.use(clerkMiddleware())
+
 // Route Endpoint to check API Status
 app.get('/', (req,res)=>{
     res.send("API Successfully connected")
