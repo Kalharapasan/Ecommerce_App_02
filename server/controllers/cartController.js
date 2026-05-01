@@ -25,3 +25,14 @@ export const addToCart = async (req, res) => {
         res.json({ success: false, message: error.message });
     }
 };
+
+// Update the Cart [POST '/update']
+export const updateCart = async (req, res) => {
+    try {
+        await User.findByIdAndUpdate(userId, { cartData });
+        res.json({ success: true, message: "Added to Cart" });
+    } catch (error) {
+        console.log(error.message);
+        res.json({ success: false, message: error.message });
+    }
+}
