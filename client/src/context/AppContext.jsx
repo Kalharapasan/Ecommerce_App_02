@@ -6,6 +6,7 @@ import { dummyProducts } from '../assets/data'
 import axios from "axios"
 
 const AppContext = createContext()
+axios.defaults.baseURL = import.meta.env.VITE_BACKEND_URL
 
 export const AppContextProvider = ({ children }) => {
 
@@ -100,7 +101,7 @@ export const AppContextProvider = ({ children }) => {
         })
     }, [user])
 
-    const value = { navigate, user, products, currency, searchQuery, setSearchQuery, cartItems, setCartItems, method, setMethod, delivery_charges, addToCart, getCartCount, getCartAmount,updateQuantity }
+    const value = { navigate, user, products, currency, searchQuery, setSearchQuery, cartItems, setCartItems, method, setMethod, delivery_charges, addToCart, getCartCount, getCartAmount, updateQuantity }
 
     return (
         <AppContext.Provider value={value} >{children}</AppContext.Provider>
