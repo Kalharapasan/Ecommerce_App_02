@@ -20,6 +20,21 @@ export const AppContextProvider = ({ children }) => {
 
 
     const { user } = useUser()
+
+    // Get the user Profile
+    const getUser = async () => {
+        try {
+            const { data } = await axios.get('/api/user', {
+                headers: {
+                    Authorization: `Bearer ${await getToken}`
+                }
+            })
+        } catch (error) {
+
+        }
+    }
+
+
     const syncedUserIdRef = useRef(null)
 
     // Add Product to the cart
