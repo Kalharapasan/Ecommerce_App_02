@@ -54,6 +54,9 @@ export const singleProduct = async (req, res) => {
 // Controller function for toggle stock [POST '/toggle-stock']
 export const toggleStock = async (req, res) => {
     try {
+        const { productId, inStock } = req.body
+        await Product.findByIdAndUpdate(productId, { inStock })
+        res.json({ success: true, message: "Stock Updated" })
 
     } catch (error) {
         console.log(error.message)
