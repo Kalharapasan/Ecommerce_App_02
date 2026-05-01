@@ -29,8 +29,20 @@ export const addToCart = async (req, res) => {
 // Update the Cart [POST '/update']
 export const updateCart = async (req, res) => {
     try {
-        await User.findByIdAndUpdate(userId, { cartData });
-        res.json({ success: true, message: "Added to Cart" });
+        const { itemId, size, quantity } = req.body
+        const { userId } = req.auth()
+
+        const userData = await User.findById(userId)
+        const cartData = await userData.cartData
+
+        if (quantity <= 0) { 
+            delete cartData[itemId]
+        } else {
+            cartData[itemId][size] = quantity
+        }
+
+        await User.findByIdAndUpdate(userId, { cartData })
+        res.json({ success: true, message: "Cart Updated" })
     } catch (error) {
         console.log(error.message);
         res.json({ success: false, message: error.message });
