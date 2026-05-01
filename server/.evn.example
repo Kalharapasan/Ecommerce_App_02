@@ -7,3 +7,4 @@ MONGO_URL="mongodb://user:Pasa2001@ac-ovq2jc7-shard-00-00.zcu1vdk.mongodb.net:27
 
 CLERK_PUBLISHABLE_KEY=pk_test_c2FjcmVkLWtvYWxhLTQwLmNsZXJrLmFjY291bnRzLmRldiQ
 CLERK_SECRET_KEY=sk_test_HFm7RofjafmOiI7dL0DGHPtsFk7lkgxuBwX4mNp7uw
+CLERK_WEBHOOK_SECRET=whsec_Sl81P1hv8az4cWgXSPS4dk1sO3kQTWxr
