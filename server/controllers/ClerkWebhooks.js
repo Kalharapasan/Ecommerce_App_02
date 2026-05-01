@@ -16,6 +16,16 @@ const clerkWebhooks = async (req, res) => {
         await whook.verify(JSON.stringify(req.body), headers)
 
         // Getting Data from request body
+        const { data, type } = req.body
+
+        // Switch Cases for different Events
+        switch (key) {
+            case value:
+                break;
+
+            default:
+                break;
+        }
 
     } catch (error) {
 
