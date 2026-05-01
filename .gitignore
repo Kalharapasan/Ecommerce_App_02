@@ -1,2 +1,13 @@
-node_modules
+# Node modules
+node_modules/
+
+# Environment files (do not commit any .env files)
+.env
+.env.*
 *.env
+
+# Common dotenv variants
+.env.local
+.env.development
+.env.test
+.env.production
