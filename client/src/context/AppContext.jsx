@@ -26,11 +26,13 @@ export const AppContextProvider = ({ children }) => {
     // Get the user Profile
     const getUser = async () => {
         try {
-            const { data } = await axios.get('/api/user', {
-                headers: {
-                    Authorization: `Bearer ${await getToken}`
-                }
-            })
+            const { data } = await axios.get('/api/user', { headers: { Authorization: `Bearer ${await getToken()}` } })
+            if (data.success) {
+                setIsOwner(data.role === "owner")
+                setCartItems(data.cartData || {})
+            } else {
+                // 
+            }
         } catch (error) {
 
         }
