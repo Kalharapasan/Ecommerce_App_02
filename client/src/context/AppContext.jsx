@@ -19,7 +19,9 @@ export const AppContextProvider = ({ children }) => {
     const delivery_charges = 10; // 10 Dollars
 
 
+    // Clerk
     const { user } = useUser()
+    const { getToken } = useAuth()
 
     // Get the user Profile
     const getUser = async () => {
