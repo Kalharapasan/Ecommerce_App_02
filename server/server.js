@@ -1,10 +1,13 @@
 import express from "express"
 import cors from "cors"
-import "dotenv/config"
+import dotenv from "dotenv"
+import { fileURLToPath } from "url"
 import connectDB from "./config/mongodb.js"
 import { clerkMiddleware } from '@clerk/express'
 import clerkWebhooks from "./controllers/ClerkWebhooks.js"
 import userRouter from "./routes/userRoutes.js"
+
+dotenv.config({ path: fileURLToPath(new URL("./.env", import.meta.url)) })
 
 await connectDB();
 
