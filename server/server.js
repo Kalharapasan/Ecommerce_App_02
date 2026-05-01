@@ -9,6 +9,7 @@ import userRouter from "./routes/userRoutes.js"
 import connectCloudinary from "./config/clodinary.js"
 import productRouter from "./routes/productRoutes.js"
 import addressRouter from "./routes/addressRoutes.js"
+import cartRouter from "./routes/cardRoutes.js"
 
 dotenv.config({ path: fileURLToPath(new URL("./.env", import.meta.url)) })
 
@@ -36,6 +37,7 @@ app.use(authMiddleware)
 app.use('/api/users', userRouter) // Routes for User functionality
 app.use('/api/products', productRouter) // Routes for handling products
 app.use('/api/addresses', addressRouter) // Routes for handling addresses
+app.use('/api/cart', cartRouter) // Routes for handling addresses
 
 // Route Endpoint to check API Status
 app.get('/', (req, res) => {

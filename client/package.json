@@ -12,6 +12,7 @@
   "dependencies": {
     "@clerk/react": "^6.1.4",
     "@tailwindcss/vite": "^4.1.17",
+    "axios": "^1.15.2",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-hot-toast": "^2.6.0",
