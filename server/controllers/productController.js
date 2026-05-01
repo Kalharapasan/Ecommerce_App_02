@@ -28,6 +28,9 @@ export const createProduct = async (req, res) => {
 // Controller function for get Product List [GET '/']
 export const listProduct = async (req, res) => {
     try {
+        const { productId } = await req.body
+        const product = await Product.findById(productId)
+        res.json({ success: true, product })
 
     } catch (error) {
         console.log(error.message)
@@ -54,3 +57,4 @@ export const toggleStock = async (req, res) => {
         res.json({ success: false, message: error.message })
     }
 }
+
