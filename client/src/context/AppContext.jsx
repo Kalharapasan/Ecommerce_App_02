@@ -90,6 +90,12 @@ export const AppContextProvider = ({ children }) => {
     }
 
     useEffect(() => {
+        if (user) {
+            getUser()
+        }
+    }, [user])
+
+    useEffect(() => {
         fetchProducts()
     }, [])
 
