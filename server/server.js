@@ -6,10 +6,12 @@ import connectDB from "./config/mongodb.js"
 import { clerkMiddleware } from '@clerk/express'
 import clerkWebhooks from "./controllers/ClerkWebhooks.js"
 import userRouter from "./routes/userRoutes.js"
+import connectCloudinary from "./config/clodinary.js"
 
 dotenv.config({ path: fileURLToPath(new URL("./.env", import.meta.url)) })
 
-await connectDB();
+await connectDB() // Establish connection to the database
+await connectCloudinary() // Setup cloudinary for image storage
 
 const authMiddleware = process.env.CLERK_SECRET_KEY
     ? clerkMiddleware()
