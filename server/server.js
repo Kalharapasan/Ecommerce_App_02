@@ -34,7 +34,7 @@ app.use(express.json()) // Enables JSON request body parsing
 app.use(authMiddleware)
 
 // Define API Routes
-app.use('/api/users', userRouter) // Routes for User functionality
+app.use('/api/user', userRouter) // Routes for User functionalit
 app.use('/api/products', productRouter) // Routes for handling products
 app.use('/api/addresses', addressRouter) // Routes for handling addresses
 app.use('/api/cart', cartRouter) // Routes for handling addresses

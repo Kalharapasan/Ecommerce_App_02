@@ -27,7 +27,7 @@ export const AppContextProvider = ({ children }) => {
     // Get the user Profile
         const getUser = async () => {
             try {
-                const { data } = await axios.get('/api/users', { headers: { Authorization: `Bearer ${await getToken()}` } })
+                const { data } = await axios.get('/api/user', { headers: { Authorization: `Bearer ${await getToken()}` } })
             if (data.success) {
                 setIsOwner(data.role === "owner")
                 setCartItems(data.cartData || {})
@@ -104,7 +104,7 @@ export const AppContextProvider = ({ children }) => {
             if (!user?.id || syncedUserIdRef.current === user.id) return
 
             const backendUrl = import.meta.env.VITE_BACKEND_URL || ""
-            const response = await fetch(`${backendUrl}/api/users`, {
+            const response = await fetch(`${backendUrl}/api/user`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
