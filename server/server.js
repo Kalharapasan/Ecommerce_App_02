@@ -4,6 +4,7 @@ import "dotenv/config"
 import connectDB from "./config/mongodb.js"
 import { clerkMiddleware } from '@clerk/express'
 import clerkWebhooks from "./controllers/ClerkWebhooks.js"
+import userRouter from "./routes/userRoutes.js"
 
 await connectDB();
 
