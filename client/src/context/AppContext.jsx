@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useUser } from '@clerk/react'
+import { useAuth, useUser } from '@clerk/react'
 import toast from 'react-hot-toast'
 import { dummyProducts } from '../assets/data'
 import axios from "axios"
