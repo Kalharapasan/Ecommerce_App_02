@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useUser } from '@clerk/react'
 import toast from 'react-hot-toast'
 import { dummyProducts } from '../assets/data'
+import axios from "axios"
 
 const AppContext = createContext()
 
