@@ -34,6 +34,7 @@ app.use(authMiddleware)
 // Define API Routes
 app.use('/api/users', userRouter) // Routes for User functionality
 app.use('/api/products', productRouter) // Routes for handling products
+app.use('/api/addresses', addressRouter) // Routes for handling addresses
 
 // Route Endpoint to check API Status
 app.get('/', (req, res) => {
