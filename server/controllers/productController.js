@@ -26,12 +26,22 @@ export const createProduct = async (req, res) => {
 
 
 // Controller function for get Product List [GET '/']
-export const listProduct = async (req, res)=>{
-  try {
+export const listProduct = async (req, res) => {
+    try {
 
-  } catch (error) {
-    console.log(error.message)
-    res.json({success:false, message: error.message})
-  }
+    } catch (error) {
+        console.log(error.message)
+        res.json({ success: false, message: error.message })
+    }
+}
+
+// Controller function for get single product [GET '/single']
+export const singleProduct = async (req, res) => {
+    try {
+
+    } catch (error) {
+        console.log(error.message)
+        res.json({ success: false, message: error.message })
+    }
 }
 
