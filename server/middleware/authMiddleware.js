@@ -26,6 +26,6 @@ export const authUser = async (req, res, next) => {
 
     } catch (error) {
         console.log(error)
-        return res.json({ success: false, message: "Not Authorized" })
+        return res.json({ success: false, message: error.message })
     }
 };
