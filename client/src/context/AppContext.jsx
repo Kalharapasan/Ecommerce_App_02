@@ -31,7 +31,10 @@ export const AppContextProvider = ({ children }) => {
                 setIsOwner(data.role === "owner")
                 setCartItems(data.cartData || {})
             } else {
-                // 
+                // Retry fetch user details after 5 seconds
+                setTimeout(() => {
+                    getUser()
+                }, 5000);
             }
         } catch (error) {
 
