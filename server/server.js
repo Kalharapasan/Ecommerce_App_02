@@ -17,6 +17,9 @@ app.use(clerkMiddleware())
 // API to Listen Clerk Webhooks
 app.use("/api/clerk", clerkWebhooks)
 
+// Define API Routes
+app.use('/api/user', userRouter) // Routes for User functionality
+
 // Route Endpoint to check API Status
 app.get('/', (req, res) => {
     res.send("API Successfully connected")
