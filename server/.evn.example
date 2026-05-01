@@ -1,1 +1,5 @@
+#FIRST OPTION
+#MONGO_URL=mongodb+srv://user:Pasa2001#@cluster0.epf5fbx.mongodb.net/?appName=Cluster0
+
+#SECOND OPTION
 MONGO_URL=mongodb+srv://user:Pasa2001#@cluster0.epf5fbx.mongodb.net/?appName=Cluster0
