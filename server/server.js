@@ -13,6 +13,9 @@ app.use(cors()) // Enable Cross-Origin Resource sharing
 app.use(express.json()) // Enables JSON request body parsing
 app.use(clerkMiddleware())
 
+// API to Listen Clerk Webhooks
+app.use("/api/clerk", clerkWebhooks)
+
 // Route Endpoint to check API Status
 app.get('/', (req, res) => {
     res.send("API Successfully connected")
