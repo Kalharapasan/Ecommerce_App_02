@@ -58,8 +58,8 @@ const AddProduct = () => {
   }
 
   return (
-    <div>
-      <form>
+    <div className='md:px-8 py-6 xl:py-8 m-1.5 sm:m-3 h-[97vh] overflow-y-scroll lg:w-11/12 bg-primary shadow rounded-xl'>
+      <form className='flex flex-col gap-y-3.5 px-2 text-sm w-full lg:w-11/12'>
 
         <div className='w-full'>
           <h5 className='h5'>Product Name</h5>
