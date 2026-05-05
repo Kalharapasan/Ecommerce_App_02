@@ -23,7 +23,7 @@ const App = () => {
 
   return (
     <main className='overflow-hidden text-tertiary'>
-      <Header />
+      {!isOwnerPath && <Header />}
       <Toaster position='bottom-right' />
       <Routes>
 
