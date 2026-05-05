@@ -132,10 +132,32 @@ const AddProduct = () => {
 
           </div>
 
+          {/* Images */}
+          <div className='flex gap-2 mt-2'>
+            {Object.keys(images).map((key) => (
+              <label
+                key={key}
+                htmlFor={`productImage${key}`}
+                className='ring-1 ring-slate-900/10 overflow-hidden rounded-lg'
+              >
+                <input
+                  onChange={(e) => setImages({ ...images, [key]: e.target.files[0] })}
+                  type="file"
+                  accept='image/*'
+                  id={`productImage${key}`}
+                  hidden
+                />
+                <div>
+                  <img
+                    src={images[key] ? URL.createObjectURL(images[key]) : assets.uploadIcon}
+                    alt=""
+                  />
+                </div>
+              </label>
+            ))}
+          </div>
+
         </div>
-
-
-
 
       </form>
     </div>
