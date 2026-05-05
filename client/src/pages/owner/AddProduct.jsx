@@ -58,7 +58,14 @@ const AddProduct = () => {
   }
 
   return (
-    <div>AddProduct</div>
+    <div>
+      <form>
+        <div className='w-full'>
+          <h5 className='h5'>Product Name</h5>
+          <input type="text" placeholder='Type here...' className='' />
+        </div>
+      </form>
+    </div>
   )
 
 
