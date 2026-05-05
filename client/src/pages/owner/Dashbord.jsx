@@ -35,7 +35,7 @@ export const Dashbord = () => {
         </div>
 
         <div>
-          <img src={assets.house} alt="" className='hidden sm:flex w-8' />
+          <img src={assets.dollar} alt="" className='hidden sm:flex w-8' />
           <div>
             <h4 className='h4'>{dashboardData?.totalOrders?.toString().padStart(2, "0")}</h4>
             <h5 className='h5 text-secondary'>Total Seles</h5>
