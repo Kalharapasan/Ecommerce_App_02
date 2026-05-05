@@ -37,7 +37,7 @@ export const Dashbord = () => {
         <div className='flexStart gap-7 p-5 bg-[#fff4d2] lg:min-w-56 rounded-xl'>
           <img src={assets.dollar} alt="" className='hidden sm:flex w-8' />
           <div>
-            <h4 className='h4'>{dashboardData?.totalRevenue || 0}</h4>
+            <h4 className='h4'>{currency}{dashboardData?.totalRevenue || 0}</h4>
             <h5 className='h5 text-secondary'>Total Earnings</h5>
           </div>
         </div>
