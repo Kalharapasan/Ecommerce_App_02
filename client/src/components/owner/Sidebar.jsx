@@ -84,7 +84,7 @@ const Sidebar = () => {
 
           </div>
         </div>
-        <div>
+        <div className="hidden md:flex items-center gap-3 md:bg-primary border-t border-slate-900/15 rounded-b-xl p-2 pl-5 lg:pl-10 md:mt-10">
           <UserButton
             appearance={{
               elements: {
