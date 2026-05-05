@@ -36,7 +36,7 @@ const Sidebar = () => {
       <div className="mx-auto max-w-[1440px] flex flex-col md:flex-row">
         {/* Sidebar */}
         <div className="max-md:flexCenter flex flex-col justify-between bg-primary sm:m-3 md:min-w-[20%] md:min-h-[97vh] rounded-xl shadow">
-          <div>
+          <div className="flex flex-col gap-y-6 max-md:items-center md:flex-col md:pt-5">
             {/* Logo */}
             <div className="flex flex-1 p-3 lg:pl-12">
               <Link to={"/"} className="flex items-end">
@@ -77,21 +77,21 @@ const Sidebar = () => {
           </div>
 
         </div>
-        </div>
-            <div>
-          <UserButton
-            appearance={{
-              elements: {
-                userButtonAvatarBox: {
-                  width: "42px",
-                  height: "42px",
-                },
+      </div>
+      <div>
+        <UserButton
+          appearance={{
+            elements: {
+              userButtonAvatarBox: {
+                width: "42px",
+                height: "42px",
               },
-            }}
-          />
-          <div>
-            {user?.firstName} {user?.lastName}
-          </div>
+            },
+          }}
+        />
+        <div>
+          {user?.firstName} {user?.lastName}
+        </div>
 
       </div>
     </div>
