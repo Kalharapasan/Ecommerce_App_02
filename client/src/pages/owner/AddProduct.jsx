@@ -20,6 +20,11 @@ const AddProduct = () => {
     popular: false,
   })
 
+  const [sizePrices, setSizePrices] = useState([])
+  const [newSize, setNewSize] = useState("")
+  const [newPrice, setNewPrice] = useState("")
+  const [loading, setLoading] = useState(false)
+
   return (
     <div>AddProduct</div>
   )
