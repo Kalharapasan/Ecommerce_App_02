@@ -8,11 +8,11 @@ import { useAppContext } from "../context/AppContext";
 const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false);
   const { openSignIn } = useClerk();
-  const {navigate,user,getCartCount,isOwner} = useAppContext();
+  const { navigate, user, getCartCount, isOwner } = useAppContext();
 
   const toggleMenu = () => setMenuOpened((prev) => !prev);
   const OrdersIcon = () => (
-  <svg
+    <svg
       xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
@@ -51,21 +51,19 @@ const Header = () => {
 
               setMenuOpened={setMenuOpened}
               containerStyles={`${menuOpened
-                  ? "flex items-start flex-col gap-y-8 fixed top-16 right-6 p-5 bg-white rounded-xl shadow-md w-52 z-50"
-                  : "hidden lg:flex gap-x-5 xl:gap-x-10 medium-15 bg-secondary/10 rounded-full p-1"
+                ? "flex items-start flex-col gap-y-8 fixed top-16 right-6 p-5 bg-white rounded-xl shadow-md w-52 z-50"
+                : "hidden lg:flex gap-x-5 xl:gap-x-10 medium-15 bg-secondary/10 rounded-full p-1"
                 }`}
             />
           </div>
 
           {/* Button and Profile */}
           <div className="flex flex-1 items-center sm:justify-end gap-x-4 sm:gap-x-8">
-            
+
             {isOwner && (
-              <div>
-                <button className="btn-outline px-2 py-1 text-xs font-semibold">
-                  Dashboard
-                </button>
-              </div>
+              <button onClick={() => navigate('/owner')} className="btn-outline px-2 py-1 text-xs font-semibold">
+                Dashboard
+              </button>
             )}
 
             {/* menu*/}
@@ -87,7 +85,7 @@ const Header = () => {
               />
             </div>
             {/* Cart */}
-            <div onClick={()=> navigate('/cart')}  className="relative cursor-pointer">
+            <div onClick={() => navigate('/cart')} className="relative cursor-pointer">
               <img src={assets.cartAdded} alt="" className="min-w-7" />
               <label className="absolute bottom-7 right-0 left-0 text-xs font-bold bg-secondary/15 flexCenter rounded-full">{getCartCount()}</label>
             </div>
@@ -100,10 +98,10 @@ const Header = () => {
                 {user ?
                   (
                     <UserButton appearance={{
-                      elements :{
-                        userButtonAvatarBox:{
-                          width:"42px",
-                          height:"42px"
+                      elements: {
+                        userButtonAvatarBox: {
+                          width: "42px",
+                          height: "42px"
                         }
                       }
                     }}>

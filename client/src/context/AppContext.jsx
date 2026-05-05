@@ -14,7 +14,7 @@ export const AppContextProvider = ({ children }) => {
     const [searchQuery, setSearchQuery] = useState("")
     const [cartItems, setCartItems] = useState({})
     const [method, setMethod] = useState("COD")
-    const [isOwner, setIsOwner] = useState(false)
+    const [isOwner, setIsOwner] = useState(true)
     const navigate = useNavigate()
     const currency = import.meta.env.VITE_CURRENCY
     const delivery_charges = 10; // 10 Dollars
