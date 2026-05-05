@@ -49,7 +49,7 @@ export const Dashbord = () => {
       {/* ALL Orders/Sales */}
       <div className='bg-primary mt-4'>
         {dashboardData.orders.map((order) => (
-          <div key={order._id}>
+          <div key={order._id} className='bg-white p-3 mb-4 rounded-2xl'>
 
             {/* Product List */}
             {order.items.map((item, idx) => (
