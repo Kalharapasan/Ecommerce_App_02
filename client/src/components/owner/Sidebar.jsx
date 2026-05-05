@@ -35,7 +35,7 @@ const Sidebar = () => {
     <div>
       <div className="mx-auto max-w-[1440px] flex flex-col md:flex-row">
         {/* Sidebar */}
-        <div>
+        <div className="max-md:flexCenter flex flex-col justify-between bg-primary sm:m-3 md:min-w-[20%] md:min-h-[97vh] rounded-xl shadow">
           <div>
             {/* Logo */}
             <div className="flex flex-1 p-3 lg:pl-12">
@@ -77,8 +77,8 @@ const Sidebar = () => {
           </div>
 
         </div>
-
-        <div>
+        </div>
+            <div>
           <UserButton
             appearance={{
               elements: {
@@ -92,8 +92,6 @@ const Sidebar = () => {
           <div>
             {user?.firstName} {user?.lastName}
           </div>
-        </div>
-
 
       </div>
     </div>
