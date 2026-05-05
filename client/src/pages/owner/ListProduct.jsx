@@ -4,8 +4,9 @@ import { useAppContext } from '../../context/AppContext'
 
 const ListProduct = () => {
 
-  
+  const { products, currency, fetchProducts } = useAppContext()
 
+  
   return (
     <div>ListProduct</div>
   )
