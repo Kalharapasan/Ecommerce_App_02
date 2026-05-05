@@ -90,7 +90,7 @@ const Sidebar = () => {
               },
             }}
           />
-          <div>
+          <div className="text-sm font-semibold text-gray-800 capitalize">
             {user?.firstName} {user?.lastName}
           </div>
         </div>
