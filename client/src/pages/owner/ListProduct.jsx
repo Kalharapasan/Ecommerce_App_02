@@ -21,7 +21,7 @@ const ListProduct = () => {
         </div>
         {/* Product list */}
         {products.map((product) => (
-          <div key={product._id} className=''>
+          <div key={product._id} className='grid grid-cols-[1fr_3.5fr_1.5fr_1.5fr_1fr] items-center gap-2 p-2 bg-white rounded-lg'>
             <img src={product.images[0]} alt="" className='w-12 bg-primary rounded' />
             <h5 className="text-sm font-semibold">{product.title}</h5>
             <p className="text-sm font-semibold">{product.category}</p>
