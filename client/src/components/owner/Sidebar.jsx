@@ -57,6 +57,9 @@ const Sidebar = () => {
                   },
                 }}
               />
+              <div>
+                {user?.firstName} {user?.lastName}
+              </div>
             </div>
           </div>
         </div>
