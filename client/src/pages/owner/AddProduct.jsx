@@ -66,7 +66,12 @@ const AddProduct = () => {
           <input type="text" placeholder='Type here...' className='px-3 py-1.5 ring-1 ring-slate-900/10 rounded-lg bg-white text-gray-600 medium-14 mt-1 w-full' />
         </div>
 
-        
+        <div className='w-full'>
+          <h5 className='h5'>Product Description</h5>
+          <input type="text" placeholder='Type here...' className='px-3 py-1.5 ring-1 ring-slate-900/10 rounded-lg bg-white text-gray-600 medium-14 mt-1 w-full' />
+        </div>
+
+
       </form>
     </div>
   )
