@@ -12,6 +12,14 @@ const AddProduct = () => {
     4: null,
   })
 
+  const [inputs, setInputs] = useState({
+    title: "",
+    description: "",
+    category: "",
+    type: "",
+    popular: false,
+  })
+
   return (
     <div>AddProduct</div>
   )
