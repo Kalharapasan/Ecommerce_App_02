@@ -27,6 +27,7 @@ const App = () => {
         <Route path='/cart' element={<Cart />} />
         <Route path='/my-orders' element={<MyOrders />} />
         <Route path='/address-form' element={<AddressForm />} />
+        <Route path="/owner" element={<Sidebar />}
 
       </Routes>
       <Footer/>
