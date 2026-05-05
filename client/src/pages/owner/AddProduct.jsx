@@ -60,7 +60,7 @@ const AddProduct = () => {
   return (
     <div>
       <form>
-        
+
         <div className='w-full'>
           <h5 className='h5'>Product Name</h5>
           <input type="text" placeholder='Type here...' className='px-3 py-1.5 ring-1 ring-slate-900/10 rounded-lg bg-white text-gray-600 medium-14 mt-1 w-full' />
@@ -68,7 +68,15 @@ const AddProduct = () => {
 
         <div className='w-full'>
           <h5 className='h5'>Product Description</h5>
-          <input type="text" placeholder='Type here...' className='px-3 py-1.5 ring-1 ring-slate-900/10 rounded-lg bg-white text-gray-600 medium-14 mt-1 w-full' />
+          <textarea type="text" placeholder='Type here...' className='px-3 py-1.5 ring-1 ring-slate-900/10 rounded-lg bg-white text-gray-600 medium-14 mt-1 w-full' />
+        </div>
+
+        <div className="flex gap-4 flex-wrap">
+          <div>
+            <select className='px-3 py-1.5 ring-1 ring-slate-900/10 rounded-lg bg-white text-gray-600 medium-14 mt-1 w-38'>
+              <option value=""></option>
+            </select>
+          </div>
         </div>
 
 
