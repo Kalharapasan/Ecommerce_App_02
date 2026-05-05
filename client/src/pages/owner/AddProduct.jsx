@@ -85,14 +85,16 @@ const AddProduct = () => {
           <div>
             <h5 className="h5">Types</h5>
             <select className='px-3 py-1.5 ring-1 ring-slate-900/10 rounded-lg bg-white text-gray-600 medium-14 mt-1 w-38'>
-              <option value="">Select Category</option>
-              {allCategories.map((cat, index) => (
-                <option key={index} value={cat}>{cat}</option>
+              <option value="">Select Type</option>
+              {allTypes.map((t, index) => (
+                <option key={index} value={t}>{t}</option>
               ))}
             </select>
           </div>
 
         </div>
+
+        
 
 
       </form>
