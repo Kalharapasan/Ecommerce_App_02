@@ -133,7 +133,8 @@ const AddProduct = () => {
             ))}
           </div>
 
-          {/* Images */}mt-5 border-t pt-5'>
+          {/* Images */}
+          <div className='mt-5 border-t pt-5'>
             <label className='h5 block mb-3'>Product Images</label>
             <div className='grid grid-cols-2 md:grid-cols-4 gap-3'>
               {Object.keys(images).map((key) => (
