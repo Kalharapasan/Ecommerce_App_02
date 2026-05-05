@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useAppContext } from '../../context/AppContext'
 import { assets } from '../../assets/data'
 import { Link, NavLink, Outlet } from 'react-router-dom'
-import { UserButton } from '@clerk/clerk-react'
+import { UserButton } from '@clerk/react'
 
 const Sidebar = () => {
   const { navigate, isOwner, user } = useAppContext()
@@ -26,7 +26,17 @@ const Sidebar = () => {
   ];
 
   return (
-    <div>Sidebar</div>
+    <div>
+      {navItems.map((item, index) => (
+        <NavLink
+          key={index}
+          to={item.path}
+          className="flex items-center gap-3 p-3 hover:bg-gray-100"
+        >
+          <img src={item.icon} alt={item.label} className="w-5 h-5" />
+          <span>{item.label}</span>
+        </NavLink>
+      ))}
+    </div>
   )
 }
-export default Sidebar
