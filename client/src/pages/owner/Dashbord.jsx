@@ -26,7 +26,7 @@ export const Dashbord = () => {
     <div className="p-5 md:p-8">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
 
-        <div className="flexStart gap-4 bg-primary rounded-2xl p-5 md:p-8 shadow-sm">
+        <div className='flexStart gap-7 p-5 bg-[#fff4d2] lg:min-w-56 rounded-xl'>
           <img src={assets.house} alt="" className='hidden sm:flex w-8' />
           <div>
             <h4 className='h4'>{dashboardData?.totalOrders?.toString().padStart(2, "0")}</h4>
@@ -34,11 +34,11 @@ export const Dashbord = () => {
           </div>
         </div>
 
-        <div className="flexStart gap-4 bg-primary rounded-2xl p-5 md:p-8 shadow-sm">
+        <div className='flexStart gap-7 p-5 bg-[#fff4d2] lg:min-w-56 rounded-xl'>
           <img src={assets.dollar} alt="" className='hidden sm:flex w-8' />
           <div>
             <h4 className='h4'>{dashboardData?.totalRevenue?.toString().padStart(2, "0")}</h4>
-            <h5 className='h5 text-secondary'>Total Earning</h5>
+            <h5 className='h5 text-secondary'>Total Earnings</h5>
           </div>
         </div>
 
