@@ -47,6 +47,10 @@ const AddProduct = () => {
       toast.error("Size already exists")
       return
     }
+    setSizePrices([...sizePrices, { size: newSize, price: parseFloat(newPrice) }])
+    setNewSize("")
+    setNewPrice("")
+
   }
 
   return (
