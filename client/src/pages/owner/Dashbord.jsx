@@ -28,7 +28,7 @@ export const Dashbord = () => {
         <div>
           <img src={assets.house} alt="" className='hidden sm:flex w-8' />
           <div>
-            <h4></h4>
+            <h4 className='h4'>{dashboardData?.totalOrders?.toString()}</h4>
           </div>
         </div>
       </div>
