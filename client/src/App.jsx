@@ -43,7 +43,8 @@ const App = () => {
         </Route>
 
       </Routes>
-      <Footer/>
+      {!isOwnerPath && <Footer />}
+      
     </main >
   )
 }
