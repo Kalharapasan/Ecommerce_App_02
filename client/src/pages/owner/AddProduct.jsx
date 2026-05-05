@@ -112,7 +112,7 @@ const AddProduct = () => {
               placeholder='Price'
               className='px-3 py-1.5 ring-1 ring-slate-900/10 rounded-lg bg-white text-gray-600 medium-14 w-32'
             />
-            <button type='button' onClick={addSizePrice}>Add</button>
+            <button type='button' onClick={addSizePrice} className='btn-secondary font-semibold p-1.5 rounded-lg'>Add</button>
           </div>
 
           <div className="mt-2">
@@ -145,6 +145,7 @@ const AddProduct = () => {
                   type="file"
                   accept='image/*'
                   id={`productImage${key}`}
+                  
                   hidden
                 />
                 <div>
@@ -160,7 +161,7 @@ const AddProduct = () => {
         </div>
         <div className="flex gap-2 mt-3">
           <h5 className="h5">Add to Popular</h5>
-          <input type="text" onChange={(e) => setInputs()} />
+          <input type="text" onChange={(e)=> setInputs({...inputs, propular: e.target.value})} />
           <input type="checkbox" />
         </div>
 
