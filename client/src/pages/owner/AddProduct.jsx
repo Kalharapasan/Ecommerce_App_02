@@ -53,6 +53,10 @@ const AddProduct = () => {
 
   }
 
+  const removeSizePrice = (size) => {
+    setSizePrices(sizePrices.filter((sp) => sp.size !== size))
+  }
+
   return (
     <div>AddProduct</div>
   )
