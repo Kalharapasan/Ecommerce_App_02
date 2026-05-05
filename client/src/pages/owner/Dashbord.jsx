@@ -4,6 +4,14 @@ import { assets, dummyDashboardData } from '../../assets/data'
 import toast from 'react-hot-toast'
 
 export const Dashbord = () => {
+
+  const {user, currency} = useAppContext()
+  const [dashboardData, setDashboardData] = useState({
+    orders: [],
+    totalOrders: 0,
+    totalRevenue: 0,
+  })
+
   return (
     <div>Dashbord</div>
   )
