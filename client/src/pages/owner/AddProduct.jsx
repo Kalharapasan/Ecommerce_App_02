@@ -114,6 +114,24 @@ const AddProduct = () => {
             />
             <button type='button' onClick={addSizePrice}>Add</button>
           </div>
+
+          <div className="mt-2">
+
+            {sizePrices.map((sp, index) => (
+              <div key={index}>
+                <span>{sp.size}: ${sp.price}</span>
+                <button
+                  type='button'
+                  onClick={() => removeSizePrice(sp.size)}
+                  className='text-red-500'
+                >
+                  Remove
+                </button>
+              </div>
+            ))}
+
+          </div>
+
         </div>
 
 
