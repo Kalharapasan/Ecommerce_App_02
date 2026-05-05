@@ -32,7 +32,24 @@ const Sidebar = () => {
   }, [isOwner])
 
   return (
-    <div>Sidebar</div>
+    <div>
+      <div>
+        {/* Sidebar */}
+        <div>
+          <div>
+            {/* Logo */}
+            <div className="flex flex-1 p-3 lg:pl-12">
+              <Link to={"/"} className="flex items-end">
+                <img src={assets.logoImg} alt="logoImg" className="h-11" />
+                <span className="bold-24 relative top-1 right-2">
+                  ogues
+                </span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
 export default Sidebar
