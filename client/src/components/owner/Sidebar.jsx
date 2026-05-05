@@ -62,6 +62,20 @@ const Sidebar = () => {
               </div>
             </div>
           </div>
+
+          <div>
+            {navItems.map((link) => (
+              <NavLink
+                key={link.label}
+                to={link.path}
+                end={link.path === "/owner"}
+              >
+                <img src={link.icon} alt={link.label} className="hidden md:block " width={18} />
+                {link.label}
+              </NavLink>
+            ))}
+          </div>
+
         </div>
       </div>
     </div>
