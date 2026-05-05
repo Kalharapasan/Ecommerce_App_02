@@ -20,6 +20,14 @@ const ListProduct = () => {
           <h5>InStock</h5>
         </div>
         {/* Product list */}
+        {products.map((product) => (
+          <div key={product._id} className=''>
+            <img src={product.images[0]} alt="" className='w-12 bg-primary rounded' />
+            <h5 className="text-sm font-semibold">{product.title}</h5>
+            <p className="text-sm font-semibold">{product.category}</p>
+            <div className="text-sm font-semibold">{product.price}</div>
+          </div>
+        ))}
 
       </div>
 
