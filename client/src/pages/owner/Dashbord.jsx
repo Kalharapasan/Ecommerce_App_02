@@ -51,7 +51,7 @@ export const Dashbord = () => {
         {dashboardData.orders.map((order) => (
           <div key={i}>
 
-
+            {/* Product List */}
             {order.items.map((item, idx) => (
               <div key={idx} className='text-gray-700 flex flex-col lg:flex-row gap-4 mb-3'>
                 <div className='flex flex-[2] gap-x-3'>
