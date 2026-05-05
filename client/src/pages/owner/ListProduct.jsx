@@ -6,9 +6,22 @@ const ListProduct = () => {
 
   const { products, currency, fetchProducts } = useAppContext()
 
-  
+
   return (
-    <div>ListProduct</div>
+    <div className=''>
+
+      <div>
+
+        <div>
+          <h5>Image</h5>
+          <h5>Title</h5>
+          <h5>Category</h5>
+          <h5>Category</h5>
+        </div>
+        
+      </div>
+
+    </div>
   )
 }
 
