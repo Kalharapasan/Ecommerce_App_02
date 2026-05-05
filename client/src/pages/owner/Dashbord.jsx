@@ -47,7 +47,7 @@ export const Dashbord = () => {
       </div>
 
       {/* ALL Orders/Sales */}
-      <div>
+      <div className='bg-primary mt-4'>
         {dashboardData.orders.map((order) => (
           <div key={order._id}>
 
