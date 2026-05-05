@@ -16,9 +16,11 @@ const ListProduct = () => {
           <h5>Image</h5>
           <h5>Title</h5>
           <h5>Category</h5>
-          <h5>Category</h5>
+          <h5>Price</h5>
+          <h5>InStock</h5>
         </div>
-        
+        {/* Product list */}
+
       </div>
 
     </div>
