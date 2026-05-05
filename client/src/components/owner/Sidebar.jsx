@@ -47,7 +47,7 @@ const Sidebar = () => {
                   </span>
                 </Link>
               </div>
-              <div>
+              <div className="md:hidden flex items-center gap-3 bg-primary rounded-b-xl p-2 pl-5 lg:pl-10 md:mt-10">
                 <UserButton
                   appearance={{
                     elements: {
