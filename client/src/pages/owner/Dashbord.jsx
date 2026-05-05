@@ -15,6 +15,12 @@ export const Dashbord = () => {
   const getDashboardData = () => {
     setDashboardData(dummyDashboardData)
   }
+  
+  useEffect(() => {
+    if (user) {
+      getDashboardData()
+    }
+  }, [user])
 
   return (
     <div>Dashbord</div>
