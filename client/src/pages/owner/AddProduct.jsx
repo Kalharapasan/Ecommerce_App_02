@@ -25,6 +25,19 @@ const AddProduct = () => {
   const [newPrice, setNewPrice] = useState("")
   const [loading, setLoading] = useState(false)
 
+  const allCategories = ["Hair Care", "Body Care", "Face Care"]
+  const allTypes = [
+    "Body-Spray",
+    "Cleanser",
+    "Hand-Wash",
+    "Lip-Product",
+    "Lotion",
+    "Oil",
+    "Perfume",
+    "Serum",
+    "Shampoo",
+  ]
+
   return (
     <div>AddProduct</div>
   )
