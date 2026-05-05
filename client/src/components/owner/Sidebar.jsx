@@ -33,7 +33,7 @@ const Sidebar = () => {
 
   return (
     <div>
-      <div>
+      <div className="mx-auto max-w-[1440px] flex flex-col md:flex-row">
         {/* Sidebar */}
         <div>
           <div>
