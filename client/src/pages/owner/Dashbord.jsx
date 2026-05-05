@@ -15,7 +15,7 @@ export const Dashbord = () => {
   const getDashboardData = () => {
     setDashboardData(dummyDashboardData)
   }
-  
+
   useEffect(() => {
     if (user) {
       getDashboardData()
@@ -23,6 +23,15 @@ export const Dashbord = () => {
   }, [user])
 
   return (
-    <div>Dashbord</div>
+    <div>
+      <div>
+        <div>
+          <img src={assets.house} alt="" className='hidden sm:flex w-8' />
+          <div>
+            <h4></h4>
+          </div>
+        </div>
+      </div>
+    </div>
   )
 }
