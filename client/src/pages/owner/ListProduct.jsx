@@ -25,7 +25,14 @@ const ListProduct = () => {
             <img src={product.images[0]} alt="" className='w-12 bg-primary rounded' />
             <h5 className="text-sm font-semibold">{product.title}</h5>
             <p className="text-sm font-semibold">{product.category}</p>
-            <div className="text-sm font-semibold">{product.price}</div>
+            <div className="text-sm font-semibold">{product.price[product.sizes[0]]}</div>
+            <div>
+
+              <label className=''>
+                <input type="checkbox" className='sr-only peer' defaultChecked={product.inStock} />
+              </label>
+
+            </div>
           </div>
         ))}
 
