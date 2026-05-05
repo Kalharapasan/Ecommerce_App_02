@@ -46,7 +46,7 @@ const Sidebar = () => {
                     ogues
                   </span>
                 </Link>
-              </div>
+              </div >
               <div className="md:hidden flex items-center gap-3 bg-primary rounded-b-xl p-2 pl-5 lg:pl-10 md:mt-10">
                 <UserButton
                   appearance={{
@@ -64,7 +64,7 @@ const Sidebar = () => {
               </div>
             </div>
 
-            <div>
+            <div className="flex md:flex-col md:gap-x-5 gap-y-8 md:mt-4">
               {navItems.map((link) => (
                 <NavLink
                   key={link.label}
