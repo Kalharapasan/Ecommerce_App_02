@@ -148,7 +148,7 @@ const AddProduct = () => {
                   
                   hidden
                 />
-                <div>
+                <div className='h-16 w-22 bg-white flexCenter'>
                   <img
                     src={images[key] ? URL.createObjectURL(images[key]) : assets.uploadIcon}
                     alt=""
