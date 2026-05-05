@@ -49,7 +49,7 @@ export const Dashbord = () => {
       {/* ALL Orders/Sales */}
       <div>
         {dashboardData.orders.map((order) => (
-          <div key={i}>
+          <div key={order._id}>
 
             {/* Product List */}
             {order.items.map((item, idx) => (
