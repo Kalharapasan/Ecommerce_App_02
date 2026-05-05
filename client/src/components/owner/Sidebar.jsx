@@ -38,7 +38,7 @@ const Sidebar = () => {
         <div className="max-md:flexCenter flex flex-col justify-between bg-primary sm:m-3 md:min-w-[20%] md:min-h-[97vh] rounded-xl shadow">
           <div className="flex flex-col gap-y-6 max-md:items-center md:flex-col md:pt-5">
             {/* Logo */}
-            <div >
+            <div className="w-full flex justify-between md:flex-col">
               <div className="flex flex-1 p-3 lg:pl-12">
                 <Link to={"/"} className="flex items-end">
                   <img src={assets.logoImg} alt="logoImg" className="h-11" />
