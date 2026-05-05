@@ -71,7 +71,7 @@ const Sidebar = () => {
                 end={link.path === "/owner"}
               >
                 <img src={link.icon} alt={link.label} className="hidden md:block " width={18} />
-                {link.label}
+                <div>{link.label}</div>
               </NavLink>
             ))}
           </div>
