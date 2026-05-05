@@ -8,7 +8,7 @@ const ListProduct = () => {
 
 
   return (
-    <div className=''>
+    <div className='px-2 sm:px-6 py-12 m-2 h-[97vh] bg-primary overflow-y-scroll lg:w-11/12 rounded-xl'>
 
       <div>
 
@@ -30,6 +30,8 @@ const ListProduct = () => {
 
               <label className=''>
                 <input type="checkbox" className='sr-only peer' defaultChecked={product.inStock} />
+                <div className='' />
+                <span className=''/>
               </label>
 
             </div>
