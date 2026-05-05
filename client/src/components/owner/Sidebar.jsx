@@ -25,18 +25,14 @@ const Sidebar = () => {
     },
   ];
 
+  useEffect(() => {
+    if (!isOwner) {
+      navigate("/")
+    }
+  }, [isOwner])
+
   return (
-    <div>
-      {navItems.map((item, index) => (
-        <NavLink
-          key={index}
-          to={item.path}
-          className="flex items-center gap-3 p-3 hover:bg-gray-100"
-        >
-          <img src={item.icon} alt={item.label} className="w-5 h-5" />
-          <span>{item.label}</span>
-        </NavLink>
-      ))}
-    </div>
+    <div>Sidebar</div>
   )
 }
+export default Sidebar
