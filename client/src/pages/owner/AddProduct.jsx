@@ -158,6 +158,11 @@ const AddProduct = () => {
           </div>
 
         </div>
+        <div className="flex gap-2 mt-3">
+          <h5 className="h5">Add to Popular</h5>
+          <input type="text" onChange={(e) => setInputs()} />
+          <input type="checkbox" />
+        </div>
 
       </form>
     </div>
