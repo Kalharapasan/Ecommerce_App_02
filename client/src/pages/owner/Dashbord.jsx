@@ -34,7 +34,7 @@ export const Dashbord = () => {
           </div>
         </div>
 
-        <div className='flexStart gap-7 p-5 bg-[#fff4d2] lg:min-w-56 rounded-xl'>
+        <div className='flexStart gap-7 p-5 bg-[#d2fff0] lg:min-w-56 rounded-xl'>
           <img src={assets.dollar} alt="" className='hidden sm:flex w-8' />
           <div>
             <h4 className='h4'>{currency}{dashboardData?.totalRevenue || 0}</h4>
