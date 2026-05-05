@@ -94,7 +94,19 @@ const AddProduct = () => {
 
         </div>
 
-        
+        {/* Size and Price Pairs */}
+        <div className='w-full mt-4'>
+          <h5 className='h5'>Sizes and Prices</h5>
+          <div className='flex gap-4 mt-2'>
+            <input
+              type="text"
+              placeholder='Size (e.g. 50ml)'
+              className='px-3 py-1.5 ring-1 ring-slate-900/10 rounded-lg bg-white text-gray-600 medium-14 mt-1 w-full'
+            />
+          </div>
+        </div>
+
+
 
 
       </form>
