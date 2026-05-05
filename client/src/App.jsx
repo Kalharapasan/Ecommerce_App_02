@@ -17,6 +17,10 @@ import AddProduct from './pages/owner/AddProduct'
 import ListProduct from './pages/owner/ListProduct'
 
 const App = () => {
+
+  const location = useLocation()
+  const isOwnerPath = location.pathname.includes('owner')
+
   return (
     <main className='overflow-hidden text-tertiary'>
       <Header />
