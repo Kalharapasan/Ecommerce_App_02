@@ -145,7 +145,7 @@ const AddProduct = () => {
                   type="file"
                   accept='image/*'
                   id={`productImage${key}`}
-                  
+
                   hidden
                 />
                 <div className='h-16 w-22 bg-white flexCenter'>
@@ -159,11 +159,14 @@ const AddProduct = () => {
           </div>
 
         </div>
+
         <div className="flex gap-2 mt-3">
           <h5 className="h5">Add to Popular</h5>
-          <input type="text" onChange={(e)=> setInputs({...inputs, propular: e.target.value})} />
-          <input type="checkbox" />
+          <input type="text" onChange={(e) => setInputs({ ...inputs, propular: e.target.checked })} />
         </div>
+        <button type="submit" disabled={loading} className='btn-secondary font-semibold mt-3 p-2 max-w-36 sm:w-full rounded-xl'>
+          {loading ? "Adding" : "Add Product"}
+        </button>
 
       </form>
     </div>
