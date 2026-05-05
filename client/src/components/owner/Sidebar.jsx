@@ -70,6 +70,11 @@ const Sidebar = () => {
                   key={link.label}
                   to={link.path}
                   end={link.path === "/owner"}
+                  className={({ isActive }) =>
+                    isActive
+                      ? "flexStart gap-x-2 p-5 lg:pl-12 bold-13 sm:!text-sm cursor-pointer h-10 bg-secondary/10 max-md:border-b-4 md:border-r-4 border-secondary"
+                      : "flexStart gap-x-2 lg:pl-12 p-5 bold-13 sm:!text-sm cursor-pointer h-10 rounded-xl"
+                  }
                 >
                   <img src={link.icon} alt={link.label} className="hidden md:block " width={18} />
                   <div>{link.label}</div>
