@@ -77,6 +77,24 @@ const Sidebar = () => {
           </div>
 
         </div>
+
+        <div>
+          <UserButton
+            appearance={{
+              elements: {
+                userButtonAvatarBox: {
+                  width: "42px",
+                  height: "42px",
+                },
+              },
+            }}
+          />
+          <div>
+            {user?.firstName} {user?.lastName}
+          </div>
+        </div>
+
+
       </div>
     </div>
   )
