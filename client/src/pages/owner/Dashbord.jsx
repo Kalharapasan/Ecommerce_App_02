@@ -23,22 +23,22 @@ export const Dashbord = () => {
   }, [user])
 
   return (
-    <div>
-      <div>
+    <div className="p-5 md:p-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
 
-        <div>
+        <div className="flexStart gap-4 bg-primary rounded-2xl p-5 md:p-8 shadow-sm">
           <img src={assets.house} alt="" className='hidden sm:flex w-8' />
           <div>
             <h4 className='h4'>{dashboardData?.totalOrders?.toString().padStart(2, "0")}</h4>
-            <h5 className='h5 text-secondary'>Total Seles</h5>
+            <h5 className='h5 text-secondary'>Total Orders</h5>
           </div>
         </div>
 
-        <div>
+        <div className="flexStart gap-4 bg-primary rounded-2xl p-5 md:p-8 shadow-sm">
           <img src={assets.dollar} alt="" className='hidden sm:flex w-8' />
           <div>
-            <h4 className='h4'>{dashboardData?.totalOrders?.toString().padStart(2, "0")}</h4>
-            <h5 className='h5 text-secondary'>Total Seles</h5>
+            <h4 className='h4'>{dashboardData?.totalRevenue?.toString().padStart(2, "0")}</h4>
+            <h5 className='h5 text-secondary'>Total Earning</h5>
           </div>
         </div>
 
