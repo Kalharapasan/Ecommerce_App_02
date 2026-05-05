@@ -155,25 +155,22 @@ const AddProduct = () => {
                   </div>
                 </label>
               ))}
-            </div>/label>
-            ))}
+            </div>
           </div>
-items-center gap-3 mt-5 border-t pt-5">
+        </div>
+
+        <div className="flex items-center gap-3 mt-5 border-t pt-5">
           <input type="checkbox" id="popular" onChange={(e) => setInputs({ ...inputs, propular: e.target.checked })} className='w-4 h-4 cursor-pointer' />
           <label htmlFor="popular" className="h5 cursor-pointer">Add to Popular</label>
         </div>
+
         <button type="submit" disabled={loading} className='btn-secondary font-semibold mt-6 px-6 py-3 rounded-lg w-full sm:w-auto'>
-          {loading ? "Adding...box" onChange={(e) => setInputs({ ...inputs, propular: e.target.checked })} />
-        </div>
-        <button type="submit" disabled={loading} className='btn-secondary font-semibold mt-3 p-2 max-w-36 sm:w-full rounded-xl'>
-          {loading ? "Adding" : "Add Product"}
+          {loading ? "Adding..." : "Add Product"}
         </button>
 
       </form>
     </div>
   )
-
-
 }
 
 export default AddProduct
