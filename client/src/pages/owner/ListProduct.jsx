@@ -28,7 +28,7 @@ const ListProduct = () => {
             <div className="text-sm font-semibold">{product.price[product.sizes[0]]}</div>
             <div>
 
-              <label className=''>
+              <label className='relative inline-flex items-center cursor-pointer text-gray-900 gap-3'>
                 <input type="checkbox" className='sr-only peer' defaultChecked={product.inStock} />
                 <div className='' />
                 <span className=''/>
