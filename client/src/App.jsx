@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from "./components/Header"
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useLocation } from 'react-router-dom'
 import Home from './pages/Home'
 import Collection from './pages/Collection'
 import Footer from './components/Footer'
