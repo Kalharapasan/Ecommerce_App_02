@@ -25,13 +25,23 @@ export const Dashbord = () => {
   return (
     <div>
       <div>
+
         <div>
           <img src={assets.house} alt="" className='hidden sm:flex w-8' />
           <div>
-            <h4 className='h4'>{dashboardData?.totalOrders?.toString().padStart(2,"0")}</h4>
-            <h5 className='h5 text-secondary'></h5>
+            <h4 className='h4'>{dashboardData?.totalOrders?.toString().padStart(2, "0")}</h4>
+            <h5 className='h5 text-secondary'>Total Seles</h5>
           </div>
         </div>
+
+        <div>
+          <img src={assets.house} alt="" className='hidden sm:flex w-8' />
+          <div>
+            <h4 className='h4'>{dashboardData?.totalOrders?.toString().padStart(2, "0")}</h4>
+            <h5 className='h5 text-secondary'>Total Seles</h5>
+          </div>
+        </div>
+
       </div>
     </div>
   )
