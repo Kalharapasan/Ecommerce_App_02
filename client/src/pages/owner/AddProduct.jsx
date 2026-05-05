@@ -38,6 +38,17 @@ const AddProduct = () => {
     "Shampoo",
   ]
 
+  const addSizePrice = () => {
+    if (!newSize || !newPrice) {
+      toast.error("Please enter size and price")
+      return
+    }
+    if (sizePrices.some((sp) => sp.size === newSize)) {
+      toast.error("Size already exists")
+      return
+    }
+  }
+
   return (
     <div>AddProduct</div>
   )
