@@ -30,7 +30,7 @@ const ListProduct = () => {
 
               <label className='relative inline-flex items-center cursor-pointer text-gray-900 gap-3'>
                 <input type="checkbox" className='sr-only peer' defaultChecked={product.inStock} />
-                <div className='' />
+                <div className='w-10 h-6 bg-slate-300 rounded-full peer peer-checked:bg-secondary transition-colors duration-200' />
                 <span className=''/>
               </label>
 
