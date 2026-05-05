@@ -46,6 +46,18 @@ const Sidebar = () => {
                 </span>
               </Link>
             </div>
+            <div>
+              <UserButton
+                appearance={{
+                  elements: {
+                    userButtonAvatarBox: {
+                      width: "42px",
+                      height: "42px",
+                    },
+                  },
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>
