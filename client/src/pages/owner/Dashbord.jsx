@@ -28,7 +28,8 @@ export const Dashbord = () => {
         <div>
           <img src={assets.house} alt="" className='hidden sm:flex w-8' />
           <div>
-            <h4 className='h4'>{dashboardData?.totalOrders?.toString()}</h4>
+            <h4 className='h4'>{dashboardData?.totalOrders?.toString().padStart(2,"0")}</h4>
+            <h5 className='h5 text-secondary'></h5>
           </div>
         </div>
       </div>
