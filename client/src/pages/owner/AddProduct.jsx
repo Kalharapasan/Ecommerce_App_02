@@ -114,7 +114,7 @@ const AddProduct = () => {
         }
       })
 
-      const {data} = await axios.post("/api/products", formData)
+      const {data} = await axios.post("/api/products", formData, {headers: {Authorization: `Bearer ${await getToken()}`}})
 
 
     } catch (error) {
