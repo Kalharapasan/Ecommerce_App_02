@@ -120,8 +120,13 @@ const AddProduct = () => {
         toast.success(data.message)
         //Reset form after success
         setInputs({
-          
+          title: "",
+          description: "",
+          category: "",
+          type: "",
+          popular: false,
         })
+        setSizePrices([])
       }
 
 
