@@ -34,5 +34,11 @@ cloudinary.config({
 
 async function bulkUpload() {
 
+    try {
+        
+    } catch (error) {
+        
+    }
+
 }
 bulkUpload();
