@@ -113,6 +113,8 @@ const AddProduct = () => {
         }
       })
 
+      const {data} = await axios
+
 
     } catch (error) {
       console.log(error);
