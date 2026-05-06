@@ -727,7 +727,7 @@ async function bulkUpload() {
     try {
 
         // Connect to MongoDB
-        await mongoose.connect(`${process.env.MONGO_URI}`); // Or your full URI
+        await mongoose.connect(`${process.env.MONGO_URL}`); // Or your full URI
 
         for (const prod of dummyProducts) {
             // Upload images to Cloudinary
