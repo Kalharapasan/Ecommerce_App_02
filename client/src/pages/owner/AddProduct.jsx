@@ -187,7 +187,11 @@ const AddProduct = () => {
 
           <div>
             <label className="h5 block mb-2">Types</label>
-            <select className='px-4 py-2.5 ring-1 ring-slate-900/10 rounded-lg bg-white text-gray-600 medium-14 w-full focus:outline-none focus:ring-2 focus:ring-secondary'>
+            <select
+              onChange={(e) => setInputs({ ...inputs, type: e.target.value })}
+              value={inputs.type}
+              className='px-4 py-2.5 ring-1 ring-slate-900/10 rounded-lg bg-white text-gray-600 medium-14 w-full focus:outline-none focus:ring-2 focus:ring-secondary'
+            >
               <option value="">Select Type</option>
               {allTypes.map((t, index) => (
                 <option key={index} value={t}>{t}</option>
