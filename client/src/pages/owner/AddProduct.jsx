@@ -67,6 +67,8 @@ const AddProduct = () => {
       !inputs.type
     ) {
       // Handle error or return here
+      toast.error("Please fill all required fields")
+      return;
     }
   }
 
