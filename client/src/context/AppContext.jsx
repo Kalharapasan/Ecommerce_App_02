@@ -90,6 +90,8 @@ export const AppContextProvider = ({ children }) => {
             const { data } = await axios.get('/api/products')
             if (data.success) {
                 setProducts(data.products);
+            }else{
+                toast.error(data.message)
             }
 
         } catch (error) {
