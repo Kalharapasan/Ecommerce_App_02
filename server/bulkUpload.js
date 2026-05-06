@@ -35,9 +35,12 @@ cloudinary.config({
 async function bulkUpload() {
 
     try {
-        
+
+        // Connect to MongoDB
+        await mongoose.connect(`${process.env.MONGO_URI}`); // Or your full URI
+
     } catch (error) {
-        
+
     }
 
 }
