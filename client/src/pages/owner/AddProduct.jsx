@@ -70,6 +70,13 @@ const AddProduct = () => {
       toast.error("Please fill all required fields")
       return;
     }
+
+    if (sizePrices.length === 0) {
+      toast.error("Please add at least one size and price");
+      return;
+    }
+
+
   }
 
 
