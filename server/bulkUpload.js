@@ -39,9 +39,21 @@ async function bulkUpload() {
         // Connect to MongoDB
         await mongoose.connect(`${process.env.MONGO_URI}`); // Or your full URI
 
-    } catch (error) {
+        for (const prod of dummyProducts) {
+            // Upload images to Cloudinary
+            const imagesUrl = await Promise.all(
+                prod.images.map(async (filename) => {
+                    const filePath = path.join(__dirname, "images", filename);
+                    const result = await cloudinary.uploader.upload(filePath, {
+                        resource_type: "image",
+                    });
+                    return result.secure_url;
+                })
+            );
+
+        } catch (error) {
+
+        }
 
     }
-
-}
 bulkUpload();
