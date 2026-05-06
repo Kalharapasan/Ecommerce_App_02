@@ -66,9 +66,14 @@ async function bulkUpload() {
         }
         console.log("All products uploaded successfully!");
 
-    } catch (error) {
+    } catch (err) {
 
+        console.error("Error:", err.message);
+    } finally {
+        mongoose.disconnect();
     }
 
 }
+
+
 bulkUpload();
