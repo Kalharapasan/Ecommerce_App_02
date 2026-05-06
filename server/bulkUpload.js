@@ -12,7 +12,7 @@ const __dirname = dirname(__filename);
 // Your dummyProducts array (update images to file names like 'product_1.png')
 const dummyProducts = [
     {
-        
+
         title: "Argan Hair Oil",
         images: [product_1],
         price: { "50ml": 15, "100ml": 25, "200ml": 40 },
@@ -21,12 +21,11 @@ const dummyProducts = [
         category: "Hair Care",
         type: "Oil",
         sizes: ["50ml", "100ml", "200ml"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-        
+
         title: "Coconut Body Oil",
         images: [product_2_1, product_2_2, product_2_3, product_2_4],
         price: { "100ml": 20, "200ml": 35, "400ml": 50 },
@@ -35,12 +34,11 @@ const dummyProducts = [
         category: "Body Care",
         type: "Oil",
         sizes: ["100ml", "200ml", "400ml"],
-        date: 1716634345448,
         popular: true,
         inStock: true,
     },
     {
-        
+
         title: "Jojoba Face Oil",
         images: [product_3],
         price: { "30ml": 25, "50ml": 40, "100ml": 60 },
@@ -49,12 +47,11 @@ const dummyProducts = [
         category: "Face Care",
         type: "Oil",
         sizes: ["30ml", "50ml", "100ml"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-       
+
         title: "Tea Tree Hair Oil",
         images: [product_4],
         price: { "50ml": 18, "100ml": 30, "200ml": 45 },
@@ -63,12 +60,11 @@ const dummyProducts = [
         category: "Hair Care",
         type: "Oil",
         sizes: ["50ml", "100ml", "200ml"],
-        date: 1716634345448,
         popular: true,
         inStock: true,
     },
     {
-        
+
         title: "Almond Body Oil",
         images: [product_5],
         price: { "100ml": 22, "200ml": 38, "400ml": 55 },
@@ -77,12 +73,11 @@ const dummyProducts = [
         category: "Body Care",
         type: "Oil",
         sizes: ["100ml", "200ml", "400ml"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-        
+
         title: "Rosehip Face Oil",
         images: [product_6],
         price: { "30ml": 28, "50ml": 45, "100ml": 65 },
@@ -91,12 +86,11 @@ const dummyProducts = [
         category: "Face Care",
         type: "Oil",
         sizes: ["30ml", "50ml", "100ml"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-      
+
         title: "Castor Hair Oil",
         images: [product_7],
         price: { "50ml": 12, "100ml": 20, "200ml": 35 },
@@ -105,12 +99,11 @@ const dummyProducts = [
         category: "Hair Care",
         type: "Oil",
         sizes: ["50ml", "100ml", "200ml"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-        
+
         title: "Lavender Body Oil",
         images: [product_8],
         price: { "100ml": 25, "200ml": 40, "400ml": 60 },
@@ -119,12 +112,11 @@ const dummyProducts = [
         category: "Body Care",
         type: "Oil",
         sizes: ["100ml", "200ml", "400ml"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-        
+
         title: "Vitamin C Face Oil",
         images: [product_9],
         price: { "30ml": 30, "50ml": 50, "100ml": 75 },
@@ -133,12 +125,11 @@ const dummyProducts = [
         category: "Face Care",
         type: "Oil",
         sizes: ["30ml", "50ml", "100ml"],
-        date: 1716634345448,
         popular: true,
         inStock: true,
     },
     {
-       
+
         title: "Citrus Burst Perfume",
         images: [product_10],
         price: { "50ml": 40, "100ml": 60, "200ml": 85 },
@@ -147,12 +138,11 @@ const dummyProducts = [
         category: "Body Care",
         type: "Perfume",
         sizes: ["50ml", "100ml", "200ml"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-        
+
         title: "Floral Dream Perfume",
         images: [product_11],
         price: { "50ml": 45, "100ml": 65, "200ml": 90 },
@@ -161,12 +151,11 @@ const dummyProducts = [
         category: "Body Care",
         type: "Perfume",
         sizes: ["50ml", "100ml", "200ml"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-        
+
         title: "Woody Spice Perfume",
         images: [product_12],
         price: { "50ml": 35, "100ml": 55, "200ml": 80 },
@@ -175,12 +164,11 @@ const dummyProducts = [
         category: "Body Care",
         type: "Perfume",
         sizes: ["50ml", "100ml", "200ml"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-       
+
         title: "Ocean Breeze Perfume",
         images: [product_13],
         price: { "50ml": 42, "100ml": 62, "200ml": 88 },
@@ -189,12 +177,11 @@ const dummyProducts = [
         category: "Body Care",
         type: "Perfume",
         sizes: ["50ml", "100ml", "200ml"],
-        date: 1716634345448,
         popular: true,
         inStock: true,
     },
     {
-        
+
         title: "Vanilla Musk Perfume",
         images: [product_14],
         price: { "50ml": 38, "100ml": 58, "200ml": 82 },
@@ -203,12 +190,11 @@ const dummyProducts = [
         category: "Body Care",
         type: "Perfume",
         sizes: ["50ml", "100ml", "200ml"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-        
+
         title: "Spicy Amber Perfume",
         images: [product_15],
         price: { "50ml": 44, "100ml": 64, "200ml": 89 },
@@ -217,12 +203,11 @@ const dummyProducts = [
         category: "Body Care",
         type: "Perfume",
         sizes: ["50ml", "100ml", "200ml"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-        
+
         title: "Fresh Mint Perfume",
         images: [product_16],
         price: { "50ml": 36, "100ml": 56, "200ml": 81 },
@@ -231,12 +216,11 @@ const dummyProducts = [
         category: "Body Care",
         type: "Perfume",
         sizes: ["50ml", "100ml", "200ml"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-        
+
         title: "Exotic Oud Perfume",
         images: [product_17],
         price: { "50ml": 48, "100ml": 70, "200ml": 95 },
@@ -245,12 +229,11 @@ const dummyProducts = [
         category: "Body Care",
         type: "Perfume",
         sizes: ["50ml", "100ml", "200ml"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-        
+
         title: "Berry Bliss Perfume",
         images: [product_18],
         price: { "50ml": 39, "100ml": 59, "200ml": 84 },
@@ -259,12 +242,11 @@ const dummyProducts = [
         category: "Body Care",
         type: "Perfume",
         sizes: ["50ml", "100ml", "200ml"],
-        date: 1716634345448,
         popular: true,
         inStock: true,
     },
     {
-        
+
         title: "Hyaluronic Acid Serum",
         images: [product_19],
         price: { "30ml": 25, "50ml": 40, "100ml": 60 },
@@ -273,12 +255,11 @@ const dummyProducts = [
         category: "Face Care",
         type: "Serum",
         sizes: ["30ml", "50ml", "100ml"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-        
+
         title: "Vitamin C Brightening Serum",
         images: [product_20],
         price: { "30ml": 28, "50ml": 45, "100ml": 65 },
@@ -287,12 +268,11 @@ const dummyProducts = [
         category: "Face Care",
         type: "Serum",
         sizes: ["30ml", "50ml", "100ml"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-       
+
         title: "Retinol Anti-Aging Serum",
         images: [product_21],
         price: { "30ml": 30, "50ml": 50, "100ml": 70 },
@@ -301,12 +281,11 @@ const dummyProducts = [
         category: "Face Care",
         type: "Serum",
         sizes: ["30ml", "50ml", "100ml"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-        
+
         title: "Niacinamide Balancing Serum",
         images: [product_22],
         price: { "30ml": 22, "50ml": 35, "100ml": 55 },
@@ -315,12 +294,11 @@ const dummyProducts = [
         category: "Face Care",
         type: "Serum",
         sizes: ["30ml", "50ml", "100ml"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-        
+
         title: "Peptide Firming Serum",
         images: [product_23],
         price: { "30ml": 32, "50ml": 52, "100ml": 75 },
@@ -329,12 +307,11 @@ const dummyProducts = [
         category: "Face Care",
         type: "Serum",
         sizes: ["30ml", "50ml", "100ml"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-        
+
         title: "Volumizing Shampoo",
         images: [product_24],
         price: { "200ml": 15, "400ml": 25, "750ml": 40 },
@@ -343,12 +320,11 @@ const dummyProducts = [
         category: "Hair Care",
         type: "Shampoo",
         sizes: ["200ml", "400ml", "750ml"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-        
+
         title: "Moisturizing Shampoo",
         images: [product_25],
         price: { "200ml": 18, "400ml": 30, "750ml": 45 },
@@ -357,12 +333,11 @@ const dummyProducts = [
         category: "Hair Care",
         type: "Shampoo",
         sizes: ["200ml", "400ml", "750ml"],
-        date: 1716634345448,
         popular: true,
         inStock: true,
     },
     {
-        
+
         title: "Clarifying Shampoo",
         images: [product_26],
         price: { "200ml": 20, "400ml": 35, "750ml": 50 },
@@ -371,12 +346,11 @@ const dummyProducts = [
         category: "Hair Care",
         type: "Shampoo",
         sizes: ["200ml", "400ml", "750ml"],
-        date: 1716634345448,
         popular: true,
         inStock: true,
     },
     {
-        
+
         title: "Anti-Dandruff Shampoo",
         images: [product_27],
         price: { "200ml": 16, "400ml": 28, "750ml": 42 },
@@ -385,12 +359,11 @@ const dummyProducts = [
         category: "Hair Care",
         type: "Shampoo",
         sizes: ["200ml", "400ml", "750ml"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-       
+
         title: "Color-Protect Shampoo",
         images: [product_28],
         price: { "200ml": 19, "400ml": 32, "750ml": 48 },
@@ -399,12 +372,11 @@ const dummyProducts = [
         category: "Hair Care",
         type: "Shampoo",
         sizes: ["200ml", "400ml", "750ml"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-       
+
         title: "Fresh Citrus Body Spray",
         images: [product_29],
         price: { "150ml": 12, "250ml": 20, "500ml": 35 },
@@ -413,12 +385,11 @@ const dummyProducts = [
         category: "Body Care",
         type: "Body-Spray",
         sizes: ["150ml", "250ml", "500ml"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-        
+
         title: "Cool Mint Body Spray",
         images: [product_30],
         price: { "150ml": 14, "250ml": 22, "500ml": 38 },
@@ -427,12 +398,11 @@ const dummyProducts = [
         category: "Body Care",
         type: "Body-Spray",
         sizes: ["150ml", "250ml", "500ml"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-        
+
         title: "Vanilla Dream Body Spray",
         images: [product_31],
         price: { "150ml": 13, "250ml": 21, "500ml": 36 },
@@ -441,12 +411,11 @@ const dummyProducts = [
         category: "Body Care",
         type: "Body-Spray",
         sizes: ["150ml", "250ml", "500ml"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-        
+
         title: "Ocean Wave Body Spray",
         images: [product_32],
         price: { "150ml": 15, "250ml": 25, "500ml": 40 },
@@ -455,12 +424,11 @@ const dummyProducts = [
         category: "Body Care",
         type: "Body-Spray",
         sizes: ["150ml", "250ml", "500ml"],
-        date: 1716634345448,
         popular: true,
         inStock: true,
     },
     {
-       
+
         title: "Berry Fresh Body Spray",
         images: [product_33],
         price: { "150ml": 11, "250ml": 18, "500ml": 32 },
@@ -469,12 +437,11 @@ const dummyProducts = [
         category: "Body Care",
         type: "Body-Spray",
         sizes: ["150ml", "250ml", "500ml"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-       
+
         title: "Gentle Foaming Cleanser",
         images: [product_34],
         price: { "100ml": 15, "200ml": 25, "400ml": 40 },
@@ -483,12 +450,11 @@ const dummyProducts = [
         category: "Face Care",
         type: "Cleanser",
         sizes: ["100ml", "200ml", "400ml"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-       
+
         title: "Oil-Control Cleanser",
         images: [product_35],
         price: { "100ml": 18, "200ml": 30, "400ml": 45 },
@@ -497,12 +463,11 @@ const dummyProducts = [
         category: "Face Care",
         type: "Cleanser",
         sizes: ["100ml", "200ml", "400ml"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-        
+
         title: "Hydrating Milk Cleanser",
         images: [product_36],
         price: { "100ml": 20, "200ml": 35, "400ml": 50 },
@@ -511,12 +476,11 @@ const dummyProducts = [
         category: "Face Care",
         type: "Cleanser",
         sizes: ["100ml", "200ml", "400ml"],
-        date: 1716634345448,
         popular: true,
         inStock: true,
     },
     {
-        
+
         title: "Exfoliating Gel Cleanser",
         images: [product_37],
         price: { "100ml": 22, "200ml": 38, "400ml": 55 },
@@ -525,12 +489,11 @@ const dummyProducts = [
         category: "Face Care",
         type: "Cleanser",
         sizes: ["100ml", "200ml", "400ml"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-        
+
         title: "Micellar Water Cleanser",
         images: [product_38],
         price: { "100ml": 16, "200ml": 28, "400ml": 42 },
@@ -539,12 +502,11 @@ const dummyProducts = [
         category: "Face Care",
         type: "Cleanser",
         sizes: ["100ml", "200ml", "400ml"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-      
+
         title: "Antibacterial Hand Wash",
         images: [product_39],
         price: { "250ml": 10, "500ml": 18, "1000ml": 30 },
@@ -553,12 +515,11 @@ const dummyProducts = [
         category: "Body Care",
         type: "Hand-Wash",
         sizes: ["250ml", "500ml", "1000ml"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-        
+
         title: "Moisturizing Hand Wash",
         images: [product_40],
         price: { "250ml": 12, "500ml": 20, "1000ml": 35 },
@@ -567,12 +528,11 @@ const dummyProducts = [
         category: "Body Care",
         type: "Hand-Wash",
         sizes: ["250ml", "500ml", "1000ml"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-        
+
         title: "Citrus Scented Hand Wash",
         images: [product_41],
         price: { "250ml": 11, "500ml": 19, "1000ml": 32 },
@@ -581,12 +541,11 @@ const dummyProducts = [
         category: "Body Care",
         type: "Hand-Wash",
         sizes: ["250ml", "500ml", "1000ml"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-        
+
         title: "Lavender Calming Hand Wash",
         images: [product_42],
         price: { "250ml": 13, "500ml": 22, "1000ml": 38 },
@@ -595,12 +554,11 @@ const dummyProducts = [
         category: "Body Care",
         type: "Hand-Wash",
         sizes: ["250ml", "500ml", "1000ml"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-       
+
         title: "Tea Tree Purifying Hand Wash",
         images: [product_43],
         price: { "250ml": 14, "500ml": 24, "1000ml": 40 },
@@ -609,12 +567,11 @@ const dummyProducts = [
         category: "Body Care",
         type: "Hand-Wash",
         sizes: ["250ml", "500ml", "1000ml"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-        
+
         title: "Matte Red Lipstick",
         images: [product_44],
         price: { "3g": 15, "5g": 25 },
@@ -623,12 +580,11 @@ const dummyProducts = [
         category: "Face Care",
         type: "Lip-Product",
         sizes: ["3g", "5g"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-       
+
         title: "Hydrating Lip Balm",
         images: [product_45],
         price: { "4g": 10, "8g": 18 },
@@ -637,12 +593,11 @@ const dummyProducts = [
         category: "Face Care",
         type: "Lip-Product",
         sizes: ["4g", "8g"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-        
+
         title: "Glossy Pink Lip Gloss",
         images: [product_46],
         price: { "5ml": 12, "10ml": 20 },
@@ -651,12 +606,11 @@ const dummyProducts = [
         category: "Face Care",
         type: "Lip-Product",
         sizes: ["5ml", "10ml"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-        
+
         title: "Vitamin E Lip Serum",
         images: [product_47],
         price: { "10ml": 18, "20ml": 30 },
@@ -665,12 +619,11 @@ const dummyProducts = [
         category: "Face Care",
         type: "Lip-Product",
         sizes: ["10ml", "20ml"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-        
+
         title: "Nude Matte Lipstick",
         images: [product_48],
         price: { "3g": 14, "5g": 24 },
@@ -679,12 +632,11 @@ const dummyProducts = [
         category: "Face Care",
         type: "Lip-Product",
         sizes: ["3g", "5g"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-        
+
         title: "Aloe Vera Body Lotion",
         images: [product_49],
         price: { "200ml": 15, "400ml": 25, "750ml": 40 },
@@ -693,12 +645,11 @@ const dummyProducts = [
         category: "Body Care",
         type: "Lotion",
         sizes: ["200ml", "400ml", "750ml"],
-        date: 1716634345448,
         popular: true,
         inStock: true,
     },
     {
-        
+
         title: "Shea Butter Hand Lotion",
         images: [product_50],
         price: { "100ml": 12, "200ml": 20, "400ml": 35 },
@@ -707,12 +658,11 @@ const dummyProducts = [
         category: "Body Care",
         type: "Lotion",
         sizes: ["100ml", "200ml", "400ml"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-        
+
         title: "Coconut Moisturizing Lotion",
         images: [product_51],
         price: { "200ml": 18, "400ml": 30, "750ml": 45 },
@@ -721,12 +671,11 @@ const dummyProducts = [
         category: "Body Care",
         type: "Lotion",
         sizes: ["200ml", "400ml", "750ml"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-        
+
         title: "Lavender Relaxing Lotion",
         images: [product_52],
         price: { "100ml": 14, "200ml": 22, "400ml": 38 },
@@ -735,12 +684,11 @@ const dummyProducts = [
         category: "Body Care",
         type: "Lotion",
         sizes: ["100ml", "200ml", "400ml"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-       
+
         title: "Vitamin E Enriched Lotion",
         images: [product_53],
         price: { "200ml": 20, "400ml": 35, "750ml": 50 },
@@ -749,12 +697,11 @@ const dummyProducts = [
         category: "Body Care",
         type: "Lotion",
         sizes: ["200ml", "400ml", "750ml"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
     {
-        
+
         title: "Unscented Sensitive Lotion",
         images: [product_54],
         price: { "100ml": 16, "200ml": 28, "400ml": 42 },
@@ -763,7 +710,6 @@ const dummyProducts = [
         category: "Body Care",
         type: "Lotion",
         sizes: ["100ml", "200ml", "400ml"],
-        date: 1716634345448,
         popular: false,
         inStock: true,
     },
