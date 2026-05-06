@@ -127,6 +127,7 @@ const AddProduct = () => {
           popular: false,
         })
         setSizePrices([])
+        setImages({})
       }
 
 
