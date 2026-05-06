@@ -85,7 +85,16 @@ const AddProduct = () => {
     setLoading(true);
 
     try {
-      // Your code logic here
+      const formData = new FormData()
+
+      const prices = {};
+      const sizes = []
+      sizePrices.forEach((sp) => {
+        prices[sp.size] = sp.price
+        sizes.push(sp.size)
+      })
+
+
     } catch (error) {
       console.log(error);
     }
