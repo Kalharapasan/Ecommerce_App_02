@@ -133,6 +133,8 @@ const AddProduct = () => {
           3: null,
           4: null,
         })
+      }else{
+        toast.error(error.message)
       }
 
 
