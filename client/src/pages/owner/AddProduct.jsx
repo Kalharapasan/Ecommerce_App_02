@@ -5,6 +5,7 @@ import { useAppContext } from '../../context/AppContext'
 
 const AddProduct = () => {
 
+  const { axios, getToken } = useAppContext()
   const [images, setImages] = useState({
     1: null,
     2: null,
@@ -113,7 +114,7 @@ const AddProduct = () => {
         }
       })
 
-      const {data} = await axios
+      const { data } = await axios
 
 
     } catch (error) {
