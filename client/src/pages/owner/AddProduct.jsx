@@ -94,6 +94,11 @@ const AddProduct = () => {
         sizes.push(sp.size)
       })
 
+      const productData = {
+        title: inputs.title,
+        description: inputs.description,
+      }
+
 
     } catch (error) {
       console.log(error);
