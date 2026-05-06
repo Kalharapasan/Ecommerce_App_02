@@ -58,7 +58,7 @@ const AddProduct = () => {
     setSizePrices(sizePrices.filter((sp) => sp.size !== size))
   }
 
-  const onSubmitHandler = (event) => {
+  const onSubmitHandler = async  (event) => {
     event.preventDefault();
     // Check if all inputs are filled
     if (
@@ -114,7 +114,7 @@ const AddProduct = () => {
         }
       })
 
-      const { data } = await axios
+      const { data } = await axios.post()
 
 
     } catch (error) {
