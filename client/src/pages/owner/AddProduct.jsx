@@ -114,7 +114,7 @@ const AddProduct = () => {
         }
       })
 
-      const { data } = await axios.post()
+      const {data} = await axios.post("/api/products", formData)
 
 
     } catch (error) {
