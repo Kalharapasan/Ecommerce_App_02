@@ -27,7 +27,7 @@ const dummyProducts = [
     {
 
         title: "Coconut Body Oil",
-        images: ["product_2_1.png", "product_2_2.png", "product_2_3.png", "product_2_4.png"],
+        images: ["product_27.png", "product_28.png", "product_24.png", "product_25.png"],
         price: { "100ml": 20, "200ml": 35, "400ml": 50 },
         description:
             "Hydrate your skin with our Coconut Body Oil, providing deep moisture and a tropical scent. It helps improve skin elasticity and leaves you feeling soft all day.",
