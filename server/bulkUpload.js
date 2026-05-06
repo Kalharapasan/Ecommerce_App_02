@@ -50,10 +50,25 @@ async function bulkUpload() {
                     return result.secure_url;
                 })
             );
+            await Product.create({
+                title: prod.title,
+                description: prod.description,
+                price: prod.price,
+                sizes: prod.sizes,
+                images: imagesUrl,
+                category: prod.category,
+                type: prod.type,
+                popular: prod.popular,
+                inStock: prod.inStock,
+            });
 
-        } catch (error) {
-
+            console.log(`Uploaded: ${prod.title}`);
         }
+        console.log("All products uploaded successfully!");
+
+    } catch (error) {
 
     }
+
+}
 bulkUpload();
