@@ -58,7 +58,7 @@ const AddProduct = () => {
     setSizePrices(sizePrices.filter((sp) => sp.size !== size))
   }
 
-  const onSubmitHandler = async  (event) => {
+  const onSubmitHandler = async (event) => {
     event.preventDefault();
     // Check if all inputs are filled
     if (
@@ -114,7 +114,15 @@ const AddProduct = () => {
         }
       })
 
-      const {data} = await axios.post("/api/products", formData, {headers: {Authorization: `Bearer ${await getToken()}`}})
+      const { data } = await axios.post("/api/products", formData, { headers: { Authorization: `Bearer ${await getToken()}` } })
+
+      if (data.success) {
+        toast.success(data.message)
+        //Reset form after success
+        setInputs({
+          
+        })
+      }
 
 
     } catch (error) {
