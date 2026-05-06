@@ -57,6 +57,12 @@ const AddProduct = () => {
     setSizePrices(sizePrices.filter((sp) => sp.size !== size))
   }
 
+  const onSubmitHandler = () => {
+
+  }
+
+
+
   return (
     <div className='md:px-8 py-6 xl:py-8 m-1.5 sm:m-3 h-[97vh] overflow-y-scroll lg:w-11/12 bg-primary shadow rounded-xl'>
       <form className='flex flex-col gap-y-5 px-2 text-sm w-full lg:w-11/12'>
@@ -151,7 +157,7 @@ const AddProduct = () => {
                     hidden
                   />
                   <div className='h-24 bg-white flexCenter'>
-                    <img src={images[key] ? URL.createObjectURL(images[key]) : assets.uploadIcon} alt="" className='w-12 overflow-hidden object-contain'/>
+                    <img src={images[key] ? URL.createObjectURL(images[key]) : assets.uploadIcon} alt="" className='w-12 overflow-hidden object-contain' />
                   </div>
                 </label>
               ))}
