@@ -82,6 +82,14 @@ const AddProduct = () => {
       return;
     }
 
+    setLoading(true);
+
+    try {
+      // Your code logic here
+    } catch (error) {
+      console.log(error);
+    }
+
 
   }
 
