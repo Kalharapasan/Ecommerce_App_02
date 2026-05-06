@@ -87,6 +87,8 @@ export const AppContextProvider = ({ children }) => {
 
     const fetchProducts = async () => {
         try {
+            const { data } = await axios.get('/api/products')
+            
 
         } catch (error) {
             toast.error(error.message)
