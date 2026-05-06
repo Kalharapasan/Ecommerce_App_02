@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import { assets } from '../../assets/data'
 import toast from 'react-hot-toast'
-import { useAppContext } from '../../context/AppContext'
+import { useAuth } from '@clerk/react'
+import axios from 'axios'
 
 const AddProduct = () => {
-  const { axios, getToken } = useAppContext()
+  const { getToken } = useAuth()
 
   const [images, setImages] = useState({
     1: null,
