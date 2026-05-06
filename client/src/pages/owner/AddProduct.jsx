@@ -106,6 +106,13 @@ const AddProduct = () => {
 
       formData.append("productData", JSON.stringify(productData))
 
+      // Adding images to FormData
+      Object.keys(images).forEach((key) => {
+        if (images[key]) {
+          formData.append("images", images[key])
+        }
+      })
+
 
     } catch (error) {
       console.log(error);
