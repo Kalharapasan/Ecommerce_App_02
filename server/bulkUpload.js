@@ -31,3 +31,8 @@ cloudinary.config({
     api_key: process.env.CLDN_API_KEY,
     api_secret: process.env.CLDN_API_SECRET,
 });
+
+async function bulkUpload() {
+
+}
+bulkUpload();
