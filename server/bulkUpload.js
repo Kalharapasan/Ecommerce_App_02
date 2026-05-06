@@ -131,7 +131,7 @@ const dummyProducts = [
     {
 
         title: "Citrus Burst Perfume",
-        images: ["product_10..png"],
+        images: ["product_10.png"],
         price: { "50ml": 40, "100ml": 60, "200ml": 85 },
         description:
             "Invigorate your senses with our Citrus Burst Perfume, featuring fresh lemon and orange notes. This energizing fragrance lasts throughout the day.",
