@@ -173,7 +173,11 @@ const AddProduct = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label className="h5 block mb-2">Category</label>
-            <select className='px-4 py-2.5 ring-1 ring-slate-900/10 rounded-lg bg-white text-gray-600 medium-14 w-full focus:outline-none focus:ring-2 focus:ring-secondary'>
+            <select
+              onChange={(e) => setInputs({ ...inputs, category: e.target.value })}
+              value={inputs.category}
+              className='px-4 py-2.5 ring-1 ring-slate-900/10 rounded-lg bg-white text-gray-600 medium-14 w-full focus:outline-none focus:ring-2 focus:ring-secondary'
+            >
               <option value="">Select Category</option>
               {allCategories.map((cat, index) => (
                 <option key={index} value={cat}>{cat}</option>
