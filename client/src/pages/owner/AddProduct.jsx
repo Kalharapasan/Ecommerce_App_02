@@ -97,6 +97,11 @@ const AddProduct = () => {
       const productData = {
         title: inputs.title,
         description: inputs.description,
+        category: inputs.category,
+        type: inputs.type,
+        popular: inputs.popular,
+        price: inputs.price,
+        sizes: inputs.sizes,
       }
 
 
