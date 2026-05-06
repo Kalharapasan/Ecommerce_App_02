@@ -104,6 +104,8 @@ const AddProduct = () => {
         sizes: inputs.sizes,
       }
 
+      formData.append("productData", JSON.stringify(productData))
+
 
     } catch (error) {
       console.log(error);
