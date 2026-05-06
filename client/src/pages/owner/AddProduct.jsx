@@ -57,8 +57,17 @@ const AddProduct = () => {
     setSizePrices(sizePrices.filter((sp) => sp.size !== size))
   }
 
-  const onSubmitHandler = () => {
-
+  const onSubmitHandler = (event) => {
+    event.preventDefault();
+    // Check if all inputs are filled
+    if (
+      !inputs.title ||
+      !inputs.description ||
+      !inputs.category ||
+      !inputs.type
+    ) {
+      // Handle error or return here
+    }
   }
 
 
