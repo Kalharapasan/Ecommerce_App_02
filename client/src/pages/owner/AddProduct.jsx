@@ -76,6 +76,12 @@ const AddProduct = () => {
       return;
     }
 
+    const hasImage = Object.values(images).some((img) => img !== null);
+    if (!hasImage) {
+      toast.error("Please upload at least one image");
+      return;
+    }
+
 
   }
 
