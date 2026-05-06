@@ -154,17 +154,19 @@ const AddProduct = () => {
             onChange={(e) => setInputs({ ...inputs, title: e.target.value })}
             value={inputs.title}
             type="text" placeholder='Type here...'
-            className='px-4 py-2.5 ring-1 ring-slate-900/10 rounded-lg bg-white text-gray-600 medium-14 w-full focus:outline-none focus:ring-2 focus:ring-secondary' 
-            />
+            className='px-4 py-2.5 ring-1 ring-slate-900/10 rounded-lg bg-white text-gray-600 medium-14 w-full focus:outline-none focus:ring-2 focus:ring-secondary'
+          />
         </div>
 
         <div className='w-full'>
           <label className='h5 block mb-2'>Product Description</label>
-          <textarea 
-          type ="text"
-          rows={5}
-          placeholder='Type here...' 
-          className='px-4 py-2.5 ring-1 ring-slate-900/10 rounded-lg bg-white text-gray-600 medium-14 w-full min-h-24 focus:outline-none focus:ring-2 focus:ring-secondary' 
+          <textarea
+            onChange={(e) => setInputs({ ...inputs, description: e.target.value })}
+            value={inputs.description}
+            type="text"
+            rows={5}
+            placeholder='Type here...'
+            className='px-4 py-2.5 ring-1 ring-slate-900/10 rounded-lg bg-white text-gray-600 medium-14 w-full min-h-24 focus:outline-none focus:ring-2 focus:ring-secondary'
           />
         </div>
 
