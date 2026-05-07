@@ -6,6 +6,14 @@ const ListProduct = () => {
 
   const { products, currency, fetchProducts } = useAppContext()
 
+  const toggleStock = async (productId, inStock) => {
+    try {
+
+    } catch (error) {
+
+    }
+  }
+
 
   return (
     <div className='px-2 sm:px-6 py-12 m-2 h-[97vh] bg-primary overflow-y-scroll lg:w-11/12 rounded-xl'>
