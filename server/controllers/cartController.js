@@ -6,7 +6,7 @@ export const addToCart = async (req, res) => {
         const { itemId, size } = req.body;
         const { userId } = req.auth();
         const userData = await User.findById(userId);
-        const cartData = await userData.cartData;
+        const cartData = await userData.cartData || {}; // Initialize if undefined
 
         if (cartData[itemId]) {
             if (cartData[itemId][size]) {
