@@ -44,7 +44,7 @@ const ListProduct = () => {
             <div>
 
               <label className='relative inline-flex items-center cursor-pointer text-gray-900 gap-3'>
-                <input type="checkbox" className='sr-only peer' defaultChecked={product.inStock} />
+                <input onClick={() => toggleStock(product._id, !product.inStock)} type="checkbox" className='sr-only peer' defaultChecked={product.inStock} />
                 <div className='w-10 h-6 bg-slate-300 rounded-full peer peer-checked:bg-secondary transition-colors duration-200' />
                 <span className='absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-transform duration-200 ease-in-out peer-checked:translate-x-4' />
               </label>
