@@ -46,7 +46,7 @@ export const AppContextProvider = ({ children }) => {
     const syncedUserIdRef = useRef(null)
 
     // Add Product to the cart
-    const addToCart = (itemId, size) => {
+    const addToCart = async (itemId, size) => {
         if (!size) return toast.error("Please select a size first")
         let cartData = structuredClone(cartItems)
         cartData[itemId] = cartData[itemId] || {}
@@ -55,19 +55,19 @@ export const AppContextProvider = ({ children }) => {
 
         if (user) {
             try {
-                const { data } = await axios.get('/api/user', { headers: { Authorization: `Bearer ${await getToken()}` } })
+                const { data } = await axios.get("/api/user", {
+                    headers: { Authorization: `Bearer ${await getToken()}` },
+                });
                 if (data.success) {
-                    setIsOwner(data.role === "owner")
-                    setCartItems(data.cartData || {})
+                    setIsOwner(data.role === "owner");
+                    setCartItems(data.cartData || {});
                 } else {
                     // Retry fetch user details after 5 seconds
                     setTimeout(() => {
-                        getUser()
+                        getUser();
                     }, 5000);
                 }
-            } catch (error) {
-                toast.error(error.message)
-            }
+            } catch (error) { }
         }
 
     }
