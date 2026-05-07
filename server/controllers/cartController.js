@@ -36,7 +36,7 @@ export const updateCart = async (req, res) => {
         const cartData = await userData.cartData || {}; // Initialize if undefined
 
         if (quantity <= 0) {
-            delete cartData[itemId]
+           delete cartData[itemId][size] // Delete only the specific size
         } else {
             cartData[itemId] = cartData[itemId] || {} // Ensure parent exist
             cartData[itemId][size] = quantity
