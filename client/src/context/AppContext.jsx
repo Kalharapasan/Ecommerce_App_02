@@ -52,6 +52,15 @@ export const AppContextProvider = ({ children }) => {
         cartData[itemId] = cartData[itemId] || {}
         cartData[itemId][size] = (cartData[itemId][size] || 0) + 1
         setCartItems(cartData)
+
+        if (user) {
+            try {
+
+            } catch (error) {
+
+            }
+        }
+
     }
 
     // Get Cart Count
@@ -90,7 +99,7 @@ export const AppContextProvider = ({ children }) => {
             const { data } = await axios.get('/api/products')
             if (data.success) {
                 setProducts(data.products);
-            }else{
+            } else {
                 toast.error(data.message)
             }
 
