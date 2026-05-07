@@ -26,6 +26,15 @@ const AddressForm = () => {
     setAddress((data) => ({ ...data, [name]: value }))
   }
 
+  const onSubmitHandler = async (e) => {
+    e.preventDefault()
+    try {
+
+    } catch (error) {
+
+    }
+  }
+
   return (
     <div className='max-padd-container py-16 pt-28 bg-primary'>
       {/* Container */}
