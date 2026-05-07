@@ -63,7 +63,7 @@ export const AppContextProvider = ({ children }) => {
                 } else {
                     toast.error(data.message);
                 }
-            } catch (error) { 
+            } catch (error) {
                 toast.error(error.message)
             }
         }
@@ -86,6 +86,14 @@ export const AppContextProvider = ({ children }) => {
         let cartData = structuredClone(cartItems)
         cartData[itemId][size] = quantity
         setCartItems(cartData)
+
+
+        if (user) {
+            const { data } = await axios.post("/api/cart/add", { itemId, size }, {
+                headers: { Authorization: `Bearer ${await getToken()}` },
+            })
+        }
+
     }
 
     // Get Cart Amount
