@@ -44,6 +44,12 @@ const AddressForm = () => {
     }
   }
 
+  useEffect(() => {
+    if (!user) {
+      navigate('/cart')
+    }
+  }, [])
+
   return (
     <div className='max-padd-container py-16 pt-28 bg-primary'>
       {/* Container */}
