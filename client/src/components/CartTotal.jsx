@@ -7,9 +7,9 @@ const CartTotal = () => {
 
     const { navigate, user, products, currency, cartItems, setCartItems, method, setMethod, delivery_charges, getCartCount, getCartAmount } = useAppContext()
 
-    const [addresses, setAddresses] = useState(dummyAddress)
+    const [addresses, setAddresses] = useState([])
     const [showAddress, setShowAddress] = useState(false)
-    const [selectedAddress, setSelectedAddress] = useState(dummyAddress[0])
+    const [selectedAddress, setSelectedAddress] = useState()
 
     return (
         <div>
