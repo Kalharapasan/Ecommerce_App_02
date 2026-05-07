@@ -35,14 +35,16 @@ export const updateCart = async (req, res) => {
         const userData = await User.findById(userId)
         const cartData = await userData.cartData || {}; // Initialize if undefined
 
-        if (quantity <= 0) { 
+        if (quantity <= 0) {
             delete cartData[itemId]
         } else {
+            cartData[itemId] = cartData[itemId] || {} // Ensure parent exist
             cartData[itemId][size] = quantity
         }
 
         await User.findByIdAndUpdate(userId, { cartData })
         res.json({ success: true, message: "Cart Updated" })
+
     } catch (error) {
         console.log(error.message);
         res.json({ success: false, message: error.message });
