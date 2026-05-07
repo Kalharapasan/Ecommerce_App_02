@@ -99,7 +99,9 @@ export const AppContextProvider = ({ children }) => {
                 );
 
                 if (data.success) {
-
+                    toast.success(data.message);
+                }else{
+                    toast.success(data.message);
                 }
 
             } catch (error) { }
