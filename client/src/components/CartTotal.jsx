@@ -5,7 +5,7 @@ import { dummyAddress } from '../assets/data'
 
 const CartTotal = () => {
 
-    const { navigate,axios,getToken, user, products, currency, cartItems, setCartItems, method, setMethod, delivery_charges, getCartCount, getCartAmount } = useAppContext()
+    const { navigate, axios, getToken, user, products, currency, cartItems, setCartItems, method, setMethod, delivery_charges, getCartCount, getCartAmount } = useAppContext()
 
     const [addresses, setAddresses] = useState([])
     const [showAddress, setShowAddress] = useState(false)
@@ -18,12 +18,12 @@ const CartTotal = () => {
             });
             if (data.success) {
                 setAddresses(data.addresses);
-                setCartItems(data.cartData || {});
+                if (data.addresses.length > 0) {
+                    setSelectedAddress(data.addresses[0])
+                }
+
             } else {
-                // Retry fetch user details after 5 seconds
-                setTimeout(() => {
-                    getUser();
-                }, 5000);
+
             }
         } catch (error) {
             toast.error(error.message);
