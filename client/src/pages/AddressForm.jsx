@@ -29,9 +29,16 @@ const AddressForm = () => {
   const onSubmitHandler = async (e) => {
     e.preventDefault()
     try {
+      const { data } = await axios.get("/api/addresses", {
+        headers: { Authorization: `Bearer ${await getToken()}` },
+      });
+      if (data.success) {
 
+      } else {
+        toast.error(data.message);
+      }
     } catch (error) {
-
+      toast.error(error.message);
     }
   }
 
