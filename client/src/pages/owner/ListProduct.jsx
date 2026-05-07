@@ -4,7 +4,7 @@ import { useAppContext } from '../../context/AppContext'
 
 const ListProduct = () => {
 
-  const { products, currency, fetchProducts } = useAppContext()
+  const { products, currency, fetchProducts, axios, getToken } = useAppContext()
 
   const toggleStock = async (productId, inStock) => {
     try {
