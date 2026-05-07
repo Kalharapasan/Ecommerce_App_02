@@ -6,7 +6,7 @@ import { useAppContext } from '../context/AppContext'
 
 const AddressForm = () => {
 
-  const { navigate, user, method, setMethod } = useAppContext()
+  const { navigate, user, method, setMethod, axios, getToken } = useAppContext()
   const [address, setAddress] = useState({
     firstName: "",
     lastName: "",
@@ -29,9 +29,10 @@ const AddressForm = () => {
   const onSubmitHandler = async (e) => {
     e.preventDefault()
     try {
-      const { data } = await axios.get("/api/addresses", {
+      const { data } = await axios.post("/api/addresses/add", { address }, {
         headers: { Authorization: `Bearer ${await getToken()}` },
       });
+
       if (data.success) {
 
       } else {
