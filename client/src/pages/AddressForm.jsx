@@ -34,7 +34,8 @@ const AddressForm = () => {
       });
 
       if (data.success) {
-
+        toast.success(data.message);
+        navigate("/cart")
       } else {
         toast.error(data.message);
       }
