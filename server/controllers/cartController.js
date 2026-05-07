@@ -33,7 +33,7 @@ export const updateCart = async (req, res) => {
         const { userId } = req.auth()
 
         const userData = await User.findById(userId)
-        const cartData = await userData.cartData
+        const cartData = await userData.cartData || {}; // Initialize if undefined
 
         if (quantity <= 0) { 
             delete cartData[itemId]
