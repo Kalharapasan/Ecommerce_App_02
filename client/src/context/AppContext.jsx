@@ -90,12 +90,14 @@ export const AppContextProvider = ({ children }) => {
 
         if (user) {
             try {
-                const { data } = await axios.post("/api/cart/update", { itemId, size, quantity }, {
-                    headers: { Authorization: `Bearer ${await getToken()}` },
-                });
-            } catch (error) {
-
-            }
+                const { data } = await axios.post(
+                    "/api/cart/update",
+                    { itemId, size, quantity },
+                    {
+                        headers: { Authorization: `Bearer ${await getToken()}` },
+                    }
+                );
+            } catch (error) { }
         }
 
     }
