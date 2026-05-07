@@ -145,6 +145,8 @@ export const AppContextProvider = ({ children }) => {
         user,
         products,
         fetchProducts,
+        axios,
+        getToken,
         currency,
         searchQuery,
         setSearchQuery,
