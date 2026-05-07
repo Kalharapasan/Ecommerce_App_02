@@ -55,9 +55,18 @@ export const AppContextProvider = ({ children }) => {
 
         if (user) {
             try {
-
+                const { data } = await axios.get('/api/user', { headers: { Authorization: `Bearer ${await getToken()}` } })
+                if (data.success) {
+                    setIsOwner(data.role === "owner")
+                    setCartItems(data.cartData || {})
+                } else {
+                    // Retry fetch user details after 5 seconds
+                    setTimeout(() => {
+                        getUser()
+                    }, 5000);
+                }
             } catch (error) {
-
+                toast.error(error.message)
             }
         }
 
