@@ -13,11 +13,11 @@ const CartTotal = () => {
 
     const getAddress = async () => {
         try {
-            const { data } = await axios.get("/api/user", {
+            const { data } = await axios.get("/api/user/addresses", {
                 headers: { Authorization: `Bearer ${await getToken()}` },
             });
             if (data.success) {
-                setIsOwner(data.role === "owner");
+                setAddresses(data.addresses);
                 setCartItems(data.cartData || {});
             } else {
                 // Retry fetch user details after 5 seconds
