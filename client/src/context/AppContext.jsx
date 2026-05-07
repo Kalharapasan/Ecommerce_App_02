@@ -97,6 +97,11 @@ export const AppContextProvider = ({ children }) => {
                         headers: { Authorization: `Bearer ${await getToken()}` },
                     }
                 );
+
+                if (data.success) {
+
+                }
+
             } catch (error) { }
         }
 
