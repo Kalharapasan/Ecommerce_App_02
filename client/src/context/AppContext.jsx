@@ -101,10 +101,12 @@ export const AppContextProvider = ({ children }) => {
                 if (data.success) {
                     toast.success(data.message);
                 }else{
-                    toast.success(data.message);
+                    toast.error(data.message);
                 }
 
-            } catch (error) { }
+            } catch (error) { 
+                toast.error(error.message);
+            }
         }
 
     }
