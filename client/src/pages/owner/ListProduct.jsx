@@ -8,9 +8,18 @@ const ListProduct = () => {
 
   const toggleStock = async (productId, inStock) => {
     try {
-
+      const { data } = await axios.post('/api/user', { headers: { Authorization: `Bearer ${await getToken()}` } })
+      if (data.success) {
+        setIsOwner(data.role === "owner")
+        setCartItems(data.cartData || {})
+      } else {
+        // Retry fetch user details after 5 seconds
+        setTimeout(() => {
+          getUser()
+        }, 5000);
+      }
     } catch (error) {
-
+      toast.error(error.message)
     }
   }
 
