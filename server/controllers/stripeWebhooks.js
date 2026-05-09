@@ -36,7 +36,8 @@ export const stripeWebhooks = async (request, response) => {
 
         // Clear User Cart
         await User.findByIdAndUpdate(userId, { cartData: {} })
-    }else{
-        
+    } else {
+        console.log("Unhandled event type :", event.type)
     }
+    
 }
