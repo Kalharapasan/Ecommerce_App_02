@@ -139,6 +139,17 @@ export const Dashbord = () => {
                   </div>
                 </div>
 
+                <div className="flex gap-4">
+                  <div className='flex items-center gap-x-2'>
+                    <h5 className='medium-14'>Date:</h5>
+                    <p className='text-gray-400 text-xs'>{new Date(order.createdAt).toDateString()}</p>
+                  </div>
+                  <div className='flex items-center gap-x-2'>
+                    <h5 className='medium-14'>Amount:</h5>
+                    <p className='text-gray-400 text-xs'>{order.paymentMethod}</p>
+                  </div>
+                </div>
+
               </div>
               <div className='flex items-center gap-2'>
                 <h5 className='medium-14'>Status:</h5>
