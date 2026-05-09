@@ -74,7 +74,9 @@ const CartTotal = () => {
 
             // Place Order using COD
             if (method === "COD") {
-                const { data } = await axios.post("/api/orders/cod", { items, address: selectedAddress._id })
+                const { data } = await axios.post("/api/orders/cod", { items, address: selectedAddress._id }, {
+                    headers: { Authorization: `Bearer ${await getToken()}` },
+                });
             }
 
         } catch (error) {
