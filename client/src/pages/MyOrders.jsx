@@ -1,15 +1,27 @@
 import React, { useEffect, useState } from 'react'
 import Title from '../components/Title'
 import { useAppContext } from '../context/AppContext'
-import { dummyOrdersData } from '../assets/data'
+
 
 const MyOrders = () => {
 
   const { currency, user } = useAppContext()
   const [orders, setOrders] = useState([])
 
-  const loadOrdersData = () => {
-    setOrders(dummyOrdersData)
+  const loadOrdersData = async () => {
+    if (!user) return
+
+    try {
+      const { data } = await axios.post(
+        "/api/orders/userorders",
+        { items, address: selectedAddress._id },
+        {
+          headers: { Authorization: `Bearer ${await getToken()}` },
+        }
+      );
+    } catch (error) {
+
+    }
   }
 
   useEffect(() => {
@@ -82,15 +94,15 @@ const MyOrders = () => {
               </div>
             </div>
             <div className='flex gap-3'>
-                <div className='flex items-center gap-2'>
-                  <h5 className='medium-14'>Status:</h5>
-                  <div className='flex items-center gap-1'>
-                    <span className="min-w-2 h-2 rounded-full bg-green-500" />
-                    <p>{order.status}</p>
-                  </div>
+              <div className='flex items-center gap-2'>
+                <h5 className='medium-14'>Status:</h5>
+                <div className='flex items-center gap-1'>
+                  <span className="min-w-2 h-2 rounded-full bg-green-500" />
+                  <p>{order.status}</p>
                 </div>
-                <button className='btn-secondary !py-1 !text-xs rounded-sm'>Track Order</button>
               </div>
+              <button className='btn-secondary !py-1 !text-xs rounded-sm'>Track Order</button>
+            </div>
           </div>
 
         </div>
