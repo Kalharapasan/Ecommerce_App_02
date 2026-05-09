@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useAppContext } from '../../context/AppContext'
-import { assets, dummyDashboardData } from '../../assets/data'
+import { assets } from '../../assets/data'
 import toast from 'react-hot-toast'
 
 export const Dashbord = () => {
@@ -13,7 +13,11 @@ export const Dashbord = () => {
   })
 
   const getDashboardData = () => {
-    setDashboardData(dummyDashboardData)
+    try {
+      const { data } = await axios
+    } catch (error) {
+
+    }
   }
 
   useEffect(() => {
