@@ -12,13 +12,17 @@ export const Dashbord = () => {
     totalRevenue: 0,
   })
 
-  const getDashboardData = () => {
+  const getDashboardData = async () => {
     try {
-      const { data } = await axios.get('/api/orders/', {
-        headers: { Authorization: `Bearer ${await getToken()}` },
-      })
-    } catch (error) {
+      const { data } = await axios.get('/api/orders/', { headers: { Authorization: `Bearer ${await getToken()}` } })
 
+      if (data.success) {
+        setDashboardData(data.dashboardData)
+      } else {
+        toast.error(data.message)
+      }
+    } catch (error) {
+      toast.error(error.message)
     }
   }
 
