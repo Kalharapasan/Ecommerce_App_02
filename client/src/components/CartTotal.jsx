@@ -84,17 +84,30 @@ const CartTotal = () => {
                 ({ data } = await axios.post("/api/orders/cod", { items, address: selectedAddress._id }, {
                     headers: { Authorization: `Bearer ${await getToken()}` },
                 }));
+
+
+                if (data.success) {
+                    toast.success(data.message)
+                    setCartItems({})
+                    navigate('/my-orders')
+                }
+                else {
+                    toast.error(data.message)
+                }
+            } else {
+                const { data } = await axios.post(
+                    "/api/orders/stripe",
+                    { items, address: selectedAddress._id },
+                    {
+                        headers: { Authorization: `Bearer ${await getToken()}` },
+                    }
+                );
+
+                if (data.success) {
+                    window.location.replace(data.url);
+                }
             }
 
-            if (data.success) {
-                toast.success(data.message)
-                setCartItems({})
-                navigate('/my-orders')
-            }
-            else {
-                toast.error(data.message)
-            }
-            
 
         } catch (error) {
 
