@@ -100,14 +100,13 @@ export const allOrders = async (req, res) => {
 // Update Order status for the Admin [POST '/status']
 export const updateStatus = async (req, res) => {
     try {
-
         const { orderId, status } = req.body
         await Order.findByIdAndUpdate(orderId, { status })
-        res.json({ success: true, message: "Order Placed" })
+
+        res.json({ success: true, message: "Order status updated" })
 
     } catch (error) {
         console.log(error.message)
         res.json({ success: false, message: error.message })
-
     }
 }
