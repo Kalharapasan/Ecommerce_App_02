@@ -37,6 +37,14 @@ export const placeOrderCOD = async (req, res) => {
         const taxAmount = subtotal * taxPercentage
         const totalAmount = subtotal + taxAmount + delivery_charges
 
+        const order = await Order.create({
+            userId,
+            items,
+            amount: totalAmount,
+            address,
+            paymentMethod: "COD",
+        })
+
     } catch (error) {
 
     }
