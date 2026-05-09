@@ -89,6 +89,12 @@ export const placeOrderCOD = async (req, res) => {
 // Place order using Stripe [POST '/stripe']
 export const placeOrderStripe = async (req, res) => {
     try {
+        const { items, address } = req.body;
+        const { userId } = req.auth();
+
+        if (!items || items.length === 0) {
+            return res.json({ success: false, message: "Please add Product first" })
+        }
 
     } catch (error) {
 
