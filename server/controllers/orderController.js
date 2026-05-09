@@ -60,6 +60,18 @@ export const placeOrderCOD = async (req, res) => {
         const mailOptions = {
             from: process.env.SMTP_SENDER_EMAIL,
             to: user.email,
+            subject: "Order Details (COD)",
+            html: `
+    <h2>Your Delivery Details</h2>
+    <p>Thank You for your Order! Below are your Order details:</p>
+    <ul>
+        <li><strong>Order ID:</strong> ${populatedOrder._id}</li>
+        <li><strong>Products Name:</strong> ${productTitles}</li>
+        <li><strong>Address:</strong> ${addressString}</li>
+        <li><strong>Total Amount:</strong> ${process.env.CURRENCY || "$"}${populatedOrder.amount}</li>
+    </ul>
+    <p>You will get your delivery in 1-2 Days. Pay on delivery.</p>
+    `
         }
 
         return res.json({ success: true, message: "Order Placed" })
