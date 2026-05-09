@@ -30,7 +30,7 @@ export const placeOrderCOD = async (req, res) => {
                 return res.json({ success: false, message: "Invalid size selected" })
             }
 
-
+            subtotal += unitPrice * item.quantity
         }
 
 
