@@ -2,6 +2,7 @@ import Order from "../models/Order.js";
 import Product from "../models/Product.js";
 import User from "../models/User.js";
 import transporter from "../config/nodemailer.js";
+import stripe from "stripe"
 
 // Global variables for payment
 const currency = "usd"
@@ -132,6 +133,8 @@ export const placeOrderStripe = async (req, res) => {
             address,
             paymentMethod: "stripe",
         })
+
+        const stripeInstance = new stripe(process.env.)
 
     } catch (error) {
 
