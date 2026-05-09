@@ -6,7 +6,7 @@ import User from "../models/User.js"
 export const stripeWebhooks = async (request, response) => {
     // Stripe Gateway initialize
     const stripeInstance = new stripe(process.env.STRIPE_SECRET_KEY)
-    const sig = request.headers["stripe-signature"]
+    const sig = request.headers["Stripe-signature"]
     let event;
 
     try {
@@ -16,6 +16,8 @@ export const stripeWebhooks = async (request, response) => {
             process.env.STRIPE_WEBHOOK_SECRET
         )
     } catch (error) {
-        // Error handling would go here
+        response.status(400).send(`Webhook Error: ${error.message}`)
     }
+
+    // Handle
 }
