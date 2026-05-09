@@ -33,9 +33,12 @@ const CartTotal = () => {
     const placeOrder = async () => {
         try {
             if (!selectedAddress) {
-
+                return toast.error("Please select an address")
             }
-        } catch (error) {
+            let orderItems = []
+            for (const itemId in cartItems)
+
+    } catch (error) {
 
         }
     }
