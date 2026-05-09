@@ -24,6 +24,13 @@ export const placeOrderCOD = async (req, res) => {
             if (!product) {
                 return res.json({ success: false, message: "Product not found" })
             }
+
+            const unitPrice = product.price[item.size] // Pick correct size first
+            if (!unitPrice) {
+                return res.json({ success: false, message: "Invalid size selected" })
+            }
+
+
         }
 
 
