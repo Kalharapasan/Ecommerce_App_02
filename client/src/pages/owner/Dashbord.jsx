@@ -119,19 +119,20 @@ export const Dashbord = () => {
                     <h5 className='medium-14'>Phone:</h5>
                     <p className='text-gray-400 text-xs'>{order.address.phone}</p>
                   </div>
-
+                </div>
+                <div className='flex items-center gap-x-2'>
+                  <h5 className='medium-14'>Address:</h5>
+                  <p className='text-gray-400 text-sm'>
+                    {order.address.street}, {order.address.city}, {" "}
+                    {order.address.state}, {order.address.country}, {" "}
+                    {order.address.zipcode}
+                  </p>
+                </div>
+                <div className='flex items-center gap-x-2'>
+                  <h5 className='medium-14'>Amount:</h5>
+                  <p className='text-gray-400 text-xs'>{currency}{order.amount}</p>
                 </div>
 
-                <div className='flex gap-4'>
-                  <div className='flex items-center gap-x-2'>
-                    <h5 className='medium-14'>Date:</h5>
-                    <p className='text-gray-400 text-sm'>{new Date(order.createdAt).toDateString()}</p>
-                  </div>
-                  <div className='flex items-center gap-x-2'>
-                    <h5 className='medium-14'>Amount:</h5>
-                    <p className='text-gray-400 text-xs'>{currency}{order.amount}</p>
-                  </div>
-                </div>
               </div>
               <div className='flex items-center gap-2'>
                 <h5 className='medium-14'>Status:</h5>
