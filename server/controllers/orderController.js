@@ -89,7 +89,7 @@ export const allOrders = async (req, res) => {
         const totalOrders = orders.length
         const totalRevenue = orders.reduce((acc, o) => acc + (o.isPaid ? o.amount : 0), 0)
 
-        res.json({ success: true, orders })
+        res.json({ success: true, dashboardData: { totalOrders, totalRevenue, orders } })
 
     } catch (error) {
         console.log(error.message)
