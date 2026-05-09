@@ -128,9 +128,11 @@ export const Dashbord = () => {
                     {order.address.zipcode}
                   </p>
                 </div>
-                <div className='flex items-center gap-x-2'>
-                  <h5 className='medium-14'>Amount:</h5>
-                  <p className='text-gray-400 text-xs'>{currency}{order.amount}</p>
+                <div className="flex gap-4">
+                  <div className='flex items-center gap-x-2'>
+                    <h5 className='medium-14'>Amount:</h5>
+                    <p className='text-gray-400 text-xs'>{currency}{order.amount}</p>
+                  </div>
                 </div>
 
               </div>
