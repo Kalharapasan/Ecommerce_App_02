@@ -31,7 +31,8 @@ export const Dashbord = () => {
       const { data } = await axios.post('/api/orders/status', { orderId, status: e.target.value }, { headers: { Authorization: `Bearer ${await getToken()}` } })
 
       if (data.success) {
-        setDashboardData(data.dashboardData)
+        await getDashboardData()
+        toast.success(data.message)
       } else {
         toast.error(data.message)
       }
