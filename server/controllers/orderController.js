@@ -52,6 +52,7 @@ export const placeOrderCOD = async (req, res) => {
 
         // Send confirmation email for COD
         const populatedOrder = await Order.findById(order._id).populate("items.product address")
+        const user = await User.findById(userId)
 
     } catch (error) {
         console.log(error.message)
