@@ -134,7 +134,14 @@ export const placeOrderStripe = async (req, res) => {
             paymentMethod: "stripe",
         })
 
-        const stripeInstance = new stripe(process.env.)
+        const stripeInstance = new stripe(process.env.STRIPE_SECRET_KEY)
+
+        // Stripe line items
+        let line_items = productData.map(((item) => ({
+            price_data: {
+                currency: currency
+            }
+        })))
 
     } catch (error) {
 
