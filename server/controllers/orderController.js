@@ -59,7 +59,7 @@ export const placeOrderCOD = async (req, res) => {
         const addressString = populatedOrder.address ? `${populatedOrder.address.street || "N/A"}, ${populatedOrder.address.city || "N/A"}, ${populatedOrder.address.state || "N/A"}, ${populatedOrder.address.country || "N/A"}` : "No address";
 
         const mailOptions = {
-            from: process.env.SMTP_SENDER_EMAIL,
+            from: process.env.MAIL_FROM || process.env.ADMIN_EMAIL,
             to: user.email,
             subject: "Order Details (COD)",
             html: `

@@ -15,7 +15,4 @@ const transporter = nodemailer.createTransport({
     },
 });
 
-// Set default sender - use SMTP_USER (your verified sender email) instead of the relay address
-transporter.set('from', process.env.SMTP_USER || process.env.SMTP_SENDER_EMAIL);
-
 export default transporter
