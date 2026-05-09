@@ -115,9 +115,9 @@ export const Dashbord = () => {
                     </span>
                   </p>
                 </div>
-                <div className='text-right'>
-                  <p className='text-sm font-semibold text-gray-800 mb-2'>Status:</p>
-                  <select onChange={(e) => statusHandler(e, order._id)} value={order.status} className='text-sm p-1 border border-gray-300 rounded bg-white cursor-pointer min-w-28 text-gray-700 font-medium'>
+                <div className='flex items-center gap-2'>
+                  <p className='text-sm font-semibold text-gray-800'>Status:</p>
+                  <select onChange={(e) => statusHandler(e, order._id)} value={order.status} className='text-sm p-1 border border-gray-300 rounded bg-white cursor-pointer text-gray-700 font-medium'>
                     <option value="Order Placed">Order Placed</option>
                     <option value="Packing">Packing</option>
                     <option value="Shipping">Shipping</option>
