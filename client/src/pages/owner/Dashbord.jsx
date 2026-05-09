@@ -33,10 +33,9 @@ export const Dashbord = () => {
       if (data.success) {
         await getDashboardData()
         toast.success(data.message)
-      } else {
-        toast.error(data.message)
-      }
+      } 
     } catch (error) {
+      console.log(error)
       toast.error(error.message)
     }
   }
