@@ -98,6 +98,8 @@ export const placeOrderStripe = async (req, res) => {
 
         // calculate amount using items
         let subtotal = 0
+        let productData = []
+
         for (const item of items) {
             const product = await Product.findById(item.product);
             if (!product) {
@@ -110,6 +112,8 @@ export const placeOrderStripe = async (req, res) => {
             }
 
             subtotal += unitPrice * item.quantity
+
+            productData.push({})
         }
 
     } catch (error) {
