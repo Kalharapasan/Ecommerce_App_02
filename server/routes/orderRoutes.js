@@ -14,3 +14,5 @@ orderRouter.post('/stripe', authUser, placeOrderStripe)
 
 // For User
 orderRouter.post('/userorders', authUser, userOrders)
+
+export default orderRouter
