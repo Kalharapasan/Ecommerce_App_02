@@ -50,6 +50,9 @@ export const placeOrderCOD = async (req, res) => {
         await User.findByIdAndUpdate(userId, { cartData: {} })
         return res.json({ success: true, message: "Order Placed" })
 
+        // Send confirmation email for COD
+        const populatedOrder = await Order.findById(order._id).populate("items.product address")
+
     } catch (error) {
         console.log(error.message)
         res.json({ success: false, message: error.message })
