@@ -33,7 +33,9 @@ export const placeOrderCOD = async (req, res) => {
             subtotal += unitPrice * item.quantity
         }
 
-
+        // calculate total amount by adding tax and delivery charges
+        const taxAmount = subtotal * taxPercentage
+        const totalAmount = subtotal + taxAmount + delivery_charges
 
     } catch (error) {
 
