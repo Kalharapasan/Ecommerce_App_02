@@ -87,6 +87,9 @@ const CartTotal = () => {
             else {
                 toast.error(data.message)
             }
+            else{
+                
+            }
 
         } catch (error) {
 
