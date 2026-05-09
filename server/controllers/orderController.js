@@ -83,7 +83,14 @@ export const userOrders = async (req, res) => {
 // ALL Orders data for the Admin [GET '/']
 export const allOrders = async (req, res) => {
     try {
-        const orders = await Order.find({})
+
+        const orders = await Order.find({ $or: [{ paymentMethod: "COD" }, { isPaid: true }] }).populate("items.product address").sort({ createdAt: -1 })
+
+        const totalOrders = orders.length
+        const totalRevenue = orders.reduce((acc, o) => acc + (o.isPaid ? o.amount : 0), 0)
+
+        res.json({ success: true, orders })
+
     } catch (error) {
         console.log(error.message)
         return res.json({ success: false, message: error.message })
