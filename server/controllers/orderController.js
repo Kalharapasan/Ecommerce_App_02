@@ -48,7 +48,7 @@ export const placeOrderCOD = async (req, res) => {
         })
         // Clear user Cart after placing order
         await User.findByIdAndUpdate(userId, { cartData: {} })
-        return res.json({ success: true, message: "Order Placed" })
+
 
         // Send confirmation email for COD
         const populatedOrder = await Order.findById(order._id).populate("items.product address")
@@ -56,6 +56,14 @@ export const placeOrderCOD = async (req, res) => {
 
         const productTitles = populatedOrder.items.map(item => item.product?.title || "Unknown").join(", ")
         const addressString = populatedOrder.address ? `${populatedOrder.address.street || "N/A"}, ${populatedOrder.address.city || "N/A"}, ${populatedOrder.address.state || "N/A"}, ${populatedOrder.address.country || "N/A"}` : "No address";
+
+        const mailOptions = {
+            from: process.env.SMTP_SENDER_EMAIL,
+            to: user.email,
+        }
+
+        return res.json({ success: true, message: "Order Placed" })
+
 
     } catch (error) {
         console.log(error.message)
