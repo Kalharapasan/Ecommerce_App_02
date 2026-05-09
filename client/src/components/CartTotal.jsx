@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast'
 import { useAppContext } from '../context/AppContext'
-import { dummyAddress } from '../assets/data'
+
 
 const CartTotal = () => {
 
@@ -109,12 +109,10 @@ const CartTotal = () => {
                     toast.error(data.message)
                 }
             }
-
-
         } catch (error) {
-
+            toast.error(error.message)
         }
-    }
+    };
 
     useEffect(() => {
         if (user) {
