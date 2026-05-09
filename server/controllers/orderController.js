@@ -72,8 +72,8 @@ export const userOrders = async (req,res)=>{
     }
 }
 
-// ALL Orders data for the Admin [POST '/']
-export const allOrders = async (req,res)=>{
+// Update Order status for the Admin [POST '/status']
+export const updateStatus = async (req,res)=>{
     try {
 
     } catch (error) {
