@@ -7,16 +7,7 @@ const currency = "usd"
 const delivery_charges = 10 // 10 Dollars
 const taxPercentage = 0.02 // 2% tax charges
 
-// ALL Orders data for the Admin [GET '/']
-export const allOrders = async (req, res) => {
-    try {
-        const orders = await Order.find({}).sort({ createdAt: -1 })
-        return res.json({ success: true, orders })
-    } catch (error) {
-        console.log(error.message)
-        return res.json({ success: false, message: error.message })
-    }
-}
+
 
 // Place Order using COD [POST '/cod']
 export const placeOrderCOD = async (req, res) => {
@@ -86,6 +77,17 @@ export const userOrders = async (req, res) => {
     } catch (error) {
         console.log(error.message)
         res.json({ success: false, message: error.message })
+    }
+}
+
+// ALL Orders data for the Admin [GET '/']
+export const allOrders = async (req, res) => {
+    try {
+        const orders = await Order.find({}).sort({ createdAt: -1 })
+        return res.json({ success: true, orders })
+    } catch (error) {
+        console.log(error.message)
+        return res.json({ success: false, message: error.message })
     }
 }
 
