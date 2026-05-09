@@ -107,18 +107,19 @@ export const Dashbord = () => {
             <div className='flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 border-t border-gray-300 pt-3'>
               <div className='flex flex-col gap-2'>
                 <div className='flex items-center gap-x-2'>
-                  <h5 className='medium-14'>Size:</h5>
+                  <h5 className='medium-14'>OrderId:</h5>
                   <p className='text-gray-400 text-xs break-all'>{order._id}</p>
                 </div>
                 <div className='flex gap-4'>
                   <div className='flex items-center gap-x-2'>
-                    <h5 className='medium-14'>Payment Status:</h5>
-                    <p className='text-gray-400 text-sm'>{order.isPaid ? "Done" : "Pending"}</p>
-                    <div className='flex items-center gap-x-2'>
-                      <h5 className='medium-14'>Method:</h5>
-                      <p className='text-gray-400 text-xs break-all'>{order.paymentMethod}</p>
-                    </div>
+                    <h5 className='medium-14'>Customer:</h5>
+                    <p className='text-gray-400 text-sm'>{order.address.firstName} {order.address.lastName}</p>
                   </div>
+                  <div className='flex items-center gap-x-2'>
+                    <h5 className='medium-14'>Phone:</h5>
+                    <p className='text-gray-400 text-xs'>{order.address.phone}</p>
+                  </div>
+
                 </div>
 
                 <div className='flex gap-4'>
