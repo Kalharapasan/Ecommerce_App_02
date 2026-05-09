@@ -88,7 +88,7 @@ const CartTotal = () => {
                 toast.error(data.message)
             }
             else{
-                
+
             }
 
         } catch (error) {
@@ -172,7 +172,7 @@ const CartTotal = () => {
                         {currency}{getCartAmount() === 0 ? "$0.00" : getCartAmount() + delivery_charges + (getCartAmount() * 2) / 100}
                     </p>
                 </div>
-                <button className='btn-dark w-full mt-8 !rounded-md'>
+                <button onClick={placeOrder} className='btn-dark w-full mt-8 !rounded-md'>
                     Proceed to Order
                 </button>
             </div>
