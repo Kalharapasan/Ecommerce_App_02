@@ -6,12 +6,25 @@ This is a full-stack e-commerce application with a React client and a Node/Expre
 The frontend is a single-page app built with Vite and React, while the backend exposes REST APIs for products, cart, addresses, orders, users, and webhooks. The app is designed to support both customer shopping flows and owner/admin product management.
 
 ## Screenshots
-Add your project screenshots here. Create a `screenshots/` folder in the root of the repository and replace the placeholder image paths below with your real image files.
+Use the table below for a compact screenshot gallery.
 
-![Home Page Screenshot](./screenshots/home-page.png)
-![Product Page Screenshot](./screenshots/product-page.png)
-![Cart Page Screenshot](./screenshots/cart-page.png)
-![Checkout Page Screenshot](./screenshots/checkout-page.png)
+<table>
+	<tr>
+		<td><img width="260" src="https://github.com/user-attachments/assets/c29af764-179f-46cb-8c3f-d83c4650a198" alt="Screenshot 1" /></td>
+		<td><img width="260" src="https://github.com/user-attachments/assets/4619eac6-bcb5-4f47-9a02-099f36463d85" alt="Screenshot 2" /></td>
+		<td><img width="260" src="https://github.com/user-attachments/assets/ba780680-3ad4-43d6-ada2-6ea2b96a600f" alt="Screenshot 3" /></td>
+	</tr>
+	<tr>
+		<td><img width="260" src="https://github.com/user-attachments/assets/79275aa5-a8da-4c34-929a-e8151cd717c9" alt="Screenshot 4" /></td>
+		<td><img width="260" src="https://github.com/user-attachments/assets/ec99a4e0-3ce4-4138-a2ff-e94ffa3bd14c" alt="Screenshot 5" /></td>
+		<td><img width="260" src="https://github.com/user-attachments/assets/afdd0f67-bce8-4407-9138-755fa9b73a70" alt="Screenshot 6" /></td>
+	</tr>
+	<tr>
+		<td><img width="260" src="https://github.com/user-attachments/assets/934bbf77-64a8-4594-aba8-9a1cae891b1a" alt="Screenshot 7" /></td>
+		<td><img width="260" src="https://github.com/user-attachments/assets/a2f83dc8-8e51-44b2-8b83-2f2f9d7846bf" alt="Screenshot 8" /></td>
+		<td><img width="260" src="https://github.com/user-attachments/assets/6a2d492c-c721-44f0-aef6-3e7b452c0334" alt="Screenshot 9" /></td>
+	</tr>
+</table>
 
 ## Prerequisites
 - Node.js 18 or newer
@@ -141,7 +154,7 @@ The example files already added to the repo can be copied and edited with your r
 ## Common Development URLs
 - Frontend: `http://localhost:5173`
 - Backend: `http://localhost:3000`
-- Live demo: https://fronend-onugxcbny-kalharas-projects-265c6636.vercel.app/collection
+- Live Demo: [https://fronend-onugxcbny-kalharas-projects-265c6636.vercel.app/collection](https://fronend-eta.vercel.app/)
 
 ## Useful Scripts
 - Client: `npm run dev`, `npm run build`, `npm run lint`, `npm run preview`
@@ -178,7 +191,6 @@ The example files already added to the repo can be copied and edited with your r
 - If Stripe checkout fails, confirm the Stripe secret key and client URL are correct.
 - If auth errors appear, recheck the Clerk publishable and secret keys.
 
-Live Demo: https://fronend-onugxcbny-kalharas-projects-265c6636.vercel.app/collection
 
 ## License
 This project is covered by the proprietary license in [LICENSE.md](LICENSE.md). The code is not licensed for public use, copying, modification, redistribution, or commercial use without explicit written permission from the author.
