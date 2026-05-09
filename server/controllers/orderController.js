@@ -53,6 +53,7 @@ export const placeOrderCOD = async (req, res) => {
         // Send confirmation email for COD
         const populatedOrder = await Order.findById(order._id).populate("items.product address")
         const user = await User.findById(userId)
+        const productTitles = populatedOrder.items.map(item => item.product?.title || "Unknown").join(", ")
 
     } catch (error) {
         console.log(error.message)
