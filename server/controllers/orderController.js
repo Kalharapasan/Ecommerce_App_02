@@ -53,3 +53,12 @@ export const placeOrderCOD = async (req, res) => {
         res.json({ success: false, message: error.message })
     }
 }
+
+// Place order using Stripe [POST '/stripe']
+export const placeOrderStripe = async (req,res)=>{
+    try {
+
+    } catch (error) {
+
+    }
+}
