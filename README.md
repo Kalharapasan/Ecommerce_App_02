@@ -1,1 +1,184 @@
 # Ecommerce_App_02
+
+## About
+This is a full-stack e-commerce application with a React client and a Node/Express backend. It includes product browsing, cart management, checkout, order placement, address handling, authentication, file uploads, Stripe payments, Cloudinary image storage, and email support.
+
+The frontend is a single-page app built with Vite and React, while the backend exposes REST APIs for products, cart, addresses, orders, users, and webhooks. The app is designed to support both customer shopping flows and owner/admin product management.
+
+## Screenshots
+Add your project screenshots here. Create a `screenshots/` folder in the root of the repository and replace the placeholder image paths below with your real image files.
+
+![Home Page Screenshot](./screenshots/home-page.png)
+![Product Page Screenshot](./screenshots/product-page.png)
+![Cart Page Screenshot](./screenshots/cart-page.png)
+![Checkout Page Screenshot](./screenshots/checkout-page.png)
+
+## Prerequisites
+- Node.js 18 or newer
+- MongoDB database connection string
+- Clerk application keys
+- Cloudinary account credentials
+- Stripe secret key for payments
+- SMTP credentials for outgoing emails
+
+## Quick Start
+1. Clone or open the project folder.
+2. Install dependencies in both apps.
+3. Create the `.env` files from the example files.
+4. Start the server.
+5. Start the client.
+6. Open the frontend in the browser and test the cart or checkout flow.
+
+## Features
+- Browse products by collection and product details
+- Add products to cart and update quantities
+- Manage shipping addresses
+- Choose between Cash on Delivery and Stripe payment
+- Owner/admin product management views
+- User authentication with Clerk
+- Image upload and storage with Cloudinary
+- Order creation and checkout flow
+- Email notifications through Nodemailer
+
+## Main Pages
+- Home page with featured sections
+- Collection page for browsing products
+- Product details page for item information and size selection
+- Cart and order summary page
+- Address form for shipping details
+- Orders page for viewing placed orders
+- Owner dashboard for managing products
+
+## Application Flow
+1. A user signs in with Clerk.
+2. Products are fetched from the backend.
+3. The user adds items to the cart.
+4. Shipping address is selected or created.
+5. Checkout is completed with Cash on Delivery or Stripe.
+6. The order is saved in MongoDB and the user is redirected to the result page.
+
+## Tech Stack
+- Frontend: React, Vite, React Router, Axios, Tailwind CSS, Swiper, React Hot Toast, Clerk React
+- Backend: Node.js, Express, MongoDB, Mongoose, Clerk Express, Stripe, Cloudinary, Nodemailer, Multer, CORS
+- Tools: ESLint, Nodemon, dotenv
+
+## Project Structure
+- `client/` React frontend built with Vite
+- `server/` Express API for business logic and database access
+- `client/src/components/` reusable UI components
+- `client/src/pages/` application screens
+- `server/controllers/` request handlers
+- `server/models/` database schemas
+- `server/routes/` API route definitions
+
+## Folder Guide
+- `client/src/context/` global app state and shared helpers
+- `client/src/assets/` static data and media
+- `server/config/` database, Cloudinary, and mail setup
+- `server/middleware/` request protection and upload helpers
+- `server/images/` uploaded image assets
+
+## Backend API Overview
+- `/api/products` product listing and product details
+- `/api/cart` cart actions
+- `/api/addresses` shipping address management
+- `/api/orders` order placement and Stripe checkout flow
+- `/api/user` user sync and profile-related data
+- `/api/clerk` Clerk webhook handling
+- `/api/stripe` Stripe webhook handling
+
+## Setup
+1. Install dependencies in both folders:
+	```bash
+	cd client
+	npm install
+
+	cd ../server
+	npm install
+	```
+2. Create your environment files:
+	- Copy `client/.env.example` to `client/.env`
+	- Copy `server/.env.example` to `server/.env`
+3. Fill in the required values for MongoDB, Clerk, Cloudinary, Stripe, SMTP, and the client URL.
+
+## Environment Variables
+### Client
+- `VITE_BACKEND_URL` - Backend API base URL
+- `VITE_CURRENCY` - Currency symbol used in prices
+- `VITE_CLERK_PUBLISHABLE_KEY` - Clerk publishable key for authentication
+
+### Server
+- `PORT` - Server port
+- `VERCEL` - Set to `1` when deployed on Vercel
+- `CLIENT_URL` - Frontend URL used for Stripe redirects
+- `MONGO_URL` - MongoDB connection string
+- `CLDN_NAME`, `CLDN_API_KEY`, `CLDN_API_SECRET` - Cloudinary credentials
+- `SMTP_SENDER_EMAIL`, `SMTP_PASS` - SMTP credentials for email delivery
+- `CLERK_SECRET_KEY` - Clerk secret key for backend auth
+- `STRIPE_SECRET_KEY` - Stripe secret key for payments
+
+## Run the Project
+1. Start the backend:
+	```bash
+	cd server
+	npm run server
+	```
+2. Start the frontend in a second terminal:
+	```bash
+	cd client
+	npm run dev
+	```
+3. Open the client URL shown by Vite, usually `http://localhost:5173`.
+
+## Environment File Example
+Create these files before running the app:
+
+- `client/.env`
+- `server/.env`
+
+The example files already added to the repo can be copied and edited with your real values.
+
+## Common Development URLs
+- Frontend: `http://localhost:5173`
+- Backend: `http://localhost:3000`
+- Live demo: https://fronend-onugxcbny-kalharas-projects-265c6636.vercel.app/collection
+
+## Useful Scripts
+- Client: `npm run dev`, `npm run build`, `npm run lint`, `npm run preview`
+- Server: `npm start`, `npm run server`
+
+## Deployment Notes
+- Frontend is deployed on Vercel and can use the live demo link above.
+- Backend should run with the correct production environment variables set.
+- If Stripe checkout redirect URLs fail, check `CLIENT_URL` on the server.
+- If API calls fail from the client, verify `VITE_BACKEND_URL`.
+
+## Authentication And Payments
+- Clerk is used for user sign-in and identity.
+- Stripe is used for online payment checkout.
+- Cash on Delivery is available for users who do not want to pay online.
+- The backend uses protected routes for authenticated actions such as cart and order operations.
+
+## Data Storage
+- MongoDB stores users, products, orders, addresses, and cart-related records.
+- Cloudinary stores uploaded product images.
+- Nodemailer sends order or notification emails through SMTP.
+
+## Notes
+- The backend expects the local `.env` file in `server/`.
+- The frontend expects the local `.env` file in `client/`.
+- If Stripe checkout or user sync fails, confirm the API base URL and Clerk keys are set correctly.
+
+## Troubleshooting
+- Make sure MongoDB is running or the Atlas connection string is valid.
+- Confirm Clerk keys match the frontend and backend projects.
+- Restart both client and server after changing environment variables.
+- If images do not upload, check the Cloudinary credentials.
+- If the frontend shows API connection errors, verify the backend is running on the configured port.
+- If Stripe checkout fails, confirm the Stripe secret key and client URL are correct.
+- If auth errors appear, recheck the Clerk publishable and secret keys.
+
+Live Demo: https://fronend-onugxcbny-kalharas-projects-265c6636.vercel.app/collection
+
+## License
+This project is covered by the proprietary license in [LICENSE.md](LICENSE.md). The code is not licensed for public use, copying, modification, redistribution, or commercial use without explicit written permission from the author.
