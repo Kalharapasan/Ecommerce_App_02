@@ -39,7 +39,7 @@ app.use('/api/user', userRouter) // Routes for User functionalit
 app.use('/api/products', productRouter) // Routes for handling products
 app.use('/api/addresses', addressRouter) // Routes for handling addresses
 app.use('/api/cart', cartRouter) // Routes for handling addresses
-app.use('/api/order', orderRouter) // Routes for handling Order
+app.use('/api/orders', orderRouter) // Routes for handling Order
 
 // Route Endpoint to check API Status
 app.get('/', (req, res) => {
