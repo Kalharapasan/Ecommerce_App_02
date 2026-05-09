@@ -12,13 +12,10 @@ const MyOrders = () => {
     if (!user) return
 
     try {
-      const { data } = await axios.post(
-        "/api/orders/userorders",
-        { items, address: selectedAddress._id },
-        {
-          headers: { Authorization: `Bearer ${await getToken()}` },
-        }
-      );
+      const { data } = await axios.post("/api/orders/userorders", {}, { headers: { Authorization: `Bearer ${await getToken()}` } });
+      if (data.success) {
+
+      }
     } catch (error) {
 
     }
