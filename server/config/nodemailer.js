@@ -1,4 +1,8 @@
+import dotenv from "dotenv"
+import { fileURLToPath } from "url"
 import nodemailer from "nodemailer"
+
+dotenv.config({ path: fileURLToPath(new URL("../.env", import.meta.url)) })
 
 // Create a test account or replace with real credentials.
 const transporter = nodemailer.createTransport({
