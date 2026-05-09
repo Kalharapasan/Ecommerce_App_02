@@ -49,10 +49,25 @@ const CartTotal = () => {
             if (!selectedAddress) {
                 return toast.error("Please select an address")
             }
-            let orderItems = []
-            for (const itemId in cartItems)
 
-    } catch (error) {
+            let orderItems = []
+
+            for (const itemId in cartItems) {
+                for (const size in cartItems[itemId]) {
+                    if (cartItems[itemId][size] > 0) {
+                        const itemInfo = structuredClone(products.find(product => product._id === itemId))
+                        if (itemInfo) {
+                            itemInfo.size = size;
+                            itemInfo.quantity = cartItems[itemId][size]
+                            orderItems.push(itemInfo)
+                        }
+                    }
+                }
+            }
+
+            // Convert orderItems
+
+        } catch (error) {
 
         }
     }
