@@ -66,7 +66,7 @@ export const placeOrderCOD = async (req, res) => {
 }
 
 // Place order using Stripe [POST '/stripe']
-export const placeOrderStripe = async (req,res)=>{
+export const placeOrderStripe = async (req, res) => {
     try {
 
     } catch (error) {
@@ -75,8 +75,13 @@ export const placeOrderStripe = async (req,res)=>{
 }
 
 // ALL Orders data for the user [POST '/userorders']
-export const userOrders = async (req,res)=>{
+export const userOrders = async (req, res) => {
     try {
+
+        const { userId } = req.auth()
+        const orders = await Order.find({ userId, $or: [{ paymentMethod: "COD" }, { isPaid: true }] }).populate("items.product address").sort({ createdAt: -1 })
+
+        res.json({ success: true, orders })
 
     } catch (error) {
 
@@ -84,7 +89,7 @@ export const userOrders = async (req,res)=>{
 }
 
 // Update Order status for the Admin [POST '/status']
-export const updateStatus = async (req,res)=>{
+export const updateStatus = async (req, res) => {
     try {
 
     } catch (error) {
