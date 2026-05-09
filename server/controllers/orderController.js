@@ -96,6 +96,22 @@ export const placeOrderStripe = async (req, res) => {
             return res.json({ success: false, message: "Please add Product first" })
         }
 
+        // calculate amount using items
+        let subtotal = 0
+        for (const item of items) {
+            const product = await Product.findById(item.product);
+            if (!product) {
+                return res.json({ success: false, message: "Product not found" })
+            }
+
+            const unitPrice = product.price[item.size] // Pick correct size first
+            if (!unitPrice) {
+                return res.json({ success: false, message: "Invalid size selected" })
+            }
+
+            subtotal += unitPrice * item.quantity
+        }
+
     } catch (error) {
 
     }
