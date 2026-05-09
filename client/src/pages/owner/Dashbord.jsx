@@ -5,7 +5,7 @@ import toast from 'react-hot-toast'
 
 export const Dashbord = () => {
 
-  const { user, currency,axios, getToken } = useAppContext()
+  const { user, currency, axios, getToken } = useAppContext()
   const [dashboardData, setDashboardData] = useState({
     orders: [],
     totalOrders: 0,
@@ -14,7 +14,9 @@ export const Dashbord = () => {
 
   const getDashboardData = () => {
     try {
-      const { data } = await axios.get()
+      const { data } = await axios.get('/api/orders/', {
+        headers: { Authorization: `Bearer ${await getToken()}` },
+      })
     } catch (error) {
 
     }
