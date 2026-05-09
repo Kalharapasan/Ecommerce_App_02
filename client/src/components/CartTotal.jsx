@@ -50,6 +50,11 @@ const CartTotal = () => {
                 return toast.error("Please select an address")
             }
 
+            // Prevent placing order when cart is empty
+            if (getCartCount() === 0) {
+                return toast.error("Please add Product first")
+            }
+
             let orderItems = []
 
             for (const itemId in cartItems) {
