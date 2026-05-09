@@ -83,8 +83,7 @@ export const userOrders = async (req, res) => {
 // ALL Orders data for the Admin [GET '/']
 export const allOrders = async (req, res) => {
     try {
-        const orders = await Order.find({}).sort({ createdAt: -1 })
-        return res.json({ success: true, orders })
+        const orders = await Order.find({})
     } catch (error) {
         console.log(error.message)
         return res.json({ success: false, message: error.message })
