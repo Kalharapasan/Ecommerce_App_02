@@ -14,7 +14,7 @@ export const placeOrderCOD = async (req, res) => {
         const { userId } = req.auth()
 
         if (!items || items.length === 0) {
-            return res.json({ success: false, message: "Please add product first" })
+            return res.json({ success: false, message: "Please add Product first" })
         }
 
     } catch (error) {
