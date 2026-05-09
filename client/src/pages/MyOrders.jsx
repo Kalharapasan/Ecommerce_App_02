@@ -5,7 +5,7 @@ import { useAppContext } from '../context/AppContext'
 
 const MyOrders = () => {
 
-  const { currency, user,axios ,getToken} = useAppContext()
+  const { currency, user, axios, getToken } = useAppContext()
   const [orders, setOrders] = useState([])
 
   const loadOrdersData = async () => {
@@ -65,7 +65,7 @@ const MyOrders = () => {
           <div className='flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 border-t border-gray-300 pt-3'>
             <div className='flex flex-col gap-2'>
               <div className='flex items-center gap-x-2'>
-                <h5 className='medium-14'>Size:</h5>
+                <h5 className='medium-14'>OrderId:</h5>
                 <p className='text-gray-400 text-xs break-all'>{order._id}</p>
               </div>
               <div className='flex gap-4'>
@@ -98,7 +98,7 @@ const MyOrders = () => {
                   <p>{order.status}</p>
                 </div>
               </div>
-              <button  onClick={loadOrdersData} className='btn-secondary !py-1 !text-xs rounded-sm'>Track Order</button>
+              <button onClick={loadOrdersData} className='btn-secondary !py-1 !text-xs rounded-sm'>Track Order</button>
             </div>
           </div>
 
