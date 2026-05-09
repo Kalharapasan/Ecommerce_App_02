@@ -1,16 +1,10 @@
 import mongoose from "mongoose";
-
 const orderSchema = new mongoose.Schema({
-    title: {type: String, required: true},
-    description: {type: String, required: true},
-    price: {type: Object, required: true},
-    sizes: {type: [String], required: true},
-    images: {type: [String], required: true},
-    category: {type: String, required: true},
-    type: {type: String, required: true},
-    popular: {type: Boolean, default: false},
-    inStock: {type: Boolean, default: true},
-}, {timestamps: true})
+    userId: { type: String, required: true, ref: 'user' },
+    items: [{
+        product: { type: String, required: true, ref: 'user' },
+    }]
+}, { timestamps: true })
 
 const Order = mongoose.model("Order", orderSchema)
 
