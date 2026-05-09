@@ -44,6 +44,10 @@ export const placeOrderCOD = async (req, res) => {
             address,
             paymentMethod: "COD",
         })
+        // Clear user Cart after placing order
+        await User.findByIdAndUpdate(userId, { cartData: {} })
+
+        return res.json({ success: true, message: "Order Placed" })
 
     } catch (error) {
 
