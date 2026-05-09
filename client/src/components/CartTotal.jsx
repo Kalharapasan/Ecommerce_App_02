@@ -104,7 +104,9 @@ const CartTotal = () => {
                 );
 
                 if (data.success) {
-                    window.location.replace(data.url);
+                    window.location.replace(data.url)
+                } else {
+                    toast.error(data.message)
                 }
             }
 
