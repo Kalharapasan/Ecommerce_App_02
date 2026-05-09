@@ -79,6 +79,12 @@ const CartTotal = () => {
                 });
             }
 
+            if (data.success) {
+                toast.success(data.message)
+                setCartItems({})
+                navigate('/my-orders')
+            }
+
         } catch (error) {
 
         }
