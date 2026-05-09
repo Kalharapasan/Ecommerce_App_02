@@ -1,6 +1,7 @@
 import Order from "../models/Order.js";
 import Product from "../models/Product.js";
 import User from "../models/User.js";
+import transporter from "../config/nodemailer.js";
 
 // Global variables for payment
 const currency = "usd"
@@ -62,17 +63,19 @@ export const placeOrderCOD = async (req, res) => {
             to: user.email,
             subject: "Order Details (COD)",
             html: `
-    <h2>Your Delivery Details</h2>
-    <p>Thank You for your Order! Below are your Order details:</p>
-    <ul>
-        <li><strong>Order ID:</strong> ${populatedOrder._id}</li>
-        <li><strong>Products Name:</strong> ${productTitles}</li>
-        <li><strong>Address:</strong> ${addressString}</li>
-        <li><strong>Total Amount:</strong> ${process.env.CURRENCY || "$"}${populatedOrder.amount}</li>
-    </ul>
-    <p>You will get your delivery in 1-2 Days. Pay on delivery.</p>
-    `
+                <h2>Your Delivery Details</h2>
+                <p>Thank You for your Order! Below are your Order details:</p>
+                <ul>
+                    <li><strong>Order ID:</strong> ${populatedOrder._id}</li>
+                    <li><strong>Products Name:</strong> ${productTitles}</li>
+                    <li><strong>Address:</strong> ${addressString}</li>
+                    <li><strong>Total Amount:</strong> ${process.env.CURRENCY || "$"}${populatedOrder.amount}</li>
+                </ul>
+                <p>You will get your delivery in 1-2 Days. Pay on delivery.</p>
+                `
         }
+
+        await transporter.sendMail(mailOptions)
 
         return res.json({ success: true, message: "Order Placed" })
 
