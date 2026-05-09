@@ -60,7 +60,6 @@ const MyOrders = () => {
               </div>
             </div>
           ))}
-
           {/* Order Summary */}
           <div className='flex flex-col lg:flex-row justify-between items-start lg:items-center gap-4 border-t border-gray-300 pt-3'>
             <div className='flex flex-col gap-2'>
@@ -78,7 +77,6 @@ const MyOrders = () => {
                   </div>
                 </div>
               </div>
-
               <div className='flex gap-4'>
                 <div className='flex items-center gap-x-2'>
                   <h5 className='medium-14'>Date:</h5>

@@ -24,7 +24,6 @@ export const authUser = async (req, res, next) => {
             // return the updated doc immediately
             user = await User.findByIdAndUpdate(userId, { role: newRole }, { new: true })
         }
-
         req.user = user;
         next()
 

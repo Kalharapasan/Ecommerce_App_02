@@ -8,7 +8,6 @@ const userSchema = new mongoose.Schema({
   role: {type:String, enum: ["user", "owner"], default:"user"},
   cartData: {type:Object, default:{}},
 }, {timestamps: true, minimize: false})
-
 const User = mongoose.model("User", userSchema)
 
 export default User

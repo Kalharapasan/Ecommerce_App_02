@@ -17,6 +17,9 @@ dotenv.config({ path: fileURLToPath(new URL("./.env", import.meta.url)) })
 await connectDB() // Establish connection to the database
 await connectCloudinary() // Setup cloudinary for image storage
 
+// API to listen to stripe webhooks
+app.post('/api/stripe', express.raw({type: "application/json"}), stripeWebhooks)
+
 const authMiddleware = process.env.CLERK_SECRET_KEY
     ? clerkMiddleware()
     : (req, res, next) => {
