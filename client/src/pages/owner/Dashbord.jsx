@@ -33,7 +33,7 @@ export const Dashbord = () => {
       if (data.success) {
         await getDashboardData()
         toast.success(data.message)
-      } 
+      }
     } catch (error) {
       console.log(error)
       toast.error(error.message)
@@ -132,15 +132,15 @@ export const Dashbord = () => {
                   </div>
                 </div>
               </div>
-              <div className='flex gap-3'>
-                <div className='flex items-center gap-2'>
-                  <h5 className='medium-14'>Status:</h5>
-                  <div className='flex items-center gap-1'>
-                    <span className="min-w-2 h-2 rounded-full bg-green-500" />
-                    <p>{order.status}</p>
-                  </div>
-                </div>
-                <button className='btn-secondary !py-1 !text-xs rounded-sm'>Track Order</button>
+              <div className='flex items-center gap-2'>
+                <h5 className='medium-14'>Status:</h5>
+                <select onChange={(e) => statusHandler(e, order._id)} value={order.status} className='text-xs font-semibold p-1 ring-1 ring-slate-900/5 rounded max-w-36 bg-primary'>
+                  <option value="Order Placed">Order Placed</option>
+                  <option value="Packing">Packing</option>
+                  <option value="Shipping">Shipping</option>
+                  <option value="Out for delivery">Out for delivery</option>
+                  <option value="Delivered">Delivered</option>
+                </select>
               </div>
             </div>
 
