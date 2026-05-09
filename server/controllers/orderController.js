@@ -92,6 +92,7 @@ export const placeOrderStripe = async (req, res) => {
     try {
         const { items, address } = req.body;
         const { userId } = req.auth();
+        const origin = req.headers.origin || process.env.CLIENT_URL || 'http://localhost:5173';
 
         if (!items || items.length === 0) {
             return res.json({ success: false, message: "Please add Product first" })
