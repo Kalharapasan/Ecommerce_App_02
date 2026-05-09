@@ -171,7 +171,11 @@ export const placeOrderStripe = async (req, res) => {
             }
         })
 
+        return res.json({ success: true, url: session.url })
+
     } catch (error) {
+        console.log("Stripe Error:", error.message)
+        res.json({ success: false, message: error.message })
 
     }
 }
