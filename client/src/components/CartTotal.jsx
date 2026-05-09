@@ -30,6 +30,16 @@ const CartTotal = () => {
         }
     }
 
+    const placeOrder = async () => {
+        try {
+            if (!selectedAddress) {
+
+            }
+        } catch (error) {
+
+        }
+    }
+
     useEffect(() => {
         if (user) {
             getAddress()
