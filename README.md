@@ -8,7 +8,6 @@ The frontend is a single-page app built with Vite and React, while the backend e
 ## Screenshots
 Use the table below for a compact screenshot gallery.
 
-<<<<<<< HEAD
 <table>
 	<tr>
 		<td><img width="260" src="https://github.com/user-attachments/assets/c29af764-179f-46cb-8c3f-d83c4650a198" alt="Screenshot 1" /></td>
@@ -26,17 +25,6 @@ Use the table below for a compact screenshot gallery.
 		<td><img width="260" src="https://github.com/user-attachments/assets/6a2d492c-c721-44f0-aef6-3e7b452c0334" alt="Screenshot 9" /></td>
 	</tr>
 </table>
-=======
-<img width="1366" height="631" alt="image" src="https://github.com/user-attachments/assets/c29af764-179f-46cb-8c3f-d83c4650a198" />
-<img width="1366" height="411" alt="image" src="https://github.com/user-attachments/assets/4619eac6-bcb5-4f47-9a02-099f36463d85" />
-<img width="1366" height="506" alt="image" src="https://github.com/user-attachments/assets/ba780680-3ad4-43d6-ada2-6ea2b96a600f" />
-<img width="1365" height="610" alt="image" src="https://github.com/user-attachments/assets/79275aa5-a8da-4c34-929a-e8151cd717c9" />
-<img width="1365" height="643" alt="image" src="https://github.com/user-attachments/assets/ec99a4e0-3ce4-4138-a2ff-e94ffa3bd14c" />
-<img width="1366" height="617" alt="image" src="https://github.com/user-attachments/assets/afdd0f67-bce8-4407-9138-755fa9b73a70" />
-<img width="1359" height="616" alt="image" src="https://github.com/user-attachments/assets/934bbf77-64a8-4594-aba8-9a1cae891b1a" />
-<img width="1366" height="689" alt="image" src="https://github.com/user-attachments/assets/a2f83dc8-8e51-44b2-8b83-2f2f9d7846bf" />
-<img width="1351" height="597" alt="image" src="https://github.com/user-attachments/assets/6a2d492c-c721-44f0-aef6-3e7b452c0334" />
->>>>>>> 9c133e7984a12fa6283902367c5ced9efae96c7d
 
 ## Prerequisites
 - Node.js 18 or newer
@@ -202,11 +190,6 @@ The example files already added to the repo can be copied and edited with your r
 - If the frontend shows API connection errors, verify the backend is running on the configured port.
 - If Stripe checkout fails, confirm the Stripe secret key and client URL are correct.
 - If auth errors appear, recheck the Clerk publishable and secret keys.
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 9c133e7984a12fa6283902367c5ced9efae96c7d
 
 ## License
 This project is covered by the proprietary license in [LICENSE.md](LICENSE.md). The code is not licensed for public use, copying, modification, redistribution, or commercial use without explicit written permission from the author.
