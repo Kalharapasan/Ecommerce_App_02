@@ -30,6 +30,12 @@ const CartTotal = () => {
         }
     }
 
+    useEffect(() => {
+        if (user) {
+            getAddress()
+        }
+    }, [user])
+
     return (
         <div>
             <h3 className='bold-22'>Order Details <span className="bold-14 text-secondary">({getCartCount()}) Items</span></h3>
