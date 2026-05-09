@@ -84,6 +84,9 @@ const CartTotal = () => {
                 setCartItems({})
                 navigate('/my-orders')
             }
+            else {
+                toast.error(data.message)
+            }
 
         } catch (error) {
 
