@@ -5,7 +5,7 @@ import { useAppContext } from '../context/AppContext'
 
 const MyOrders = () => {
 
-  const { currency, user } = useAppContext()
+  const { currency, user,axios ,getToken} = useAppContext()
   const [orders, setOrders] = useState([])
 
   const loadOrdersData = async () => {
