@@ -65,7 +65,12 @@ const CartTotal = () => {
                 }
             }
 
-            // Convert orderItems
+            // Convert orderItems to items array for backend
+            let items = orderItems.map((item) => ({
+                product: item._id,
+                quantity: item.quantity,
+                size: item.size,
+            }))
 
         } catch (error) {
 
