@@ -19,5 +19,11 @@ export const stripeWebhooks = async (request, response) => {
         response.status(400).send(`Webhook Error: ${error.message}`)
     }
 
-    // Handle
+    // Handle the event
+    if (event.type === "payment_intent.succeeded") {
+        const paymentIntent = event.data.object;
+        const paymentIntentId = paymentIntent.id
+
+        // Getting Session Metadata
+    }
 }
