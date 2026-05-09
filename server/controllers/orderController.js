@@ -113,7 +113,11 @@ export const placeOrderStripe = async (req, res) => {
 
             subtotal += unitPrice * item.quantity
 
-            productData.push({})
+            productData.push({
+                name: product.title, // Ensure this matches the Product schema
+                price: unitPrice,
+                quantity: item.quantity,
+            })
         }
 
     } catch (error) {
