@@ -62,3 +62,13 @@ export const placeOrderStripe = async (req,res)=>{
 
     }
 }
+
+// ALL Orders data for the user [POST '/userorders']
+export const userOrders = async (req,res)=>{
+    try {
+
+    } catch (error) {
+
+    }
+}
+
