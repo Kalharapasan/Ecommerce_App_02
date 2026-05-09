@@ -5,6 +5,7 @@ import { fileURLToPath } from "url"
 import connectDB from "./config/mongodb.js"
 import { clerkMiddleware } from '@clerk/express'
 import clerkWebhooks from "./controllers/ClerkWebhooks.js"
+import { stripeWebhooks } from "./controllers/stripeWebhooks.js"
 import userRouter from "./routes/userRoutes.js"
 import connectCloudinary from "./config/clodinary.js"
 import productRouter from "./routes/productRoutes.js"
@@ -13,6 +14,8 @@ import cartRouter from "./routes/cardRoutes.js"
 import orderRouter from "./routes/orderRoutes.js"
 
 dotenv.config({ path: fileURLToPath(new URL("./.env", import.meta.url)) })
+
+const app = express() // Initialize Express Application
 
 await connectDB() // Establish connection to the database
 await connectCloudinary() // Setup cloudinary for image storage
@@ -27,7 +30,6 @@ const authMiddleware = process.env.CLERK_SECRET_KEY
         next()
     }
 
-const app = express() // Initialize Express Application
 app.use(cors()) // Enable Cross-Origin Resource sharing
 
 // Clerk webhooks must keep the raw request body for signature verification.
