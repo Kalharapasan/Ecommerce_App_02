@@ -143,7 +143,7 @@ const CartTotal = () => {
                                         {address.country}
                                     </p>
                                 ))}
-                                <p onClick={() => { navigate('/address-form'); scrollTo(0, 0) }} className='p-2 text-center cursor-pointer hover:bg-tertiary hover:text-white'>Add Address</p>
+                                <p onClick={() => { navigate('/address-form'); window.scrollTo(0, 0) }} className='p-2 text-center cursor-pointer hover:bg-tertiary hover:text-white'>Add Address</p>
                             </div>
                         )}
                     </div>
