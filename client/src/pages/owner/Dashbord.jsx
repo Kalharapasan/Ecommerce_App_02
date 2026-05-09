@@ -28,7 +28,7 @@ export const Dashbord = () => {
 
   const statusHandler = async (event, orderId) => {
     try {
-      const { data } = await axios.get('/api/orders/', { headers: { Authorization: `Bearer ${await getToken()}` } })
+      const {data} = await axios.get('/api/orders/status', {headers: { Authorization: `Bearer ${await getToken()}` } })
 
       if (data.success) {
         setDashboardData(data.dashboardData)
