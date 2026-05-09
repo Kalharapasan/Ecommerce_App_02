@@ -139,8 +139,13 @@ export const placeOrderStripe = async (req, res) => {
         // Stripe line items
         let line_items = productData.map(((item) => ({
             price_data: {
-                currency: currency
-            }
+                currency: currency,
+                product_data: {
+                    name: item.name, // Use name to match productData
+                },
+                unit_amount: Math.round(item.price * 100),
+            },
+            quantity: item.quantity,
         })))
 
     } catch (error) {
