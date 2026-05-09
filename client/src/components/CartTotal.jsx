@@ -13,7 +13,7 @@ const CartTotal = () => {
 
     const getAddress = async () => {
         try {
-            const { data } = await axios.get("/api/user/addresses", {
+            const { data } = await axios.get("/api/addresses", {
                 headers: { Authorization: `Bearer ${await getToken()}` },
             });
             if (data.success) {
