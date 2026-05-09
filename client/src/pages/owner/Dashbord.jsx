@@ -146,7 +146,7 @@ export const Dashbord = () => {
                   </div>
                   <div className='flex items-center gap-x-2'>
                     <h5 className='medium-14'>Amount:</h5>
-                    <p className='text-gray-400 text-xs'>{order.paymentMethod}</p>
+                    <p className='text-gray-400 text-xs'>{currency}{order.amount}</p>
                   </div>
                 </div>
 
