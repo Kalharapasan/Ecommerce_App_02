@@ -84,7 +84,8 @@ export const userOrders = async (req, res) => {
         res.json({ success: true, orders })
 
     } catch (error) {
-
+        console.log(error.message)
+        res.json({ success: false, message: error.message })
     }
 }
 
