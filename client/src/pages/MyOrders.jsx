@@ -14,10 +14,10 @@ const MyOrders = () => {
     try {
       const { data } = await axios.post("/api/orders/userorders", {}, { headers: { Authorization: `Bearer ${await getToken()}` } });
       if (data.success) {
-
+        setOrders(data.orders.reverse())
       }
     } catch (error) {
-
+      console.log(error)
     }
   }
 
