@@ -101,6 +101,10 @@ export const allOrders = async (req, res) => {
 export const updateStatus = async (req, res) => {
     try {
 
+        const { orderId, status } = req.body
+        await Order.findByIdAndUpdate(orderId, { status })
+        res.json({ success: true, message: "Order Placed" })
+
     } catch (error) {
 
     }
