@@ -46,10 +46,10 @@ export const placeOrderCOD = async (req, res) => {
         })
         // Clear user Cart after placing order
         await User.findByIdAndUpdate(userId, { cartData: {} })
-
         return res.json({ success: true, message: "Order Placed" })
 
     } catch (error) {
-
+        console.log(error.message)
+        res.json({ success: false, message: error.message })
     }
 }
