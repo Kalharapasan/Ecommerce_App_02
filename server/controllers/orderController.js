@@ -124,12 +124,13 @@ export const placeOrderStripe = async (req, res) => {
         const taxAmount = subtotal * taxPercentage
         const totalAmount = subtotal + taxAmount + delivery_charges
 
+        // Create Order in DB
         const order = await Order.create({
             userId,
             items,
             amount: totalAmount,
             address,
-            paymentMethod: "COD",
+            paymentMethod: "stripe",
         })
 
     } catch (error) {
