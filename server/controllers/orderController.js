@@ -148,6 +148,16 @@ export const placeOrderStripe = async (req, res) => {
             quantity: item.quantity,
         })))
 
+        // Delivery Charges
+        line_items.push({
+            price_data: {
+                currency,
+                product_data: { name: "Tax (2%)" },
+                unit_amount: Math.round(taxAmount * 100),
+            },
+            quantity: 1,
+        })
+
     } catch (error) {
 
     }
